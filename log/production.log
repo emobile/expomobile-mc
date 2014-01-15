@@ -1160,6 +1160,7 @@ Compiled jHtmlArea.css  (0ms)  (pid 6037)
 Compiled jHtmlArea.ColorPickerMenu.css  (86ms)  (pid 6037)
 Compiled application.css  (124ms)  (pid 6037)
 Connecting to database specified by database.yml
+<<<<<<< HEAD
 [paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Event class
 [paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Exhibitor class
 Started GET "/" for 127.0.0.1 at 2014-01-13 17:05:46 -0700
@@ -2132,6 +2133,83 @@ Served asset /exporting-05552ed421ff004b8b0dff9f23febe29.js - 304 Not Modified (
 Started GET "/system/logos/2/original/anadic.png?1384392521" for 127.0.0.1 at 2014-01-13 17:13:55 -0700
 
 ActionController::RoutingError (No route matches [GET] "/system/logos/2/original/anadic.png"):
+=======
+Compiled jquery-1.9.0.js  (4ms)  (pid 9711)
+Compiled jquery_ujs.js  (0ms)  (pid 9711)
+Compiled jquery-ui-1.9.2.custom.js  (9ms)  (pid 9711)
+Compiled jquery.datetimeentry.js  (1ms)  (pid 9711)
+Compiled simpla.jquery.configuration.js  (38ms)  (pid 9711)
+Compiled facebox.js  (0ms)  (pid 9711)
+Compiled jquery_nested_form.js  (0ms)  (pid 9711)
+Compiled jHtmlArea-0.8.0.js  (0ms)  (pid 9711)
+Compiled jHtmlArea.ColorPickerMenu-0.8.0.js  (0ms)  (pid 9711)
+Compiled application.js  (209ms)  (pid 9711)
+Compiled attendees.js  (0ms)  (pid 9711)
+Compiled groups.js  (0ms)  (pid 9711)
+Compiled highcharts.js  (2ms)  (pid 9711)
+Compiled hours.js  (0ms)  (pid 9711)
+Compiled jquery.wysiwyg.js  (2ms)  (pid 9711)
+Compiled offerts.js  (0ms)  (pid 9711)
+Compiled rooms.js  (0ms)  (pid 9711)
+Compiled schedules.js  (0ms)  (pid 9711)
+Compiled subgroups.js  (0ms)  (pid 9711)
+Compiled workshops.js  (0ms)  (pid 9711)
+Compiled reset.css  (0ms)  (pid 9711)
+Compiled style.css  (0ms)  (pid 9711)
+Compiled table.css  (0ms)  (pid 9711)
+Compiled invalid.css  (0ms)  (pid 9711)
+Compiled blue.css  (0ms)  (pid 9711)
+Compiled jquery.datetimeentry.css  (0ms)  (pid 9711)
+Compiled redmond/jquery-ui-1.9.2.custom.css  (0ms)  (pid 9711)
+Compiled jHtmlArea.css  (0ms)  (pid 9711)
+Compiled jHtmlArea.ColorPickerMenu.css  (33ms)  (pid 9711)
+Compiled application.css  (87ms)  (pid 9711)
+Connecting to database specified by database.yml
+Compiled jquery-1.9.0.js  (50ms)  (pid 9711)
+Compiled jquery_ujs.js  (0ms)  (pid 9711)
+Compiled jquery-ui-1.9.2.custom.js  (9ms)  (pid 9711)
+Compiled jquery.datetimeentry.js  (1ms)  (pid 9711)
+Compiled simpla.jquery.configuration.js  (0ms)  (pid 9711)
+Compiled facebox.js  (0ms)  (pid 9711)
+Compiled jquery_nested_form.js  (0ms)  (pid 9711)
+Compiled jHtmlArea-0.8.0.js  (0ms)  (pid 9711)
+Compiled jHtmlArea.ColorPickerMenu-0.8.0.js  (0ms)  (pid 9711)
+Compiled application.js  (145ms)  (pid 9711)
+Compiled attendees.js  (0ms)  (pid 9711)
+Compiled groups.js  (0ms)  (pid 9711)
+Compiled highcharts.js  (2ms)  (pid 9711)
+Compiled hours.js  (0ms)  (pid 9711)
+Compiled jquery.wysiwyg.js  (0ms)  (pid 9711)
+Compiled offerts.js  (0ms)  (pid 9711)
+Compiled rooms.js  (0ms)  (pid 9711)
+Compiled schedules.js  (0ms)  (pid 9711)
+Compiled subgroups.js  (0ms)  (pid 9711)
+Compiled workshops.js  (0ms)  (pid 9711)
+Compiled reset.css  (0ms)  (pid 9711)
+Compiled style.css  (0ms)  (pid 9711)
+Compiled table.css  (0ms)  (pid 9711)
+Compiled invalid.css  (0ms)  (pid 9711)
+Compiled blue.css  (0ms)  (pid 9711)
+Compiled jquery.datetimeentry.css  (0ms)  (pid 9711)
+Compiled redmond/jquery-ui-1.9.2.custom.css  (0ms)  (pid 9711)
+Compiled jHtmlArea.css  (0ms)  (pid 9711)
+Compiled jHtmlArea.ColorPickerMenu.css  (10ms)  (pid 9711)
+Compiled application.css  (43ms)  (pid 9711)
+Connecting to database specified by database.yml
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Event class
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Exhibitor class
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:35:19 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 31ms
+Started GET "/users/sign_in" for 189.155.200.177 at 2014-01-15 02:35:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (8.1ms)
+  Rendered devise/shared/_links.erb (3.0ms)
+Completed 200 OK in 80ms (Views: 29.3ms | ActiveRecord: 2.7ms)
+Started GET "/users/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:35:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -2150,6 +2228,7 @@ ActionController::RoutingError (No route matches [GET] "/system/logos/2/original
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2161,6 +2240,18 @@ ActionController::RoutingError (No route matches [GET] "/system/logos/2/original
 Started GET "/system/banners/2/original/congreso.png?1384392521" for 127.0.0.1 at 2014-01-13 17:13:55 -0700
 
 ActionController::RoutingError (No route matches [GET] "/system/banners/2/original/congreso.png"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/users/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:35:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -2179,6 +2270,7 @@ ActionController::RoutingError (No route matches [GET] "/system/banners/2/origin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2216,6 +2308,32 @@ Served asset /bg-content-box.gif - 200 OK (1ms)
 Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-13 17:13:55 -0700
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/users/sign_in" for 69.171.234.115 at 2014-01-15 02:36:10 -0700
+Processing by Devise::SessionsController#new as */*
+  Rendered devise/sessions/new.html.erb within layouts/devise (2.9ms)
+  Rendered devise/shared/_links.erb (0.8ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+Started POST "/users/sign_in" for 189.155.200.177 at 2014-01-15 02:36:25 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJN0SxYnmhfLLwdL4yY3v/J0uM+Se+yzDnNLMT3/GVg=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+Completed 401 Unauthorized in 169ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJN0SxYnmhfLLwdL4yY3v/J0uM+Se+yzDnNLMT3/GVg=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+  Rendered devise/sessions/new.html.erb within layouts/devise (3.2ms)
+  Rendered devise/shared/_links.erb (0.9ms)
+Completed 200 OK in 143ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+Started GET "/users/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:36:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -2234,6 +2352,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2245,6 +2364,18 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
 Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-13 17:13:55 -0700
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/users/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:36:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -2263,6 +2394,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2577,6 +2709,50 @@ Served asset /bg-content-box.gif - 200 OK (0ms)
 Started GET "/assets/icons/bullet_black.png" for 127.0.0.1 at 2014-01-13 17:16:17 -0700
 Served asset /icons/bullet_black.png - 200 OK (0ms)
 Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-13 17:16:17 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started POST "/users/sign_in" for 189.155.200.177 at 2014-01-15 02:36:34 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJN0SxYnmhfLLwdL4yY3v/J0uM+Se+yzDnNLMT3/GVg=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+Redirected to http://expomobilemc.emobile-demos.com.mx/
+Completed 302 Found in 232ms (ActiveRecord: 0.0ms)
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:36:35 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_sidebar.erb (10.5ms)
+Compiled exporting.js  (1ms)  (pid 16924)
+Completed 500 Internal Server Error in 93ms
+
+ActionView::Template::Error (Permission denied - /home/edemos/Rails/expomobile-mc/tmp/cache/assets/CAE):
+    196:     </script>
+    197:     <%= yield :javascript_includes %>
+    198:     <%= javascript_include_tag "highcharts" %>
+    199:     <%= javascript_include_tag "exporting" %>
+    200:   </body>
+    201: 
+    202: </html>
+  app/views/layouts/application.html.erb:199:in `_app_views_layouts_application_html_erb___2339498591612282446_42175960'
+
+
+Connecting to database specified by database.yml
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Event class
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Exhibitor class
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:38:38 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_sidebar.erb (39.0ms)
+Compiled exporting.js  (1ms)  (pid 18394)
+Completed 200 OK in 735ms (Views: 593.8ms | ActiveRecord: 9.4ms)
+Started GET "/assets/exporting-05552ed421ff004b8b0dff9f23febe29.js" for 189.155.200.177 at 2014-01-15 02:38:40 -0700
+Served asset /exporting-05552ed421ff004b8b0dff9f23febe29.js - 200 OK (0ms)
+Started GET "/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:38:41 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2597,6 +2773,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2606,6 +2783,16 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
 
 
 Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-13 17:16:17 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:38:41 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2626,6 +2813,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2741,6 +2929,24 @@ Served asset /bg-menu-item-blue.gif - 200 OK (1ms)
 Started GET "/assets/bg-content-box.gif" for 127.0.0.1 at 2014-01-14 11:39:39 -0700
 Served asset /bg-content-box.gif - 200 OK (1ms)
 Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-14 11:39:39 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Connecting to database specified by database.yml
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Event class
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Exhibitor class
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:39:58 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_sidebar.erb (38.7ms)
+Completed 200 OK in 247ms (Views: 119.6ms | ActiveRecord: 6.5ms)
+Started GET "/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:39:58 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2761,6 +2967,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2770,6 +2977,16 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
 
 
 Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-14 11:39:39 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:39:58 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2790,6 +3007,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2831,6 +3049,28 @@ Served asset /bg-login.gif - 200 OK (3ms)
 Started GET "/assets/bg-login-top.png" for 127.0.0.1 at 2014-01-14 11:39:42 -0700
 Served asset /bg-login-top.png - 200 OK (1ms)
 Started GET "/users/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-14 11:39:42 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/devise/sessions/sign_out" for 189.155.200.177 at 2014-01-15 02:40:02 -0700
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://expomobilemc.emobile-demos.com.mx/
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms)
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:40:02 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms
+Started GET "/users/sign_in" for 189.155.200.177 at 2014-01-15 02:40:02 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (4.9ms)
+  Rendered devise/shared/_links.erb (2.7ms)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.3ms)
+Started GET "/users/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:40:02 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2851,6 +3091,7 @@ ActionController::RoutingError (No route matches [GET] "/users/resources/images/
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2860,6 +3101,16 @@ ActionController::RoutingError (No route matches [GET] "/users/resources/images/
 
 
 Started GET "/users/resources/images/loading.gif" for 127.0.0.1 at 2014-01-14 11:39:42 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/users/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:40:02 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2880,6 +3131,7 @@ ActionController::RoutingError (No route matches [GET] "/users/resources/images/
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2909,6 +3161,26 @@ Served asset /exporting-05552ed421ff004b8b0dff9f23febe29.js - 304 Not Modified (
 Started GET "/assets/icons/exclamation.png" for 127.0.0.1 at 2014-01-14 11:39:48 -0700
 Served asset /icons/exclamation.png - 200 OK (1ms)
 Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-14 11:39:48 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started POST "/users/sign_in" for 189.155.200.177 at 2014-01-15 02:40:10 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vHrsraFNnHB/YfuFAj2k0G3MpojV5YzS27e1+tm6d/I=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+Redirected to http://expomobilemc.emobile-demos.com.mx/
+Completed 302 Found in 148ms (ActiveRecord: 0.0ms)
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:40:11 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_sidebar.erb (5.3ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.9ms)
+Started GET "/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:40:11 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2929,6 +3201,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2938,6 +3211,16 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
 
 
 Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-14 11:39:48 -0700
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:40:11 -0700
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2958,6 +3241,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -2989,6 +3273,33 @@ Served asset /exporting-05552ed421ff004b8b0dff9f23febe29.js - 304 Not Modified (
 Started GET "/system_configurations/1/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-14 11:39:54 -0700
 
 ActionController::RoutingError (No route matches [GET] "/system_configurations/1/resources/images/closelabel.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/events" for 189.155.200.177 at 2014-01-15 02:40:16 -0700
+Processing by EventsController#index as HTML
+  Rendered layouts/_pagination.erb (135.0ms)
+  Rendered layouts/_index_links.erb (202.9ms)
+  Rendered layouts/_index_links.erb (1.5ms)
+  Rendered layouts/_action_links.erb (3.6ms)
+Compiled events.js  (0ms)  (pid 19203)
+  Rendered layouts/_first_tab.erb (1.2ms)
+  Rendered events/_form.html.erb (914.2ms)
+  Rendered layouts/_second_tab.erb (916.5ms)
+  Rendered events/index.html.erb within layouts/application (1267.7ms)
+  Rendered layouts/_sidebar.erb (37.3ms)
+Completed 200 OK in 1337ms (Views: 1308.0ms | ActiveRecord: 13.1ms)
+Started GET "/assets/events-dc56c1d57297399fbad3257206842048.js" for 189.155.200.177 at 2014-01-15 02:40:18 -0700
+Served asset /events-dc56c1d57297399fbad3257206842048.js - 200 OK (0ms)
+Started GET "/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:40:18 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -3007,6 +3318,7 @@ ActionController::RoutingError (No route matches [GET] "/system_configurations/1
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -3018,6 +3330,18 @@ ActionController::RoutingError (No route matches [GET] "/system_configurations/1
 Started GET "/system_configurations/1/resources/images/loading.gif" for 127.0.0.1 at 2014-01-14 11:39:54 -0700
 
 ActionController::RoutingError (No route matches [GET] "/system_configurations/1/resources/images/loading.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:40:18 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -3036,6 +3360,7 @@ ActionController::RoutingError (No route matches [GET] "/system_configurations/1
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -3077,6 +3402,30 @@ Served asset /shortcut-button-bg.gif - 200 OK (1ms)
 Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-14 11:39:59 -0700
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/system_configurations/1/edit" for 189.155.200.177 at 2014-01-15 02:40:25 -0700
+Processing by SystemConfigurationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Compiled system_configurations.js  (0ms)  (pid 19203)
+  Rendered layouts/_first_tab.erb (0.8ms)
+  Rendered system_configurations/_form.html.erb (44.4ms)
+  Rendered layouts/_action_links.erb (2.1ms)
+  Rendered system_configurations/edit.html.erb within layouts/application (48.0ms)
+  Rendered layouts/_sidebar.erb (6.7ms)
+Completed 200 OK in 84ms (Views: 46.0ms | ActiveRecord: 24.1ms)
+Started GET "/assets/system_configurations-56477f3deccbe87ed596c66c97cc7ffa.js" for 189.155.200.177 at 2014-01-15 02:40:25 -0700
+Served asset /system_configurations-56477f3deccbe87ed596c66c97cc7ffa.js - 200 OK (0ms)
+Started GET "/system_configurations/1/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:40:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system_configurations/1/resources/images/closelabel.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -3095,6 +3444,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -3106,6 +3456,18 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
 Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-14 11:39:59 -0700
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/system_configurations/1/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:40:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system_configurations/1/resources/images/loading.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -3124,6 +3486,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -3163,6 +3526,30 @@ Served asset /menu-current-arrow.gif - 200 OK (1ms)
 Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-14 11:40:14 -0700
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/devise/sessions/sign_out" for 189.155.200.177 at 2014-01-15 02:40:42 -0700
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://expomobilemc.emobile-demos.com.mx/
+Completed 302 Found in 8ms (ActiveRecord: 4.7ms)
+Started GET "/" for 189.155.200.177 at 2014-01-15 02:40:42 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms
+Started GET "/users/sign_in" for 189.155.200.177 at 2014-01-15 02:40:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (2.4ms)
+  Rendered devise/shared/_links.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+Started GET "/users/resources/images/closelabel.gif" for 189.155.200.177 at 2014-01-15 02:40:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -3181,6 +3568,7 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
@@ -3192,6 +3580,18 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/closel
 Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-14 11:40:14 -0700
 
 ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+Started GET "/users/resources/images/loading.gif" for 189.155.200.177 at 2014-01-15 02:40:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
   actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
   railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
@@ -3210,11 +3610,19 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
   rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
   railties (3.2.13) lib/rails/engine.rb:479:in `call'
   railties (3.2.13) lib/rails/application.rb:223:in `call'
+<<<<<<< HEAD
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
   /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
   /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
   /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+=======
+  railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (4.0.14) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:140:in `accept_and_process_next_request'
+  passenger (4.0.14) lib/phusion_passenger/request_handler/thread_handler.rb:108:in `main_loop'
+  passenger (4.0.14) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+>>>>>>> 4bde85e943159a387398ea4bdcf3aeea1b1b1475
 
 
