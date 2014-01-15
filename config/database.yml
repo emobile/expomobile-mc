@@ -10,16 +10,16 @@ development:
   username: expomobi_admin
   password: emobilej2011
 
-production:
-  adapter: mysql2
-  database: expomobi_expomobi_mc
-  host: localhost
-  username: expomobi_admin
-  password: emobilej2011
-
 #production:
 #  adapter: mysql2
-#  database: edemos_expomobi_mc
+#  database: expomobi_expomobi_mc
 #  host: localhost
-#  username: edemos_expomc
+#  username: expomobi_admin
 #  password: emobilej2011
+
+production:
+  adapter: mysql2
+  database: edemos_expomobi_mc
+  host: localhost
+  username: edemos_expomc
+  password: emobilej2011
