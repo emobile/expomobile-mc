@@ -131,7 +131,7 @@
   <fieldset class="column-right">
     <h3 style="text-align: center;"><%= t(:user_data) %></h3>
     <hr/>
-    <%= f.fields_for :users do |user_form| %>
+    <%= f.fields_for :user do |user_form| %>
       <p class="field">
         <%= user_form.label t'user.first_name' %>
         <%= user_form.text_field :first_name, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
