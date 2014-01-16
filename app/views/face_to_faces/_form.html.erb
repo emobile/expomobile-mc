@@ -47,7 +47,8 @@
     <p class="field">
       <%= f.label t("face_to_face.int_name") %>
       <% @interviewees = Sponsor.where(:event_id => session[:current_event_id]).map { |s| [s.name, s.name] } + Exhibitor.where(:event_id => session[:current_event_id]).map { |e| [e.name, e.name] } %>
-      <% @interviewees.uniq!.sort! %>
+      <% @interviewees.uniq! %>
+      <% @interviewees.sort! unless @interviewees.nil? %>
       <%= f.select :int_name, @interviewees, :prompt => t(:please_select) %><span class="required">*</span>
     </p>
     <p class="field">
