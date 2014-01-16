@@ -14,7 +14,6 @@ class MobileServicesController < ApplicationController
       token_for_id = @attendee_id[0, 2]
       @event = Event.find_by_token_for_id(token_for_id)
       @attendee = @event.attendees.find_by_attendee_id(@attendee_id)
-      session[:current_event_id] = @event.id
 
       if !@attendee.nil?
         @nip = @attendee.nip
@@ -84,6 +83,7 @@ class MobileServicesController < ApplicationController
       token_for_id = @attendee_id[0, 2]
       @event = Event.find_by_token_for_id(token_for_id)
       @attendee = @event.attendees.find_by_attendee_id(@attendee_id)
+      session[:current_event_id] = @event.id
       
       if !@attendee.nil?
         if params[:nip] =~ /\A[0-9a-z]{4}\z/
