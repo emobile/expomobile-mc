@@ -1616,3 +1616,1034 @@ ActionController::RoutingError (No route matches [GET] "/resources/images/loadin
 
 
   Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2014-01-15 18:11:17 -0700
+Processing by AttendeesController#index as HTML
+  [1m[36mUser Load (150.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35m (183.9ms)[0m  SELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2
+  [1m[36mAttendee Load (0.9ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2 ORDER BY id DESC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+  Rendered layouts/_pagination.erb (700.0ms)
+  [1m[35mAttendee Load (8.4ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2 ORDER BY id DESC LIMIT 10 OFFSET 0
+  [1m[36mSubgroup Load (0.1ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1[0m
+  Rendered layouts/_index_links.erb (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1
+  Rendered layouts/_index_links.erb (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1[0m
+  Rendered layouts/_index_links.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (2.0ms)
+  Rendered layouts/_first_tab.erb (0.8ms)
+  [1m[36mSubgroup Load (157.9ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`event_id` = 2 ORDER BY name[0m
+  Rendered attendees/_form.html.erb (325.0ms)
+  Rendered layouts/_second_tab.erb (326.8ms)
+  Rendered attendees/index.html.erb within layouts/application (1208.6ms)
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (72.7ms)
+Completed 200 OK in 1591ms (Views: 689.4ms | ActiveRecord: 850.5ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:11:33 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:11:33 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:11:33 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/attendees/get_all_attendee_names" for 127.0.0.1 at 2014-01-15 18:11:33 -0700
+Processing by AttendeesController#get_all_attendee_names as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36m (58.4ms)[0m  [1mSELECT DISTINCT `attendees`.`a_name` FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+Completed 200 OK in 92ms (Views: 0.4ms | ActiveRecord: 58.8ms)
+
+
+Started GET "/assets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" for 127.0.0.1 at 2014-01-15 18:11:33 -0700
+Served asset /images/ui-bg_inset-hard_100_fcfdfd_1x100.png - 404 Not Found (52ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/attendees/generate_gafete?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&attendee_id=AN0001&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&layout=true" for 127.0.0.1 at 2014-01-15 18:11:48 -0700
+Processing by AttendeesController#generate_gafete as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "attendee_id"=>"AN0001", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "layout"=>"true"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36m (21.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5) subquery_for_count [0m
+  [1m[35mConference Load (14.9ms)[0m  SELECT `conferences`.* FROM `conferences` ORDER BY start_date LIMIT 5
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 5) subquery_for_count [0m
+  [1m[35mConference Load (7.7ms)[0m  SELECT `conferences`.* FROM `conferences` LIMIT 5 OFFSET 5
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 10) subquery_for_count [0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5) subquery_for_count 
+  [1m[36mDiary Load (1.4ms)[0m  [1mSELECT `diaries`.* FROM `diaries` ORDER BY event_date LIMIT 5[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 5) subquery_for_count 
+  [1m[36mDiary Load (0.4ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 5[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 10) subquery_for_count 
+  [1m[36mDiary Load (0.4ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 10[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 15) subquery_for_count 
+  [1m[36mDiary Load (7.8ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 15[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 20) subquery_for_count 
+  [1m[36mDiary Load (0.4ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 20[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 25) subquery_for_count 
+  [1m[36mDiary Load (0.5ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 25[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 30) subquery_for_count 
+  [1m[36mDiary Load (0.7ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 30[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 35) subquery_for_count 
+  Rendered attendees/generate_gafete.html.erb within layouts/application (375.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (39.0ms)
+Completed 200 OK in 464ms (Views: 272.3ms | ActiveRecord: 155.8ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:11:48 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/attendees/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:11:48 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/attendees/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:11:48 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/attendees/print_gafete_a?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&with_logos=true" for 127.0.0.1 at 2014-01-15 18:11:50 -0700
+Processing by AttendeesController#print_gafete_a as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "with_logos"=>"true"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (3.7ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered attendees/print_gafete_a.html.erb (7.9ms)
+Completed 200 OK in 52ms (Views: 10.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/attendees/print_gafete_a?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&with_logos=true" for 127.0.0.1 at 2014-01-15 18:11:55 -0700
+Processing by AttendeesController#print_gafete_a as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "with_logos"=>"true"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.4ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered attendees/print_gafete_a.html.erb (6.3ms)
+Completed 200 OK in 37ms (Views: 8.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/attendees/print_gafete_a?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&with_logos=true" for 127.0.0.1 at 2014-01-15 18:12:00 -0700
+Processing by AttendeesController#print_gafete_a as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "with_logos"=>"true"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered attendees/print_gafete_a.html.erb (5.9ms)
+Completed 200 OK in 75ms (Views: 7.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/system_configurations/1/edit" for 127.0.0.1 at 2014-01-15 18:15:28 -0700
+Processing by SystemConfigurationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` WHERE `system_configurations`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` WHERE `system_configurations`.`id` = 1 LIMIT 1
+  Rendered layouts/_first_tab.erb (1.3ms)
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` ORDER BY name[0m
+  Rendered system_configurations/_form.html.erb (10.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (3.3ms)
+  Rendered system_configurations/edit.html.erb within layouts/application (15.8ms)
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (40.7ms)
+Completed 200 OK in 95ms (Views: 72.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/system_configurations.js" for 127.0.0.1 at 2014-01-15 18:15:29 -0700
+Served asset /system_configurations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:15:29 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/system_configurations/1/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:15:29 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system_configurations/1/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/system_configurations/1/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:15:29 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system_configurations/1/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started PUT "/system_configurations/1" for 127.0.0.1 at 2014-01-15 18:15:31 -0700
+Processing by SystemConfigurationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mnp47DZaVkfBQerp1NhKg6/Cu0kgN8lPz9BQI4rK//o=", "system_configuration"=>{"token"=>"emobile", "language"=>"es"}, "commit"=>"Update System configuration", "id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (2.2ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` WHERE `system_configurations`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` WHERE `system_configurations`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (97.6ms)[0m  [1mUPDATE `system_configurations` SET `language` = 'es', `updated_at` = '2014-01-16 01:15:31' WHERE `system_configurations`.`id` = 1[0m
+  [1m[35m (96.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/system_configurations/1
+Completed 302 Found in 229ms (ActiveRecord: 200.3ms)
+
+
+Started GET "/system_configurations/1" for 127.0.0.1 at 2014-01-15 18:15:31 -0700
+Processing by SystemConfigurationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.8ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` WHERE `system_configurations`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` WHERE `system_configurations`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.2ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (3.0ms)
+  Rendered system_configurations/show.html.erb within layouts/application (7.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.3ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (149.3ms)
+Completed 200 OK in 215ms (Views: 194.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:15:31 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/system_configurations/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:15:31 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system_configurations/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/system_configurations/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:15:31 -0700
+
+ActionController::RoutingError (No route matches [GET] "/system_configurations/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2014-01-15 18:15:38 -0700
+Processing by AttendeesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+  [1m[35mAttendee Load (0.1ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2 ORDER BY id DESC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2
+  Rendered layouts/_pagination.erb (6.0ms)
+  [1m[36mAttendee Load (0.2ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2 ORDER BY id DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mSubgroup Load (0.2ms)[0m  SELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1
+  Rendered layouts/_index_links.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1[0m
+  Rendered layouts/_index_links.erb (1.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1
+  Rendered layouts/_index_links.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (2.3ms)
+  Rendered layouts/_first_tab.erb (1.2ms)
+  [1m[35mSubgroup Load (0.2ms)[0m  SELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`event_id` = 2 ORDER BY name
+  Rendered attendees/_form.html.erb (28.4ms)
+  Rendered layouts/_second_tab.erb (30.7ms)
+  Rendered attendees/index.html.erb within layouts/application (65.7ms)
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.2ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (40.8ms)
+Completed 200 OK in 147ms (Views: 119.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:15:38 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:15:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:15:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/attendees/get_all_attendee_names" for 127.0.0.1 at 2014-01-15 18:15:38 -0700
+Processing by AttendeesController#get_all_attendee_names as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT `attendees`.`a_name` FROM `attendees` WHERE `attendees`.`event_id` = 2
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/attendees/generate_gafete?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&attendee_id=AN0001&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&layout=true" for 127.0.0.1 at 2014-01-15 18:15:39 -0700
+Processing by AttendeesController#generate_gafete as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "attendee_id"=>"AN0001", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "layout"=>"true"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (2.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5) subquery_for_count 
+  [1m[36mConference Load (0.1ms)[0m  [1mSELECT `conferences`.* FROM `conferences` ORDER BY start_date LIMIT 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 5) subquery_for_count 
+  [1m[36mConference Load (5.0ms)[0m  [1mSELECT `conferences`.* FROM `conferences` LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 10) subquery_for_count 
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` ORDER BY event_date LIMIT 5
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 5) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 5
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 10) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 10
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 15) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 15
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 20) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 20
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 25) subquery_for_count [0m
+  [1m[35mDiary Load (0.2ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 25
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 30) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 30
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 35) subquery_for_count [0m
+  Rendered attendees/generate_gafete.html.erb within layouts/application (52.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (36.3ms)
+Completed 200 OK in 133ms (Views: 92.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:15:40 -0700
+Served asset /exporting.js - 304 Not Modified (2ms)
+
+
+Started GET "/attendees/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:15:40 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/attendees/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:15:40 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/attendees/print_gafete_a?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&with_logos=true" for 127.0.0.1 at 2014-01-15 18:15:42 -0700
+Processing by AttendeesController#print_gafete_a as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "with_logos"=>"true"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (3.9ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered attendees/print_gafete_a.html.erb (11.3ms)
+Completed 200 OK in 41ms (Views: 9.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/attendees/generate_gafete?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&attendee_id=AN0001&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&layout=true" for 127.0.0.1 at 2014-01-15 18:17:50 -0700
+Processing by AttendeesController#generate_gafete as */*
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "attendee_id"=>"AN0001", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "layout"=>"true"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5) subquery_for_count 
+  [1m[36mConference Load (0.1ms)[0m  [1mSELECT `conferences`.* FROM `conferences` ORDER BY start_date LIMIT 5[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 5) subquery_for_count 
+  [1m[36mConference Load (0.1ms)[0m  [1mSELECT `conferences`.* FROM `conferences` LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 10) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` ORDER BY event_date LIMIT 5
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 5) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 5
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 10) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 10
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 15) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 15
+  [1m[36m (5.7ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 20) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 20
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 25) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 25
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 30) subquery_for_count [0m
+  [1m[35mDiary Load (0.1ms)[0m  SELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 30
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 35) subquery_for_count [0m
+  Rendered attendees/generate_gafete.html.erb within layouts/application (124.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (34.4ms)
+Completed 200 OK in 190ms (Views: 163.9ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/attendees" for 127.0.0.1 at 2014-01-15 18:22:02 -0700
+Processing by AttendeesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2
+  [1m[36mAttendee Load (0.1ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2 ORDER BY id DESC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+  Rendered layouts/_pagination.erb (4.9ms)
+  [1m[35mAttendee Load (0.1ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 2 ORDER BY id DESC LIMIT 10 OFFSET 0
+  [1m[36mSubgroup Load (0.1ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1[0m
+  Rendered layouts/_index_links.erb (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1
+  Rendered layouts/_index_links.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`id` = 3 LIMIT 1[0m
+  Rendered layouts/_index_links.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (3.0ms)
+  Rendered layouts/_first_tab.erb (0.7ms)
+  [1m[36mSubgroup Load (0.2ms)[0m  [1mSELECT `subgroups`.* FROM `subgroups` WHERE `subgroups`.`event_id` = 2 ORDER BY name[0m
+  Rendered attendees/_form.html.erb (19.3ms)
+  Rendered layouts/_second_tab.erb (21.3ms)
+  Rendered attendees/index.html.erb within layouts/application (48.5ms)
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (41.0ms)
+Completed 200 OK in 126ms (Views: 101.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:22:03 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:22:03 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:22:03 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/attendees/get_all_attendee_names" for 127.0.0.1 at 2014-01-15 18:22:03 -0700
+Processing by AttendeesController#get_all_attendee_names as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT `attendees`.`a_name` FROM `attendees` WHERE `attendees`.`event_id` = 2[0m
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" for 127.0.0.1 at 2014-01-15 18:22:03 -0700
+Served asset /images/ui-bg_inset-hard_100_fcfdfd_1x100.png - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/attendees/generate_gafete?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&attendee_id=AN0001&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&layout=true" for 127.0.0.1 at 2014-01-15 18:22:04 -0700
+Processing by AttendeesController#generate_gafete as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "attendee_id"=>"AN0001", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "layout"=>"true"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5) subquery_for_count [0m
+  [1m[35mConference Load (0.2ms)[0m  SELECT `conferences`.* FROM `conferences` ORDER BY start_date LIMIT 5
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 5) subquery_for_count [0m
+  [1m[35mConference Load (0.9ms)[0m  SELECT `conferences`.* FROM `conferences` LIMIT 5 OFFSET 5
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 10) subquery_for_count [0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5) subquery_for_count 
+  [1m[36mDiary Load (0.4ms)[0m  [1mSELECT `diaries`.* FROM `diaries` ORDER BY event_date LIMIT 5[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 5) subquery_for_count 
+  [1m[36mDiary Load (0.3ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 10) subquery_for_count 
+  [1m[36mDiary Load (0.2ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 10[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 15) subquery_for_count 
+  [1m[36mDiary Load (0.6ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 15[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 20) subquery_for_count 
+  [1m[36mDiary Load (0.3ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 25) subquery_for_count 
+  [1m[36mDiary Load (0.7ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 25[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 30) subquery_for_count 
+  [1m[36mDiary Load (0.3ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 30[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 35) subquery_for_count 
+  Rendered attendees/generate_gafete.html.erb within layouts/application (70.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.4ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (41.7ms)
+Completed 200 OK in 157ms (Views: 119.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:22:05 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/attendees/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:22:05 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/attendees/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:22:05 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/attendees/generate_gafete?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&attendee_id=AN0001&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&layout=true" for 127.0.0.1 at 2014-01-15 18:22:45 -0700
+Processing by AttendeesController#generate_gafete as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "attendee_id"=>"AN0001", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "layout"=>"true"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5) subquery_for_count [0m
+  [1m[35mConference Load (0.2ms)[0m  SELECT `conferences`.* FROM `conferences` ORDER BY start_date LIMIT 5
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 5) subquery_for_count [0m
+  [1m[35mConference Load (0.1ms)[0m  SELECT `conferences`.* FROM `conferences` LIMIT 5 OFFSET 5
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 10) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` ORDER BY event_date LIMIT 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 5) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 10) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 10[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 15) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 15[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 20) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 20[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 25) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 25[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 30) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 30[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 35) subquery_for_count 
+  Rendered attendees/generate_gafete.html.erb within layouts/application (45.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (119.2ms)
+Completed 200 OK in 210ms (Views: 182.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-15 18:22:46 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/attendees/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-15 18:22:46 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/attendees/resources/images/loading.gif" for 127.0.0.1 at 2014-01-15 18:22:46 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/attendees/print_gafete_a?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&with_logos=true&with_qr_code=true" for 127.0.0.1 at 2014-01-15 18:22:47 -0700
+Processing by AttendeesController#print_gafete_a as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "with_logos"=>"true", "with_qr_code"=>"true"}
+  [1m[35mUser Load (6.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (1.3ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (5.6ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered attendees/print_gafete_a.html.erb (4.6ms)
+Completed 200 OK in 51ms (Views: 6.4ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/attendees/print_gafete_a?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&with_logos=true&with_qr_code=false" for 127.0.0.1 at 2014-01-15 18:22:52 -0700
+Processing by AttendeesController#print_gafete_a as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "with_logos"=>"true", "with_qr_code"=>"false"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered attendees/print_gafete_a.html.erb (5.2ms)
+Completed 200 OK in 37ms (Views: 6.7ms | ActiveRecord: 0.8ms)
