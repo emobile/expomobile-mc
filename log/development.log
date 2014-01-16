@@ -2647,3 +2647,1669 @@ Processing by AttendeesController#print_gafete_a as HTML
   [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
   Rendered attendees/print_gafete_a.html.erb (5.2ms)
 Completed 200 OK in 37ms (Views: 6.7ms | ActiveRecord: 0.8ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 192.168.1.65 at 2014-01-16 12:24:42 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 401 Unauthorized in 133ms
+
+
+Started GET "/" for 192.168.1.65 at 2014-01-16 12:24:43 -0700
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 192.168.1.65 at 2014-01-16 12:24:43 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise (55.5ms)
+  Rendered devise/shared/_links.erb (3.3ms)
+Completed 200 OK in 131ms (Views: 129.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/resources/images/closelabel.gif" for 192.168.1.65 at 2014-01-16 12:24:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/resources/images/loading.gif" for 192.168.1.65 at 2014-01-16 12:24:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/users/sign_in" for 192.168.1.65 at 2014-01-16 12:24:49 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aeIR4eLYtw1Uh+LyhuLLHjswXfc2nNua1RnUeJxA/AU=", "user"=>{"login"=>"administrator", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesión"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (lower(username) = 'administrator' OR lower(email) = 'administrator') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (50.8ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2014-01-16 19:22:19', `current_sign_in_at` = '2014-01-16 19:24:49', `current_sign_in_ip` = '192.168.1.65', `sign_in_count` = 11, `updated_at` = '2014-01-16 19:24:49' WHERE `users`.`id` = 1
+  [1m[36m (55.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+Redirected to http://192.168.1.95:3000/
+Completed 302 Found in 420ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.1.65 at 2014-01-16 12:24:49 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (27.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (22.4ms)
+Completed 200 OK in 62ms (Views: 30.8ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/assets/exporting.js" for 192.168.1.65 at 2014-01-16 12:24:50 -0700
+Served asset /exporting.js - 304 Not Modified (3ms)
+
+
+Started GET "/resources/images/closelabel.gif" for 192.168.1.65 at 2014-01-16 12:24:50 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/resources/images/loading.gif" for 192.168.1.65 at 2014-01-16 12:24:50 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:25:04 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1[0m
+  [1m[35mAttendee Load (0.1ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1
+  [1m[36mNip Load (0.1ms)[0m  [1mSELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1[0m
+Completed 200 OK in 312ms (Views: 0.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/mobile_services/get_enabled_options" for 192.168.1.81 at 2014-01-16 12:25:10 -0700
+Processing by MobileServicesController#get_enabled_options as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[35mSystemConfiguration Load (0.2ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` IS NULL LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mobile_services/index_sponsors" for 192.168.1.81 at 2014-01-16 12:26:09 -0700
+Processing by MobileServicesController#index_sponsors as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `sponsors' for nil:NilClass):
+  app/controllers/mobile_services_controller.rb:144:in `index_sponsors'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.3ms)
+
+
+Started GET "/mobile_services/index_sponsors" for 192.168.1.81 at 2014-01-16 12:27:53 -0700
+Processing by MobileServicesController#index_sponsors as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` IS NULL LIMIT 1
+Completed 500 Internal Server Error in 5198ms
+
+NoMethodError (undefined method `sponsors' for nil:NilClass):
+  app/controllers/mobile_services_controller.rb:144:in `index_sponsors'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started GET "/mobile_services/index_sponsors" for 192.168.1.81 at 2014-01-16 12:28:08 -0700
+Processing by MobileServicesController#index_sponsors as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` IS NULL LIMIT 1
+Completed 500 Internal Server Error in 5005ms
+
+NoMethodError (undefined method `sponsors' for nil:NilClass):
+  app/controllers/mobile_services_controller.rb:144:in `index_sponsors'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/mobile_services/index_sponsors" for 192.168.1.81 at 2014-01-16 12:28:23 -0700
+Processing by MobileServicesController#index_sponsors as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` IS NULL LIMIT 1
+Completed 500 Internal Server Error in 137ms
+
+NoMethodError (undefined method `sponsors' for nil:NilClass):
+  app/controllers/mobile_services_controller.rb:144:in `index_sponsors'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:29:38 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1
+  [1m[36mAttendee Load (0.1ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1[0m
+  [1m[35mNip Load (0.1ms)[0m  SELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1
+Completed 200 OK in 5364ms (Views: 0.3ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:29:53 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1
+  [1m[36mAttendee Load (0.2ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1[0m
+  [1m[35mNip Load (0.2ms)[0m  SELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1
+Completed 200 OK in 5012ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:30:08 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1
+  [1m[36mAttendee Load (0.2ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1[0m
+  [1m[35mNip Load (0.2ms)[0m  SELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1
+Completed 200 OK in 5010ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:30:23 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1
+  [1m[36mAttendee Load (0.2ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1[0m
+  [1m[35mNip Load (0.2ms)[0m  SELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1
+Completed 200 OK in 5011ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:31:06 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1
+  [1m[36mAttendee Load (0.3ms)[0m  [1mSELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1[0m
+  [1m[35mNip Load (0.1ms)[0m  SELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1
+Completed 200 OK in 2355ms (Views: 0.3ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/mobile_services/get_enabled_options" for 192.168.1.81 at 2014-01-16 12:31:14 -0700
+Processing by MobileServicesController#get_enabled_options as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` IS NULL LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mobile_services/get_attendee_nip?attendee_id=EP0001&nip=2tyy" for 192.168.1.81 at 2014-01-16 12:32:45 -0700
+Processing by MobileServicesController#get_attendee_nip as JSON
+  Parameters: {"attendee_id"=>"EP0001", "nip"=>"2tyy", "mobile_service"=>{}}
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`token_for_id` = 'EP' LIMIT 1[0m
+  [1m[35mAttendee Load (0.2ms)[0m  SELECT `attendees`.* FROM `attendees` WHERE `attendees`.`event_id` = 1 AND `attendees`.`attendee_id` = 'EP0001' LIMIT 1
+  [1m[36mNip Load (0.1ms)[0m  [1mSELECT `nips`.* FROM `nips` WHERE `nips`.`attendee_id` = 2 LIMIT 1[0m
+Completed 200 OK in 333ms (Views: 0.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/mobile_services/get_enabled_options" for 192.168.1.81 at 2014-01-16 12:32:51 -0700
+Processing by MobileServicesController#get_enabled_options as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[35mSystemConfiguration Load (0.2ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mobile_services/index_sponsors" for 192.168.1.81 at 2014-01-16 12:33:11 -0700
+Processing by MobileServicesController#index_sponsors as JSON
+  Parameters: {"mobile_service"=>{}}
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Event class
+  [1m[36mSponsor Load (21.2ms)[0m  [1mSELECT `sponsors`.* FROM `sponsors` WHERE `sponsors`.`event_id` = 1 ORDER BY social_reason[0m
+Completed 200 OK in 100ms (Views: 3.5ms | ActiveRecord: 49.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-01-16 12:33:30 -0700
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `events` [0m
+  [1m[35mEvent Load (16.9ms)[0m  SELECT `events`.* FROM `events` ORDER BY id DESC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `events` [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `events` 
+  Rendered layouts/_pagination.erb (25.1ms)
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT `events`.* FROM `events` ORDER BY id DESC LIMIT 10 OFFSET 0[0m
+  Rendered layouts/_index_links.erb (279.3ms)
+  Rendered layouts/_index_links.erb (1.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (4.1ms)
+  Rendered layouts/_first_tab.erb (1.4ms)
+  Rendered events/_form.html.erb (1286.6ms)
+  Rendered layouts/_second_tab.erb (1288.7ms)
+  Rendered events/index.html.erb within layouts/application (1607.5ms)
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (35.1ms)
+Completed 200 OK in 1777ms (Views: 1636.9ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:33:32 -0700
+Served asset /events.js - 200 OK (20ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:33:32 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:33:33 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:33:33 -0700
+
+ActionController::RoutingError (No route matches [GET] "/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:33:42 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.2ms)
+  Rendered events/_form.html.erb (37.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (5.3ms)
+  Rendered events/edit.html.erb within layouts/application (126.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (35.0ms)
+Completed 200 OK in 189ms (Views: 172.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:33:43 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:33:43 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:33:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:33:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento" for 127.0.0.1 at 2014-01-16 12:36:42 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (4.6ms)
+  Rendered events/show.html.erb within layouts/application (13.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.2ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (36.3ms)
+Completed 200 OK in 83ms (Views: 61.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:36:42 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:36:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/events/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:36:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:36:48 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.3ms)
+  Rendered events/_form.html.erb (38.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (3.8ms)
+  Rendered events/edit.html.erb within layouts/application (125.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (31.9ms)
+Completed 200 OK in 192ms (Views: 169.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:36:48 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:36:48 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:36:49 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:36:49 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:42:22 -0700
+[paperclip] Duplicate URL for logo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Sponsor class
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (0.8ms)
+  Rendered events/_form.html.erb (61.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (5.4ms)
+  Rendered events/edit.html.erb within layouts/application (84.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (56.1ms)
+Completed 200 OK in 748ms (Views: 217.8ms | ActiveRecord: 139.1ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:42:24 -0700
+Served asset /events.js - 304 Not Modified (47ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:42:24 -0700
+Served asset /exporting.js - 304 Not Modified (50ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:42:25 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:42:25 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:42:39 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (0.6ms)
+  [1m[35mUser Load (118.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1
+  Rendered events/_form.html.erb (227.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (4.9ms)
+  Rendered events/edit.html.erb within layouts/application (233.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (43.1ms)
+Completed 200 OK in 551ms (Views: 168.9ms | ActiveRecord: 125.4ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:42:39 -0700
+Served asset /exporting.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:42:39 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:42:40 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:42:40 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:42:42 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  Rendered layouts/_first_tab.erb (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1[0m
+  Rendered events/_form.html.erb (37.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (4.0ms)
+  Rendered events/edit.html.erb within layouts/application (43.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.2ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (147.3ms)
+Completed 200 OK in 228ms (Views: 203.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:42:42 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:42:42 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:42:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:42:42 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:45:19 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1
+  Rendered events/_form.html.erb (31.7ms)
+  Rendered events/edit.html.erb within layouts/application (32.3ms)
+Completed 500 Internal Server Error in 58ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    131:   <fieldset class="column-right">
+    132:     <h3 style="text-align: center;"><%= t(:user_data) %></h3>
+    133:     <hr/>
+    134:     <%= f.fields_for @event.user do |user_form| %>
+    135:       <p class="field">
+    136:         <%= user_form.label t'user.first_name' %>
+    137:         <%= user_form.text_field :first_name, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+  app/views/events/_form.html.erb:134:in `block in _app_views_events__form_html_erb__4404698994384771466_69864522489600'
+  app/views/events/_form.html.erb:6:in `_app_views_events__form_html_erb__4404698994384771466_69864522489600'
+  app/views/events/edit.html.erb:1:in `_app_views_events_edit_html_erb___3933565247167150737_69864522508800'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:45:25 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (1.3ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1
+  Rendered events/_form.html.erb (29.6ms)
+  Rendered events/edit.html.erb within layouts/application (30.2ms)
+Completed 500 Internal Server Error in 144ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    131:   <fieldset class="column-right">
+    132:     <h3 style="text-align: center;"><%= t(:user_data) %></h3>
+    133:     <hr/>
+    134:     <%= f.fields_for @event.user do |user_form| %>
+    135:       <p class="field">
+    136:         <%= user_form.label t'user.first_name' %>
+    137:         <%= user_form.text_field :first_name, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+  app/views/events/_form.html.erb:134:in `block in _app_views_events__form_html_erb__4404698994384771466_69864522489600'
+  app/views/events/_form.html.erb:6:in `_app_views_events__form_html_erb__4404698994384771466_69864522489600'
+  app/views/events/edit.html.erb:1:in `_app_views_events_edit_html_erb___3933565247167150737_69864522508800'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:46:18 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1
+  Rendered events/_form.html.erb (32.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (3.4ms)
+  Rendered events/edit.html.erb within layouts/application (36.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (32.7ms)
+Completed 200 OK in 103ms (Views: 79.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:46:19 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:46:19 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:46:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:46:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:50:19 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  Rendered layouts/_first_tab.erb (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1[0m
+  Rendered events/_form.html.erb (31.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (5.0ms)
+  Rendered events/edit.html.erb within layouts/application (38.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.4ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (41.6ms)
+Completed 200 OK in 119ms (Views: 91.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:50:19 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:50:19 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:50:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:50:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:50:22 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1
+  Rendered events/_form.html.erb (30.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (4.4ms)
+  Rendered events/edit.html.erb within layouts/application (36.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.2ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (41.2ms)
+Completed 200 OK in 110ms (Views: 91.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:50:22 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:50:22 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:50:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:50:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:50:34 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  Rendered layouts/_first_tab.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1[0m
+  Rendered events/_form.html.erb (34.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (5.8ms)
+  Rendered events/edit.html.erb within layouts/application (42.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (45.8ms)
+Completed 200 OK in 449ms (Views: 102.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:50:35 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:50:35 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:50:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:50:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 12:50:38 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1
+  Rendered events/_form.html.erb (28.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (3.6ms)
+  Rendered events/edit.html.erb within layouts/application (33.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (37.1ms)
+Completed 200 OK in 101ms (Views: 81.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 12:50:38 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 12:50:38 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 12:50:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 12:50:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (102.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 13:02:18 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[35mUser Load (13.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  Rendered layouts/_first_tab.erb (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1 LIMIT 1[0m
+  Rendered events/_form.html.erb (38.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (3.5ms)
+  Rendered events/edit.html.erb within layouts/application (43.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (132.3ms)
+Completed 200 OK in 476ms (Views: 185.7ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 13:02:19 -0700
+Served asset /events.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 13:02:19 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 13:02:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 13:02:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 13:02:32 -0700
+
+ArgumentError (No association found for name `user'. Has it been defined yet?):
+  app/models/event.rb:39:in `<class:Event>'
+  app/models/event.rb:1:in `<top (required)>'
+  app/controllers/events_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.5ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 13:02:37 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (0.9ms)
+  Rendered events/_form.html.erb (36.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered layouts/_action_links.erb (3.7ms)
+  Rendered events/edit.html.erb within layouts/application (42.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  [1m[35mSystemConfiguration Load (0.1ms)[0m  SELECT `system_configurations`.* FROM `system_configurations` LIMIT 1
+  Rendered layouts/_sidebar.erb (135.3ms)
+Completed 200 OK in 456ms (Views: 190.4ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 13:02:38 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 13:02:38 -0700
+Served asset /events.js - 304 Not Modified (1ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 13:02:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 13:02:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1-evento/edit" for 127.0.0.1 at 2014-01-16 13:03:03 -0700
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-evento"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_first_tab.erb (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`event_id` = 1
+  Rendered events/_form.html.erb (46.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_action_links.erb (4.2ms)
+  Rendered events/edit.html.erb within layouts/application (51.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (128.6ms)
+Completed 200 OK in 219ms (Views: 194.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/events.js" for 127.0.0.1 at 2014-01-16 13:03:03 -0700
+Served asset /events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-16 13:03:03 -0700
+Served asset /exporting.js - 304 Not Modified (0ms)
+
+
+Started GET "/events/1-evento/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-16 13:03:03 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/events/1-evento/resources/images/loading.gif" for 127.0.0.1 at 2014-01-16 13:03:03 -0700
+
+ActionController::RoutingError (No route matches [GET] "/events/1-evento/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)

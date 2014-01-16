@@ -17,7 +17,9 @@ Role.create([
 
 
 User.create([
-    { :first_name => "System", :last_name => "Administrator", :phone => "6141111111", :street => "Address 1", :street_number => "1111", :colony => "Colony 1", :city => "Chihuahua", :state => "Chihuahua", :zip => 33333, :country => "México", :role_id => 1, :created_at => "2013-11-14 01:28:41", :updated_at => "2013-11-21 18:21:51", :username => "administrator", :email => "emobile@emobile.com.mx", :password => "Password1", :password_confirmation => "Password1", :confirmed_at => "2013-11-13 05:00:00" }
+    { :first_name => "System", :last_name => "Administrator", :phone => "6141111111", :street => "Address 1", :street_number => "1111", :colony => "Colony 1", :city => "Chihuahua", :state => "Chihuahua", :zip => 33333, :country => "México", :role_id => 1, :created_at => "2013-11-14 01:28:41", :updated_at => "2013-11-21 18:21:51", :username => "administrator", :email => "emobile@emobile.com.mx", :password => "Password1", :password_confirmation => "Password1", :confirmed_at => "2013-11-13 05:00:00" },
+    { :first_name => "Raúl", :last_name => "Maese", :phone => "6141111111", :street => "Address 1", :street_number => "1111", :colony => "Colony 1", :city => "Chihuahua", :state => "Chihuahua", :zip => 33333, :country => "México", :created_at => "2013-11-14 01:28:41", :updated_at => "2013-11-21 18:21:51", :username => "rmaeseadmin", :email => "rmaese@emobile.com.mx", :password => "Password1", :password_confirmation => "Password1", :confirmed_at => "2013-11-13 05:00:00", :event_id => 1 },
+    { :first_name => "Jorge", :last_name => "Luna", :phone => "6141222222", :street => "Address 2", :street_number => "2222", :colony => "Colony 2", :city => "Chihuahua", :state => "Chihuahua", :zip => 33333, :country => "México", :created_at => "2013-11-14 01:28:45", :updated_at => "2013-11-21 18:21:55", :username => "jlunaadmin", :email => "jluna@emobile.com.mx", :password => "Password1", :password_confirmation => "Password1", :confirmed_at => "2013-11-13 05:00:05", :event_id => 2 }
   ], :without_protection => true )
 
 

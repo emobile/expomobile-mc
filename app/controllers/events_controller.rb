@@ -51,7 +51,7 @@ class EventsController < ApplicationController
     params[:event][:r_work_zip] = params[:event][:users_attributes]["0"][:zip]
     params[:event][:r_city] = params[:event][:users_attributes]["0"][:city]
     params[:event][:r_state] = params[:event][:users_attributes]["0"][:state]
-    params[:event][:r_country] = params[:event][:users_attributes]["0"][:country] 
+    params[:event][:r_country] = params[:event][:users_attributes]["0"][:country]
     @event = Event.new(params[:event])
 
     respond_to do |format|
