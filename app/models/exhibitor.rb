@@ -6,7 +6,7 @@ class Exhibitor < ActiveRecord::Base
     :styles => {:medium => "x300",
     :thumb => "x100",
     :mobile => "x60" },
-    :default_url => "/assets/default.png"
+    :default_url => "/assets/default.jpg"
   has_many :offerts, :dependent => :destroy
   before_save :name_to_upcase
   

@@ -25,11 +25,11 @@ class Event < ActiveRecord::Base
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100"},
-    :default_url => "/assets/default.png"
+    :default_url => "/assets/default.jpg"
   has_attached_file :banner,
     :styles => {:medium => "x300",
     :thumb => "x100"},
-    :default_url => "/assets/default.png"
+    :default_url => "/assets/default.jpg"
   validates :banner, :logo, :name, :r_email, :r_enterprise, :r_name, :r_social_reason, :start_date, :end_date, :place, :token_for_id, :presence => true
   validates_numericality_of :r_work_zip, :if => :r_work_zip
   validates_format_of :token_for_id, :with => /\A[A-Z]{2}\z/, :if => :token_for_id
