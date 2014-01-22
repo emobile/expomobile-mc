@@ -553,7 +553,7 @@ class MobileServicesController < ApplicationController
   end
   
   def get_enabled_options
-    @event = Event.find_by_id(1)
+    @event = Event.find_by_id(session[:current_event_id])
     @options = { :has_activity => @event.has_activity, :has_conference => @event.has_conference, :has_facetoface => @event.has_facetoface, :has_offert => @event.has_offert, :has_workshop => @event.has_workshop }
     render json: @options
   end
