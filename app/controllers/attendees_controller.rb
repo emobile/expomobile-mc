@@ -129,6 +129,18 @@ class AttendeesController < ApplicationController
     render json: @attendees
   end
   
+  def generate_qr
+    @qr_value = params[:qr_value]
+    
+    respond_to do |format|
+      format.html
+      format.svg  { render :qrcode => @qr_value, :level => :l, :unit => 10 }
+      format.png  { render :qrcode => @qr_value, :offset => 50 }
+      format.gif  { render :qrcode => @qr_value }
+      format.jpeg { render :qrcode => @qr_value }
+    end
+  end
+  
   def generate_gafete
     @attendee_id = params[:attendee_id]
     @a_name = params[:a_name]

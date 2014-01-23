@@ -70,6 +70,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
+    mini_magick (3.7.0)
+      subexec (~> 0.2.1)
     mini_portile (0.5.2)
     multi_json (1.7.7)
     mysql2 (0.3.13)
@@ -122,6 +124,9 @@ GEM
       nokogiri
       rubyzip
       spreadsheet (> 0.6.4)
+    rqrcode (0.4.2)
+    rqrcode-rails3 (0.1.7)
+      rqrcode (>= 0.4.2)
     ruby-ole (1.2.11.7)
     ruby-rc4 (0.1.5)
     rubyzip (1.1.0)
@@ -138,6 +143,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    subexec (0.2.3)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -170,12 +176,14 @@ DEPENDENCIES
   foreigner (= 1.4.1)
   jhtmlarea
   jquery-rails
+  mini_magick
   mysql2
   nested_form
   paperclip (~> 2.8)
   prawn
   rails (= 3.2.13)
   roo
+  rqrcode-rails3
   sass-rails (~> 3.2.3)
   seed_dump
   therubyracer
