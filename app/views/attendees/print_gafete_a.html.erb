@@ -13,7 +13,7 @@
       <div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px;">
         <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: <%= @gafete_logo_visibility %>;">
           <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
-          <%= image_tag attendees_generate_qr_path(:qr_value => "[\"#{@a_name}\",\"#{@e_tradename}\",'WORK:#{@e_phone}\",\"#{@a_email}\",\"#{@e_address}\",\"#{@a_web}\"]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;; visibility: #{@gafete_qr_code_visibility};" %> 
+          <%= image_tag attendees_generate_qr_path(:qr_value => "[\"#{@a_name}\",\"#{@e_tradename}\",\"#{@e_phone}\",\"#{@a_email}\",\"#{@e_address}\",\"#{@a_web}\"]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;; visibility: #{@gafete_qr_code_visibility};" %> 
         </div>
         <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
           <%= image_tag @banner_url, :height => 125, :width => 295, :style => "height: 125px; width: 290px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
