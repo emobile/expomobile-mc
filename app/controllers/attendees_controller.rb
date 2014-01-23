@@ -134,10 +134,10 @@ class AttendeesController < ApplicationController
     
     respond_to do |format|
       format.html
-      format.svg  { render :qrcode => @qr_value, :level => :l, :unit => 10, :offset => 50, :size => 85 }
-      format.png  { render :qrcode => @qr_value, :offset => 50, :size => 85 }
-      format.gif  { render :qrcode => @qr_value, :offset => 50, :size => 85 }
-      format.jpeg { render :qrcode => @qr_value, :offset => 50, :size => 85 }
+      format.svg  { render :qrcode => @qr_value, :level => :l, :unit => 10, :offset => 50 }
+      format.png  { render :qrcode => @qr_value, :offset => 50 }
+      format.gif  { render :qrcode => @qr_value, :offset => 50 }
+      format.jpeg { render :qrcode => @qr_value, :offset => 50 }
     end
   end
   

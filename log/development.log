@@ -10027,3 +10027,250 @@ ActionController::RoutingError (No route matches [GET] "/attendees/resources/ima
 
 
   Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/attendees/generate_qr?qr_value=Jorge" for 127.0.0.1 at 2014-01-23 12:44:07 -0700
+Processing by AttendeesController#generate_qr as HTML
+  Parameters: {"qr_value"=>"Jorge"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 467ms
+
+ActionView::MissingTemplate (Missing template attendees/generate_qr, application/generate_qr with {:locale=>[:es], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/emobile/ruby_proyects/expomobile-mc/app/views"
+  * "/var/lib/gems/1.9.1/gems/devise-2.2.4/app/views"
+):
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (4.9ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=Jorge" for 127.0.0.1 at 2014-01-23 12:44:28 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"Jorge"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/attendees_controller.rb:138:in `block (2 levels) in generate_qr'
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%22Jorge%22" for 127.0.0.1 at 2014-01-23 12:45:19 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"\"Jorge\""}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 36ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/attendees_controller.rb:138:in `block (2 levels) in generate_qr'
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%22Jorge%22" for 127.0.0.1 at 2014-01-23 12:45:36 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"\"Jorge\""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 389ms (Views: 178.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%22Jorge%22" for 127.0.0.1 at 2014-01-23 12:45:59 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"\"Jorge\""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 205ms
+
+TypeError (can't convert Fixnum into Array):
+  app/controllers/attendees_controller.rb:138:in `block (2 levels) in generate_qr'
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/attendees/generate_gafete?a_email=seguidor777%40gmail.com&a_name=JORGE+ALBERTO+LUNA+QUINTANILLA&a_web=&attendee_id=AN0001&e_address=AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS&e_phone=6141111111&e_tradename=eMobile&layout=true" for 127.0.0.1 at 2014-01-23 12:47:33 -0700
+Processing by AttendeesController#generate_gafete as HTML
+  Parameters: {"a_email"=>"seguidor777@gmail.com", "a_name"=>"JORGE ALBERTO LUNA QUINTANILLA", "a_web"=>"", "attendee_id"=>"AN0001", "e_address"=>"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS", "e_phone"=>"6141111111", "e_tradename"=>"eMobile", "layout"=>"true"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5) subquery_for_count [0m
+  [1m[35mConference Load (0.2ms)[0m  SELECT `conferences`.* FROM `conferences` ORDER BY start_date LIMIT 5
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 5) subquery_for_count [0m
+  [1m[35mConference Load (0.4ms)[0m  SELECT `conferences`.* FROM `conferences` LIMIT 5 OFFSET 5
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `conferences` LIMIT 5 OFFSET 10) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` ORDER BY event_date LIMIT 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 5) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 10) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 10[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 15) subquery_for_count 
+  [1m[36mDiary Load (0.2ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 15[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 20) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 20[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 25) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 25[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 30) subquery_for_count 
+  [1m[36mDiary Load (0.1ms)[0m  [1mSELECT `diaries`.* FROM `diaries` LIMIT 5 OFFSET 30[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `diaries` LIMIT 5 OFFSET 35) subquery_for_count 
+  Rendered attendees/generate_gafete.html.erb within layouts/application (213.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `events`.* FROM `events` WHERE `events`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mSystemConfiguration Load (0.1ms)[0m  [1mSELECT `system_configurations`.* FROM `system_configurations` LIMIT 1[0m
+  Rendered layouts/_sidebar.erb (248.2ms)
+Completed 200 OK in 913ms (Views: 506.4ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/assets/exporting.js" for 127.0.0.1 at 2014-01-23 12:47:34 -0700
+Served asset /exporting.js - 304 Not Modified (9ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%5B%22JORGE+ALBERTO+LUNA+QUINTANILLA%22%2C%22eMobile%22%2C%226141111111%22%2C%22seguidor777%40gmail.com%22%2C%22AVENIDA+HEROICO+COLEGIO+MILITAR+123%2C+NOMBRE+DE+DIOS%22%2C%22%22%5D" for 127.0.0.1 at 2014-01-23 12:47:35 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"[\"JORGE ALBERTO LUNA QUINTANILLA\",\"eMobile\",\"6141111111\",\"seguidor777@gmail.com\",\"AVENIDA HEROICO COLEGIO MILITAR 123, NOMBRE DE DIOS\",\"\"]"}
+  [1m[35mUser Load (2.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 26ms
+
+TypeError (can't convert Fixnum into String):
+  app/controllers/attendees_controller.rb:138:in `block (2 levels) in generate_qr'
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/assets/default.jpg" for 127.0.0.1 at 2014-01-23 12:47:35 -0700
+Served asset /default.jpg - 304 Not Modified (19ms)
+
+
+Started GET "/attendees/resources/images/closelabel.gif" for 127.0.0.1 at 2014-01-23 12:47:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/closelabel.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/attendees/resources/images/loading.gif" for 127.0.0.1 at 2014-01-23 12:47:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/attendees/resources/images/loading.gif"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%22Jorge%22" for 127.0.0.1 at 2014-01-23 12:47:41 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"\"Jorge\""}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 24ms
+
+TypeError (can't convert Fixnum into String):
+  app/controllers/attendees_controller.rb:138:in `block (2 levels) in generate_qr'
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%22Jorge%22" for 127.0.0.1 at 2014-01-23 12:47:55 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"\"Jorge\""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 1259ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/attendees_controller.rb:138:in `block (2 levels) in generate_qr'
+  app/controllers/attendees_controller.rb:135:in `generate_qr'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started GET "/attendees/generate_qr.png?qr_value=%22Jorge%22" for 127.0.0.1 at 2014-01-23 12:48:12 -0700
+Processing by AttendeesController#generate_qr as PNG
+  Parameters: {"qr_value"=>"\"Jorge\""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 1213ms (Views: 934.7ms | ActiveRecord: 5.5ms)
