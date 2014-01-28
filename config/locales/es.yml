@@ -508,6 +508,10 @@ es:
   qr_code: "Código QR"
   rate_thank_you: "Gracias por tu opinión."
   rating: "Rating"
+  ratings:
+    application_rating: "Rating de la aplicación"
+    workshops_rating: "Rating de los talleres"
+    conferences_rating: "Rating de las conferencias"
   register_date: "HORA DE REGISTRO"
   registrations: "Registro"
   remember_me: "Recordar"

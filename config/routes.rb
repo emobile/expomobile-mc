@@ -11,7 +11,9 @@ Expomobile::Application.routes.draw do
   get "system_configurations/select_event"
   resources :system_configurations
 
-  get "rating/show_rating"
+  get "rating/show_conferences_rating"
+  get "rating/show_workshops_rating"
+  get "rating/show_application_rating"
 
   resources :diaries
   
@@ -46,6 +48,8 @@ Expomobile::Application.routes.draw do
   resources :expositions
   
   get "mobile_services/get_enabled_options"
+  get "mobile_services/rate_conference"
+  get "mobile_services/rate_workshop"
   get "mobile_services/rate"
   get "mobile_services/index_diary_days"
   get "mobile_services/show_diary"

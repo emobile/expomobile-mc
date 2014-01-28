@@ -158,8 +158,19 @@
               <li><%= link_to t(:new_record_male, :record => t("activerecord.models.user")), new_user_path, :class => controller_name == "users" && controller.action_name == "new" ? "current": "" %></li>
             </ul>
           </li>
-          <li>     
-            <%= link_to t(:rating), rating_show_rating_path, :class=> "nav-top-item no-submenu" + (controller_name == "rating" ? " current": ""), :id => "9main" %>
+          <li>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "rating" %>" id="11main"> <!-- Add the class "current" to current menu item -->
+            <%= t(:rating) %>
+          </a>
+          <ul>
+            <li><%= link_to t("ratings.application_rating"), rating_show_application_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_application_rating") ? "current": "" %></li>
+            <% if @event.has_workshop %>
+              <li><%= link_to t("ratings.workshops_rating"), rating_show_workshops_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_workshops_rating") ? "current": "" %></li>
+            <% end %>
+            <% if @event.has_conference %>
+              <li><%= link_to t("ratings.conferences_rating"), rating_show_conferences_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_conferences_rating") ? "current": "" %></li>
+            <% end %>
+          </ul>
           </li>
         <% end %>
       <% end %>

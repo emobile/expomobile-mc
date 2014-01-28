@@ -300,8 +300,11 @@ class MobileServicesController < ApplicationController
   end
   
   def index_workshop_days
-    
+    p "\n\n\n\n\n===================================================================="
+    p "1 OK"
     if !session[:attendee_id].blank?
+      p "\n\n\n\n\n=================================================================="
+      p "2 OK"
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
@@ -528,6 +531,36 @@ class MobileServicesController < ApplicationController
 
       if params[:value] =~ /\A[1-3]\z/
         Rating.create(value: params[:value], comment: params[:comment])
+        @msg = { success: "yes", msg: t(:rate_thank_you) }
+      end
+      
+    end
+  
+    render json: @msg
+  end
+  
+  def rate_workshop
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find_by_id(session[:attendee_id])
+
+      if params[:value] =~ /\A[1-4]\z/
+        RateWorkshop.create(workshop_id: params[:workshop_id], attendee_id: @attendee.id, value: params[:value])
+        @msg = { success: "yes", msg: t(:rate_thank_you) }
+      end
+      
+    end
+  
+    render json: @msg
+  end
+  
+  def rate_conference
+    
+    if !session[:attendee_id].blank?
+      @attendee = Attendee.find_by_id(session[:attendee_id])
+
+      if params[:value] =~ /\A[1-4]\z/
+        RateConference.create(conference_id: params[:conference_id], attendee_id: @attendee.id, value: params[:value])
         @msg = { success: "yes", msg: t(:rate_thank_you) }
       end
       

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  conference: 
+  attendee: 
+  event: 
+  value: 1
+
+two:
+  conference: 
+  attendee: 
+  event: 
+  value: 1

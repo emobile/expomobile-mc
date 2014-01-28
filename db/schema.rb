@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131220205522) do
+ActiveRecord::Schema.define(:version => 20140128221410) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",         :null => false
@@ -292,6 +292,32 @@ ActiveRecord::Schema.define(:version => 20131220205522) do
 
   add_index "offerts", ["event_id"], :name => "offerts_event_id_fk"
   add_index "offerts", ["exhibitor_id"], :name => "offerts_exhibitor_id_fk"
+
+  create_table "rate_conferences", :force => true do |t|
+    t.integer  "conference_id"
+    t.integer  "attendee_id"
+    t.integer  "event_id"
+    t.integer  "value"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "rate_conferences", ["attendee_id"], :name => "index_rate_conferences_on_attendee_id"
+  add_index "rate_conferences", ["conference_id"], :name => "index_rate_conferences_on_conference_id"
+  add_index "rate_conferences", ["event_id"], :name => "index_rate_conferences_on_event_id"
+
+  create_table "rate_workshops", :force => true do |t|
+    t.integer  "workshop_id"
+    t.integer  "attendee_id"
+    t.integer  "event_id"
+    t.integer  "value"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "rate_workshops", ["attendee_id"], :name => "index_rate_workshops_on_attendee_id"
+  add_index "rate_workshops", ["event_id"], :name => "index_rate_workshops_on_event_id"
+  add_index "rate_workshops", ["workshop_id"], :name => "index_rate_workshops_on_workshop_id"
 
   create_table "ratings", :force => true do |t|
     t.integer  "value",      :null => false
