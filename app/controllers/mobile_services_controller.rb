@@ -300,11 +300,8 @@ class MobileServicesController < ApplicationController
   end
   
   def index_workshop_days
-    puts "\n\n\n\n\n===================================================================="
-    puts "1 OK"
+    
     if !session[:attendee_id].blank?
-      puts "\n\n\n\n\n=================================================================="
-      puts "2 OK"
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
