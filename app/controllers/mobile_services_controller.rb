@@ -300,11 +300,11 @@ class MobileServicesController < ApplicationController
   end
   
   def index_workshop_days
-    p "\n\n\n\n\n===================================================================="
-    p "1 OK"
+    puts "\n\n\n\n\n===================================================================="
+    puts "1 OK"
     if !session[:attendee_id].blank?
-      p "\n\n\n\n\n=================================================================="
-      p "2 OK"
+      puts "\n\n\n\n\n=================================================================="
+      puts "2 OK"
       @attendee = Attendee.find_by_id(session[:attendee_id])
       
       unless @attendee.nil?
