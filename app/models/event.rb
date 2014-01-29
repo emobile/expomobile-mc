@@ -19,7 +19,9 @@ class Event < ActiveRecord::Base
   has_many :attendee_expositions
   has_many :attendee_workshops
   has_many :nips
-  has_many :mail_templates
+  has_many :mail_templates, :dependent => :destroy
+  has_many :rate_workshops, :dependent => :destroy
+  has_many :rate_conferences, :dependent => :destroy
   before_save :token_for_id_to_upcase
   
   has_attached_file :logo,

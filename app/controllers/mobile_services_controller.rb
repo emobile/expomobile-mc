@@ -539,10 +539,10 @@ class MobileServicesController < ApplicationController
   def rate_workshop
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find_by_id(session[:attendee_id])
+      @workshop = Workshop.find_by_id(params[:workshop_id])
 
-      if params[:value] =~ /\A[1-4]\z/
-        RateWorkshop.create(workshop_id: params[:workshop_id], attendee_id: @attendee.id, value: params[:value])
+      if params[:value] =~ /\A[1-4]\z/ && !@workshop.nil?
+        RateWorkshop.find_or_create_by_workshop_id_and_attendee_id(workshop_id: params[:workshop_id], attendee_id: session[:attendee_id], value: params[:value], event_id: session[:current_event_id])
         @msg = { success: "yes", msg: t(:rate_thank_you) }
       end
       
@@ -554,10 +554,10 @@ class MobileServicesController < ApplicationController
   def rate_conference
     
     if !session[:attendee_id].blank?
-      @attendee = Attendee.find_by_id(session[:attendee_id])
+      @conference = Conference.find_by_id(params[:conference_id])
 
-      if params[:value] =~ /\A[1-4]\z/
-        RateConference.create(conference_id: params[:conference_id], attendee_id: @attendee.id, value: params[:value])
+      if params[:value] =~ /\A[1-4]\z/ && !@conference.nil?
+        RateConference.find_or_create_by_conference_id_and_attendee_id(conference_id: params[:conference_id], attendee_id: session[:attendee_id], value: params[:value], event_id: session[:current_event_id])
         @msg = { success: "yes", msg: t(:rate_thank_you) }
       end
       
