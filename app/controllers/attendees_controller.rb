@@ -3,7 +3,7 @@
 class AttendeesController < ApplicationController
   before_filter :authenticate_user!, :except => [:register, :register_attendee, :confirm, :get_subgroups]
   before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c]
-  load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups]
+  load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups, :confirm]
 
   def index
     if params[:search].blank?
@@ -196,16 +196,12 @@ class AttendeesController < ApplicationController
       end
     else
       @event = Event.find_by_id(params[:attendee][:event_id])
-      unless params[:attendee][:e_city].blank?
-        params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
-        while !@event.attendees.find_by_attendee_id(params[:attendee][:attendee_id]).nil?
-          params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
-        end
+      params[:attendee][:attendee_id] = @event.token_for_id.upcase + Array.new(4){[*'0'..'9'].sample}.join
+      while !@event.attendees.find_by_attendee_id(params[:attendee][:attendee_id]).nil?
+        params[:attendee][:attendee_id] = @event.token_for_id.upcase + Array.new(4){[*'0'..'9'].sample}.join
       end
       params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
       params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
-      p params[:attendee]
-      sleep 7
       @attendee = Attendee.new(params[:attendee])
       @attendee.confirmation_token = Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join
 
@@ -229,14 +225,16 @@ class AttendeesController < ApplicationController
   
   def confirm
     @attendee = Attendee.find_by_id(params[:id])
-    I18n.locale = @attendee.event.language
-    if !@attendee.confirmed && @attendee.confirmation_token == params[:confirmation_token]
-      @attendee.update_attribute("confirmed", true)
-      flash[:alert] = t("atten.confirmation.confirmed")
-    elsif @attendee.confirmed && @attendee.confirmation_token == params[:confirmation_token]
-      flash[:notice] = t("atten.confirmation.already_confirmed")
-    else
-      flash[:error] = t("atten.confirmation.wrong")
+    unless @attendee.nil?
+      I18n.locale = @attendee.event.language
+      if !@attendee.confirmed && @attendee.confirmation_token == params[:confirmation_token]
+        @attendee.update_attribute("confirmed", true)
+        flash[:alert] = t("atten.confirmation.confirmed")
+      elsif @attendee.confirmed && @attendee.confirmation_token == params[:confirmation_token]
+        flash[:notice] = t("atten.confirmation.already_confirmed")
+      else
+        flash[:error] = t("atten.confirmation.wrong")
+      end
     end
     render layout: "devise"
   end

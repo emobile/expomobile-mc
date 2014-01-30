@@ -1,2 +1,0 @@
-<p><%= "#{t(:welcome).upcase}: #{@attendee.a_name}" %></p>
-<p><%= "#{t(:your_register_id_is)}: #{@attendee.attendee_id}" %></p>
