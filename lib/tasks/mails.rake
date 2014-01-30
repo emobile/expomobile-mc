@@ -3,7 +3,7 @@ namespace :mails do
     @event = Event.find_by_id(args[:event_id])
     #output = File.open "mail-output.txt", "w"
     #output.puts(Date.today.to_s)
-    @event.attendees.each do |attendee|
+    @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
       if attendee.a_email =~ /\A[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})\z/
         AttendeeMailer.welcome_email(attendee).deliver!
@@ -17,7 +17,7 @@ namespace :mails do
     @event = Event.find_by_id(args[:event_id])
     #output = File.open "mail-output.txt", "w"
     #output.puts(Date.today.to_s)
-    @event.attendees.each do |attendee|
+    @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
       if attendee.a_email =~ /\A[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})\z/
         AttendeeMailer.acknowledgment_email(attendee).deliver!
@@ -31,7 +31,7 @@ namespace :mails do
     @event = Event.find_by_id(args[:event_id])
     #output = File.open "mail-output.txt", "w"
     #output.puts(Date.today.to_s)
-    @event.attendees.each do |attendee|
+    @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
       attendee = Attendee.find_by_id(1)
       if attendee.a_email =~ /\A[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})\z/
@@ -46,7 +46,7 @@ namespace :mails do
     @event = Event.find_by_id(args[:event_id])
     #output = File.open "mail-output.txt", "w"
     #output.puts(Date.today.to_s)
-    @event.attendees.each do |attendee|
+    @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
       attendee = Attendee.find_by_id(1)
       if attendee.a_email =~ /\A[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})\z/

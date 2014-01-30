@@ -1,9 +1,9 @@
 # encoding: utf-8
 
 class AttendeesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:register, :register_attendee, :confirm]
+  before_filter :authenticate_user!, :except => [:register, :register_attendee, :confirm, :get_subgroups]
   before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c]
-  load_and_authorize_resource :except => [:register, :register_attendee]
+  load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups]
 
   def index
     if params[:search].blank?
@@ -189,24 +189,35 @@ class AttendeesController < ApplicationController
   end
   
   def register_attendee
-    unless params[:attendee][:e_city].blank?
-      params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
-      while !@event.attendees.find_by_attendee_id(params[:attendee][:attendee_id]).nil?
-        params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
-      end
-    end
-    params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
-    params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
-    @attendee = Attendee.new(params[:attendee])
-
-    respond_to do |format|
-      if @attendee.save
-        AttendeeMailer.send_attendee_id(@attendee, params[:attendee][:attendee_id]).deliver!
-        format.html { redirect_to "/register", notice: t(:successfully_created) }
-        format.json { render json: @attendee, status: :created, location: @attendee }
-      else
-        format.html { render action: "register", layout: "register_attendee" }
+    if params[:attendee][:event_id].nil?
+      respond_to do |format|
+        format.html { render action: "register", layout: "registration_form" }
         format.json { render json: @attendee.errors, status: :unprocessable_entity }
+      end
+    else
+      @event = Event.find_by_id(params[:attendee][:event_id])
+      unless params[:attendee][:e_city].blank?
+        params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
+        while !@event.attendees.find_by_attendee_id(params[:attendee][:attendee_id]).nil?
+          params[:attendee][:attendee_id] = (params[:attendee][:e_city][0].upcase + Array.new(2){[*'0'..'9'].sample}.join + ["0", "2", "4", "6", "8"].sample)
+        end
+      end
+      params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
+      params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
+      p params[:attendee]
+      sleep 7
+      @attendee = Attendee.new(params[:attendee])
+      @attendee.confirmation_token = Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join
+
+      respond_to do |format|
+        if @attendee.save
+          AttendeeMailer.send_attendee_id(@attendee, params[:attendee][:attendee_id]).deliver!
+          format.html { redirect_to "/register", notice: t(:successfully_created) }
+          format.json { render json: @attendee, status: :created, location: @attendee }
+        else
+          format.html { render action: "register", layout: "registration_form" }
+          format.json { render json: @attendee.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

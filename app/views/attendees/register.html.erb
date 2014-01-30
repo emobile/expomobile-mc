@@ -5,7 +5,7 @@
   $(function() {
     function updateSubgroups() {
       var event_id = $("#attendee_event_id").val();
-      
+
       $("#attendee_subgroup_id").empty();
       $.getJSON(
               "/attendees/get_subgroups",
@@ -57,7 +57,7 @@
     </p>
     <p class="field">
       <%= f.label :e_tradename, t("atten.enter.tradename") %>
-      <%= f.text_field :e_tradename, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_tradename, :class=>"text-input medium-input" %><!--<span class="required">*</span>-->
     </p>
     <p class="field">
       <%= f.label :e_street, t("atten.enter.street") %>
@@ -95,7 +95,7 @@
     </p>
     <p class="field">
       <%= f.label :e_rfc, t("atten.enter.rfc") %>
-      <%= f.text_field :e_rfc, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_rfc, :class=>"text-input small-input" %><!--<span class="required">*</span>-->
     </p>
     <p class="field">
       <%= f.label :e_lada, t("atten.enter.lada") %>
@@ -114,6 +114,10 @@
       <%= f.text_field :a_name, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
     </p>
     <p class="field">
+      <%= f.label :a_job, t("atten.atten.job") %>
+      <%= f.text_field :a_job, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+    </p>
+    <p class="field">
       <%= f.label :a_email, t("atten.atten.email") %>
       <%= f.email_field :a_email, :required => true, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
     </p>
@@ -123,7 +127,7 @@
     </p>
     <p class="field">
       <%= f.label :a_cellphone, t("atten.atten.cellphone") %>
-      <%= f.text_field :a_cellphone, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :a_cellphone, :class=>"text-input small-input" %><!--<span class="required">*</span>-->
     </p>
   </fieldset>
   <fieldset class="column-right">
@@ -166,12 +170,21 @@
       <%= label_tag "Android", nil, :style => "display: inline-block;" %>
       <%= f.check_box(:a_platform, {:multiple => true, :checked => android, :class => "checkbox"}, "Android", nil) %>
       <%= label_tag t(:other), nil, :style => "display: inline-block;" %>
-      <%= check_box_tag("other_platform", true, !other_platform.nil?) %><span class="required">*</span>
+      <%= check_box_tag("other_platform", true, !other_platform.nil?) %><!--<span class="required">*</span>-->
       <% if other_platform.nil? %>
         <%= f.text_field :a_platform, :name => "attendee[a_platform][]", :class=>"text-input small-input other", :style => "display: block; visibility: hidden;", :value => "" %>
       <% else %>
         <%= f.text_field :a_platform, :name => "attendee[a_platform][]", :class=>"text-input small-input other", :style => "display: block;", :value => other_platform[0] %>
       <% end %>
+    </p>
+    <p class="field">
+      <%= f.label :a_sector, t("atten.atten.sector") %>
+      <%= label_tag t("atten.atten.public"), nil, :style => "display: inline-block;" %>
+      <%= f.radio_button :a_sector, 1 %>
+      <%= label_tag t("atten.atten.private"), nil, :style => "display: inline-block;" %>
+      <%= f.radio_button :a_sector, 2 %>
+      <%= label_tag t("atten.atten.entrepreneur"), nil, :style => "display: inline-block;" %>
+      <%= f.radio_button :a_sector, 3 %><span class="required">*</span>
     </p>
   </fieldset>
   <div class="clear"></div>
@@ -187,7 +200,7 @@
     </p>
     <p class="field">
       <%= f.label :a_num_employees, t("atten.atten.num_employees") %>
-      <%= f.text_field :a_num_employees, :class=>"text-input small-input", :style => "width: 10% !important;", :required => true, :pattern => "[0-9]+" %><span class="required">*</span>
+      <%= f.text_field :a_num_employees, :class=>"text-input small-input", :style => "width: 10% !important;", :pattern => "[0-9]+" %><span class="required">*</span>
     </p>
   </fieldset>
   <fieldset class="column-right">
@@ -245,7 +258,7 @@
       <%= label_tag t(:web), nil, :style => "display: inline-block;" %>
       <%= f.check_box(:a_market_segment, {:multiple => true, :checked => web, :class => "checkbox"}, "Web", nil) %>
       <%= label_tag t(:other), nil, :style => "display: inline-block;" %>
-      <%= check_box_tag("other_market", true, !other_market.nil?) %><span class="required">*</span>
+      <%= check_box_tag("other_market", true, !other_market.nil?) %><!--<span class="required">*</span>-->
       <% if other_market.nil? %>
         <%= f.text_field :a_market_segment, :name => "attendee[a_market_segment][]", :class=>"text-input small-input other", :style => "display: block; visibility: hidden;", :value => "" %>
       <% else %>
@@ -254,11 +267,14 @@
     </p>
   </fieldset>
   <div class="clear"><div>
-  
-        <p><span class="required">*</span>&nbsp;&nbsp;&nbsp;<%= t(:required) %></p>
-  
-        <div class="form-actions">
-          <%= f.submit nil, :class => 'button' %>
-        </div>
+      <p class="field">
+        <%= f.label :a_want_email, t("atten.atten.want_email"), :style => "display: inline-block;" %>
+        <%= f.check_box :a_want_email %>
+      </p>
+      <p><span class="required">*</span>&nbsp;&nbsp;&nbsp;<%= t(:required) %></p>
+
+      <div class="form-actions">
+        <%= f.submit nil, :class => 'button' %>
+      </div>
 
     <% end %>

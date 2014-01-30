@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
   create_table "attendees", :force => true do |t|
     t.string   "attendee_id",                           :null => false
     t.string   "e_name",                                :null => false
-    t.string   "e_tradename",                           :null => false
+    t.string   "e_tradename"
     t.string   "e_street",                              :null => false
     t.integer  "e_ext_number",                          :null => false
     t.string   "e_int_number"
@@ -62,27 +62,30 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
     t.string   "e_city",                                :null => false
     t.string   "e_state",                               :null => false
     t.integer  "e_zip_code",                            :null => false
-    t.string   "e_rfc",                                 :null => false
+    t.string   "e_rfc"
     t.integer  "e_lada",                                :null => false
     t.string   "e_phone",                               :null => false
     t.string   "a_name",                                :null => false
     t.string   "a_email",                               :null => false
     t.string   "a_chat"
-    t.string   "a_cellphone",                           :null => false
+    t.string   "a_cellphone"
     t.string   "a_tel_nextel"
     t.string   "a_radio_nextel"
-    t.boolean  "a_is_director",      :default => false, :null => false
-    t.string   "a_platform",                            :null => false
+    t.boolean  "a_is_director"
+    t.string   "a_platform"
     t.string   "e_main_line"
     t.string   "a_sec_line"
-    t.integer  "a_num_employees",                       :null => false
+    t.integer  "a_num_employees"
     t.string   "a_other_line"
     t.string   "a_web"
-    t.string   "a_market_segment",                      :null => false
+    t.string   "a_market_segment"
     t.boolean  "confirmed",          :default => false, :null => false
     t.string   "confirmation_token",                    :null => false
     t.integer  "subgroup_id",                           :null => false
     t.integer  "event_id",                              :null => false
+    t.integer  "a_sector",                              :null => false
+    t.boolean  "a_want_email",       :default => false, :null => false
+    t.string   "a_job",                                 :null => false
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end
