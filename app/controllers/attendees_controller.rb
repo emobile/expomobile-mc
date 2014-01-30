@@ -72,10 +72,10 @@ class AttendeesController < ApplicationController
     params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
     params[:attendee][:confirmation_token] = Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join
     @attendee = Attendee.new(params[:attendee])
-    AttendeeMailer.welcome_email(@attendee).deliver!
     
     respond_to do |format|
       if @attendee.save
+        AttendeeMailer.welcome_email(@attendee).deliver!
         format.html { redirect_to @attendee, notice: t(:successfully_created) }
         format.json { render json: @attendee, status: :created, location: @attendee }
       else
@@ -207,7 +207,7 @@ class AttendeesController < ApplicationController
 
       respond_to do |format|
         if @attendee.save
-          AttendeeMailer.send_attendee_id(@attendee, params[:attendee][:attendee_id]).deliver!
+          AttendeeMailer.welcome_email(@attendee).deliver!
           format.html { redirect_to "/register", notice: t(:successfully_created) }
           format.json { render json: @attendee, status: :created, location: @attendee }
         else

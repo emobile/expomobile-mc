@@ -542,8 +542,13 @@ class MobileServicesController < ApplicationController
       @workshop = Workshop.find_by_id(params[:workshop_id])
 
       if params[:value] =~ /\A[1-4]\z/ && !@workshop.nil? && @event.has_workshop
-        RateWorkshop.find_or_create_by_workshop_id_and_attendee_id(workshop_id: params[:workshop_id], attendee_id: session[:attendee_id], value: params[:value], event_id: session[:current_event_id])
-        @msg = { success: "yes", msg: t(:rate_thank_you) }
+        @rate_workshop = RateWorkshop.find_by_workshop_id_and_attendee_id(params[:workshop_id], session[:attendee_id])
+        if @rate_workshop.nil?
+          RateWorkshop.create(workshop_id: params[:workshop_id], attendee_id: session[:attendee_id], value: params[:value], event_id: session[:current_event_id])
+          @msg = { success: "yes", msg: t(:rate_thank_you) }
+        else
+          @msg = { success: "no" }
+        end
       end
       
     end
@@ -557,8 +562,13 @@ class MobileServicesController < ApplicationController
       @conference = Conference.find_by_id(params[:conference_id])
 
       if params[:value] =~ /\A[1-4]\z/ && !@conference.nil? && @event.has_conference
-        RateConference.find_or_create_by_conference_id_and_attendee_id(conference_id: params[:conference_id], attendee_id: session[:attendee_id], value: params[:value], event_id: session[:current_event_id])
-        @msg = { success: "yes", msg: t(:rate_thank_you) }
+        @rate_conference = RateConference.find_by_conference_id_and_attendee_id(params[:conference_id], session[:attendee_id])
+        if @rate_conference.nil?
+          RateConference.create(conference_id: params[:conference_id], attendee_id: session[:attendee_id], value: params[:value], event_id: session[:current_event_id])
+          @msg = { success: "yes", msg: t(:rate_thank_you) }
+        else
+          @msg = { success: "no" }
+        end
       end
       
     end
