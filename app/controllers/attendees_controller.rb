@@ -151,6 +151,7 @@ class AttendeesController < ApplicationController
     @a_email = params[:a_email]
     @e_address = params[:e_address]
     @a_web = params[:a_web]
+    @is_exhibitor = params[:is_exhibitor] == "true"
     @event = Event.find_by_id(session[:current_event_id])
   end
   
@@ -163,6 +164,7 @@ class AttendeesController < ApplicationController
     @a_web = params[:a_web]
     @with_logos = params[:with_logos]
     @with_qr_code = params[:with_qr_code]
+    @is_exhibitor = params[:is_exhibitor] == "true"
     @event = Event.find_by_id(session[:current_event_id])
     render layout: false
   end

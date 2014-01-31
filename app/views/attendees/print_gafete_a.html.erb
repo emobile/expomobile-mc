@@ -16,7 +16,11 @@
           <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;; visibility: #{@gafete_qr_code_visibility};" %> 
         </div>
         <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
-          <%= image_tag @banner_url, :height => 125, :width => 295, :style => "height: 125px; width: 290px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+          <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
+          <%= image_tag @banner_url, :height => @banner_height, :width => @banner_width, :style => "height: #{@banner_height}px; width: #{@banner_width}px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+          <% if @is_exhibitor %>
+            <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
+          <% end %>
         </div>
         <div id="gafete-text" style="height: 115px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 30px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">
           <span style="font-weight: bold; font-size: 20px; top: 15px; position: relative;"><%= @a_name %></span><br/>

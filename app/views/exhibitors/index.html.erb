@@ -5,6 +5,7 @@
 <%#*<th><input class="check-all" type="checkbox" /></th>%>
         <th>ID</th>
         <th><%= t'exhibitor.exposition_key' %></th>
+        <th><%= (t'atten.gafete').upcase %></th>
         <th><%= t'exhibitor.name' %></th>
         <th><%= t'exhibitor.social_reason' %></th>
         <th><%= t'exhibitor.contact' %></th>
@@ -40,6 +41,12 @@
   <%# end %>
           <% @model = exhibitor %>
           <td><%= exhibitor.exposition_key %><br/><%= link_to t(:qr_code), qr_generator_generate_qr_path(:key => exhibitor.exposition_key, :exhibitor => true, :exhibitor_name => exhibitor.name, :exhibitor_job => exhibitor.job, :stand_location => exhibitor.stand_location), :class => "qr_code button" %></td>
+          
+          <td style="vertical-align: bottom;"><%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(
+              :a_name => exhibitor.contact, :e_tradename => exhibitor.name, :e_phone => exhibitor.phone, 
+              :a_email => exhibitor.email, :e_address => "#{exhibitor.work_street} #{exhibitor.work_street_number}, #{exhibitor.work_colony}", 
+              :a_web => exhibitor.web_page, :layout => "true", :is_exhibitor => "true"
+              ), :class => "button" %></td>
           
           <td><%= exhibitor.name %></td>
           

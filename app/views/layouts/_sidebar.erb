@@ -50,7 +50,8 @@
       <% end %>
       <% unless @event.nil? %>
         <li>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups massive_loads}.include?(controller_name) %>" id="4main"> <!-- Add the class "current" to current menu item -->
+          <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups massive_loads}.include?(controller_name) && !@is_exhibitor %>" id="4main"> <!-- Add the class "current" to current menu item -->
             <%= t(:attendees) %>
           </a>
           <ul>
@@ -85,7 +86,8 @@
           </li>
         <% end %>
         <li>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if %{expositions stands exhibitors offerts}.include?(controller_name) %>" id="6main"> <!-- Add the class "current" to current menu item -->
+          <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{expositions stands exhibitors offerts}.include?(controller_name) || @is_exhibitor %>" id="6main"> <!-- Add the class "current" to current menu item -->
             <%= t(:expositions) %>
           </a>
           <ul>

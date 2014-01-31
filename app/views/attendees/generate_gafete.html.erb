@@ -79,7 +79,11 @@
     <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
   </div>
   <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: visible;">
-    <%= image_tag @banner_url, :height => 125, :width => 295, :style => "height: 125px; width: 290px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+    <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
+    <%= image_tag @banner_url, :height => @banner_height, :width => @banner_width, :style => "height: #{@banner_height}px; width: #{@banner_width}px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+    <% if @is_exhibitor %>
+      <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
+    <% end %>
   </div>
   <div id="gafete-text" style="height: 115px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 20px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
     <span style="font-weight: bold; font-size: 16px; top: 15px; position: relative; display: block; height: 40px; margin: 0px 10px;"><%= @a_name %></span>
@@ -96,7 +100,7 @@
   </div>
 </div>
 <div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
-  <%= link_to t("atten.print_gafete"), attendees_print_gafete_a_path(:a_name => @a_name, :e_tradename => @e_tradename, :e_phone => @e_phone, :a_email => @a_email, :e_address => @e_address, :a_web => @a_web, :with_logos => "true", :with_qr_code => "true"), :class => "button generate-gafete", :target => "_blank", :id => "qr-link" %>
+  <%= link_to t("atten.print_gafete"), attendees_print_gafete_a_path(:a_name => @a_name, :e_tradename => @e_tradename, :e_phone => @e_phone, :a_email => @a_email, :e_address => @e_address, :a_web => @a_web, :with_logos => "true", :with_qr_code => "true", :is_exhibitor => @is_exhibitor? "true": "false"), :class => "button generate-gafete", :target => "_blank", :id => "qr-link" %>
 </div>
 <div id="conferences">
   <h3 style="margin-bottom: 20px;"><%= t(:conferences) %></h3>

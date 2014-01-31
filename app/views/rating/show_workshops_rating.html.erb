@@ -14,8 +14,19 @@
     <%  @good_percent = @good_number *  100.0 / @total %>
     <%  @excelent_number = @rating.where(:value => 4).count %>
     <%  @excelent_percent = @excelent_number *  100.0 / @total %>
+    <%  @stars_number = ((@bad_number + @can_improve_number * 2 + @good_number * 3 + @excelent_number * 4) / @total).round %>
     <% @workshop = Workshop.find_by_id(w_id) %>
-    <h3><%= @workshop.name %></h3><br/>
+    <div style="width: 450px; line-height: 36px;">
+      <h3 style="width: 250px; display: inline-block;"><%= @workshop.name %></h3>
+      <div class="stars" style="display: inline-block; float: right;">
+        <% @stars_number.times do |t| %>
+          <%= image_tag "/assets/star.png", :style => "margin: 0 5px;" %>
+        <% end %>
+        <% (4 - @stars_number).times do |t| %>
+          <%= image_tag "/assets/star_grayscale.png", :style => "margin: 0 5px;" %>
+        <% end %>
+      </div>
+    </div>
     <div style="width: 300px; display: inline-block; line-height: 30px;"><span style="width: 200px; font-size: 16px; font-weight: bold; position: absolute;"><%= "#{t("ratings.bad_total")}:" %></span><span style="width: 100px; font-size: 16px; margin-left: 200px; display: inline-block;"><%= " #{@bad_number}/#{@total}" %></span></div>
     <div style="width: 300px; display: inline-block; line-height: 30px;"><span style="width: 150px; font-size: 16px; font-weight: bold;"><%= "#{t(:percent)}:" %></span><span style="width: 200px; font-size: 16px;"><%= (@bad_percent.nan?)? " 0%": " #{"%.2f" % @bad_percent}%" %></span></div><br/>
     <div style="width: 300px; display: inline-block; line-height: 30px;"><span style="width: 200px;font-size: 16px; font-weight: bold; position: absolute;"><%= "#{t("ratings.can_improve_total")}:" %></span><span style="width: 100px; font-size: 16px; margin-left: 200px; display: inline-block;"><%= " #{@can_improve_number}/#{@total}" %></span></div>
