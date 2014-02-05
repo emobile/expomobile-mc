@@ -76,7 +76,7 @@ Expomobile::Application.configure do
 #  }
 
   config.active_support.deprecation = :stderr 
-  config.action_mailer.default_url_options = { :host => 'http://expomobilemc.emobile-demos.com.mx/' } 
+  config.action_mailer.default_url_options = { :host => 'expomobilemc.emobile-demos.com.mx' } 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default :charset => "utf-8"
