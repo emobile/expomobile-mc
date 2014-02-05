@@ -131,7 +131,7 @@
       </div>
     </div>
     <% @offset += 5 %>
-    <% @conferences = Conference.limit(5).offset(@offset) %>
+    <% @conferences = @event.conferences.limit(5).offset(@offset) %>
   <% end %>
 </div>
 <div id="diary">
@@ -158,6 +158,6 @@
       </div>
     </div>
     <% @offset += 5 %>
-    <% @diaries = Diary.limit(5).offset(@offset) %>
+    <% @diaries = @event.diaries.limit(5).offset(@offset) %>
   <% end %>
 </div>
