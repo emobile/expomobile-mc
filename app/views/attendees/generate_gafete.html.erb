@@ -109,7 +109,7 @@
     <div style="display: inline-block; margin: 0 30px;">
       <div style="width: 305px; height: 415px; margin-bottom: 30px; border: 1px solid #000; padding: 0 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible;">
-          <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
+          <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @conferences.each do |conference| %>
           <div class="conference" style="padding: 10px 0px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
@@ -131,7 +131,7 @@
       </div>
     </div>
     <% @offset += 5 %>
-    <% @conferences = @event.conferences.limit(5).offset(@offset) %>
+    <% @conferences = @event.conferences.order(:start_date).limit(5).offset(@offset) %>
   <% end %>
 </div>
 <div id="diary">
@@ -141,7 +141,7 @@
     <div style="display: inline-block; margin: 0 30px;">
       <div style="width: 305px; height: 415px; margin-bottom: 30px; border: 1px solid #000; padding: 0 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible;">
-          <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
+          <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @diaries.each do |diary| %>
           <div class="diary" style="padding: 10px 0px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
@@ -158,6 +158,6 @@
       </div>
     </div>
     <% @offset += 5 %>
-    <% @diaries = @event.diaries.limit(5).offset(@offset) %>
+    <% @diaries = @event.diaries.order(:event_date).limit(5).offset(@offset) %>
   <% end %>
 </div>

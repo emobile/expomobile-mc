@@ -8,7 +8,7 @@
       <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
       <div style="width: 305px; height: 415px; margin: 0 auto 30px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1">
         <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #aaa; visibility: <%= @gafete_logo_visibility %>;">
-          <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
+          <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @diaries.each do |diary| %>
           <div class="diary" style="padding: 10px 0px; border-bottom: 1px solid #aaa;">

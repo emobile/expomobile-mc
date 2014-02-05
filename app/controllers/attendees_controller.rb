@@ -62,11 +62,6 @@ class AttendeesController < ApplicationController
   # POST /attendees
   # POST /attendees.json
   def create
-    @last_attendee = Attendee.last
-    inc_id = 1
-    unless @last_attendee.nil?
-      inc_id = @last_attendee.attendee_id[2..-1].to_i + 1
-    end
     params[:attendee][:attendee_id] = @event.token_for_id + "%04d" % inc_id
     params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
     params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
@@ -171,7 +166,7 @@ class AttendeesController < ApplicationController
   
   def print_gafete_b
     @offset = params[:offset]
-    @conferences = Conference.order(:start_date).limit(5).offset(@offset)
+    @conferences = @event.conferences.order(:start_date).limit(5).offset(@offset)
     @with_logos = params[:with_logos]
     @event = Event.find_by_id(session[:current_event_id])
     render layout: false
@@ -179,7 +174,7 @@ class AttendeesController < ApplicationController
   
   def print_gafete_c
     @offset = params[:offset]
-    @diaries = Diary.order(:event_date).limit(5).offset(@offset)
+    @diaries = @event.diaries.order(:event_date).limit(5).offset(@offset)
     @with_logos = params[:with_logos]
     @event = Event.find_by_id(session[:current_event_id])
     render layout: false
