@@ -42,13 +42,25 @@
   <%= label_tag t(:attendances), nil, :style => "font-weight: bold; font-size: 18px;" %><br/>
   <table style="margin-bottom: 20px; width: auto; font-size: 16px;">
     <tr>
-      <td>
+      <td colspan="2" style="font-weight: bold;">
         <%= t(:exhibitors) %>
       </td>
-      <td style="font-weight: bold;">
-        <%= "#{"%.1f" % (@event.attendee_expositions.count * 100 / @attendees_total)}%" %>
-      </td>
     </tr>
+    <% @event.exhibitors.each do |exhibitor| %>
+      <% if exhibitor.attendee_expositions.count > 0 %>
+        <tr>
+          <td>
+            <%= exhibitor.name %>
+          </td>
+          <td style="font-weight: bold;">
+            <%= "#{"%.1f" % (exhibitor.attendee_expositions.count * 100 / @attendees_total)}%" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+  
+  <table style="margin-bottom: 20px; width: auto; font-size: 16px;">
     <% if @event.has_workshop %>
       <tr>
         <td>
@@ -65,6 +77,14 @@
       </td>
       <td style="font-weight: bold;">
         <%= @event.nips.count %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= t("visit.users_attended") %>
+      </td>
+      <td style="font-weight: bold;">
+        <%= "#{@event.attendees.where(:attended => true).count}/#{@attendees_total}, #{@event.attendees.where(:attended => true).count * 100 / @attendees_total}%" %>
       </td>
     </tr>
   </table>

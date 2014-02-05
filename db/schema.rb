@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
     t.integer  "a_sector",                              :null => false
     t.boolean  "a_want_email",       :default => false, :null => false
     t.string   "a_job",                                 :null => false
+    t.boolean  "attended",           :default => false, :null => false
+    t.datetime "attended_date"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end

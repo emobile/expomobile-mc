@@ -75,7 +75,7 @@
 <% @banner_url = @event.banner.url %>
 <div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px; border: 1px solid #000; color: #000;">
   <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: visible;" id="gafete-logo-first">
-    <%= image_tag @logo_url, :height => 70, :style => "height: 70px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img" %>
+    <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img" %>
     <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
   </div>
   <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: visible;">
@@ -86,8 +86,8 @@
     <% end %>
   </div>
   <div id="gafete-text" style="height: 115px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 20px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
-    <span style="font-weight: bold; font-size: 16px; top: 15px; position: relative; display: block; height: 40px; margin: 0px 10px;"><%= @a_name %></span>
-    <span style="font-size: 16px; top: 20px; position: relative; margin: 0px 10px;"><%= @e_tradename %></span>
+          <span style="font-weight: bold; font-size: 20px; top: 15px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
+          <span style="font-size: 20px; top: 15px; position: relative;"><%= @e_tradename %></span>
   </div>
   <div class="gafete-logo" style="height: 80px; width: 305px; visibility: visible;">
     <%= image_tag "/assets/logoexpo.png", :width => 100, :style => "width 140px; height: auto; -ms-interpolation-mode: bicubic; top: 8px; position: relative;" %>

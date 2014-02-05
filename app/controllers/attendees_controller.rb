@@ -2,7 +2,7 @@
 
 class AttendeesController < ApplicationController
   before_filter :authenticate_user!, :except => [:register, :register_attendee, :confirm, :get_subgroups]
-  before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c]
+  before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c, :attend]
   load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups, :confirm]
 
   def index
@@ -261,6 +261,16 @@ class AttendeesController < ApplicationController
       flash[:error] = t("mail_template.must_select")
     end
     redirect_to attendees_select_email_type_path
+  end
+  
+  def attend
+    @attendee = Attendee.find_by_id(params[:attendee_id])
+    if params[:attend] == "true"
+      @attendee.update_attributes(attended: true, attended_date: Time.now.in_time_zone(@event.time_zone).time)
+    elsif params[:attend] == "false"
+      @attendee.update_attributes(attended: false)
+    end
+    render nothing: true
   end
   
   def load_event

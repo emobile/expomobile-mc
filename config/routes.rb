@@ -98,6 +98,7 @@ Expomobile::Application.routes.draw do
 
   resources :exhibitors
   
+  post "attendees/attend"
   get "attendees/select_email_type"
   post "attendees/send_mails"
   get "attendees/confirm"

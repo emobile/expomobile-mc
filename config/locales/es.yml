@@ -639,6 +639,7 @@ es:
     sponsors_total: "Total de patrocinadores"
     total_visits_to_exhibitors_by_group: "Total de asistencias a expositores por grupo"
     total_visits_to_workshops_by_group: "Total de asistencias a talleres por grupo"
+    users_attended: "Usuarios que asistieron"
     users_using_the_app: "Usuarios que usan la aplicación móvil"
     visits_to_workshops: "Visitas a talleres"
     visits_to_exhibitors: "Visitas a expositores"

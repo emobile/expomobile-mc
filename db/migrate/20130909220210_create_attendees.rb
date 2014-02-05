@@ -36,6 +36,8 @@ class CreateAttendees < ActiveRecord::Migration
       t.integer :a_sector,               :null => false
       t.boolean :a_want_email,           :null => false, :default => false
       t.string :a_job,                   :null => false
+      t.boolean :attended,               :null => false, :default => false
+      t.datetime :attended_date
 
       t.timestamps
     end

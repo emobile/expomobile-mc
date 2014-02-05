@@ -2,6 +2,56 @@
   <%= javascript_include_tag "attendees" %>
 <% end %>
 
+<script type="text/javascript">
+  $(function() {
+
+    $(".attended").each(function() {
+      var $link = $(this).next();
+      if ($(this).prop("checked")) {
+        $link.removeClass("disabled-button");
+        $link.off("click");
+      }
+      else {
+        $link.addClass("disabled-button");
+        $link.on("click", function(e) {
+          return false;
+        });
+      }
+    });
+
+    $(".attended").on("change", function() {
+      var $link = $(this).next();
+      if ($(this).prop("checked")) {
+        $.ajax({
+          url: "/attendees/attend",
+          type: "post",
+          data: { attendee_id: $(this).val(), attend: "true" },
+          error: function(xhr, status, error) {
+            alert(error);
+          }
+        });
+        $link.removeClass("disabled-button");
+        $link.off("click");
+      }
+      else {
+        $.ajax({
+          url: "/attendees/attend",
+          type: "post",
+          data: { attendee_id: $(this).val(), attend: "false" },
+          error: function(xhr, status, error) {
+            alert(error);
+          }
+        });
+        $link.addClass("disabled-button");
+        $link.on("click", function(e) {
+          return false;
+        });
+      }
+    });
+
+  });
+</script>
+
 <div style="margin: 25px">
   <%= form_tag attendees_path, :method => "get", :id => "search_form" do %>
     <%= label_tag t(:search_by_name) %>
@@ -57,11 +107,14 @@
 
           <td><%= attendee.a_name %></td>
 
-          <td><%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(
+          <td style="text-align: center;">
+            <%= label_tag nil, t("atten.assisted") %><%= check_box_tag nil, attendee.id, attendee.attended, :class => "attended disabled-button" %>
+            <%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(
               :attendee_id => attendee.attendee_id, :a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :e_phone => attendee.e_phone, 
               :a_email => attendee.a_email, :e_address => "#{attendee.e_street} #{attendee.e_ext_number}, #{attendee.e_colony}", 
               :a_web => attendee.a_web, :layout => "true"
-              ), :class => "button" %></td>
+              ), :class => "button" %>
+          </td>
 
           <td><%= attendee.a_email %></td>            
 

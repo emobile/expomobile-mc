@@ -1104,3 +1104,9 @@ form#tolerance_form {
     top: -11px;
     left: 145px;
 }
+
+.disabled-button {
+    border-color: #bbb !important;
+    background-color: #ccc !important;
+    background-image: none !important;
+}
