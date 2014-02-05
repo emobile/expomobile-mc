@@ -51,7 +51,7 @@
       <% unless @event.nil? %>
         <li>
           <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups massive_loads}.include?(controller_name) && !@is_exhibitor %>" id="4main"> <!-- Add the class "current" to current menu item -->
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups mail_templates massive_loads}.include?(controller_name) && !@is_exhibitor %>" id="4main"> <!-- Add the class "current" to current menu item -->
             <%= t(:attendees) %>
           </a>
           <ul>
