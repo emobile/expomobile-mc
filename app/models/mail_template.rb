@@ -3,7 +3,7 @@ class MailTemplate < ActiveRecord::Base
   belongs_to :event
   
   validates :name, :content, :presence => true
-  validates :name, :uniqueness => true
+  validates :name, :uniqueness => {:scope => :event_id}
   
   def to_param
     [id, name.parameterize].join("-")
