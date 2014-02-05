@@ -139,8 +139,8 @@ class AttendeesController < ApplicationController
   def generate_gafete
     @attendee_id = params[:attendee_id]
     @a_name = params[:a_name]
-    @conferences = Conference.order(:start_date).limit(5)
-    @diaries = Diary.order(:event_date).limit(5)
+    @conferences = @event.conferences.order(:start_date).limit(5)
+    @diaries = @event.diaries.order(:event_date).limit(5)
     @e_tradename = params[:e_tradename]
     @e_phone = params[:e_phone]
     @a_email = params[:a_email]
