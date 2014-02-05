@@ -2,7 +2,7 @@
   <h2><%= label_tag t("visit.control_numbers_report") %></h2>
 </div>
 <div style="line-height: 30px;">
-  <% @attendees_total = Attendee.count %>
+  <% @attendees_total = @event.attendees.count %>
   <table style="margin-bottom: 20px; width: auto; font-size: 16px;">
     <tr>
       <td>
@@ -42,8 +42,11 @@
   <%= label_tag t(:attendances), nil, :style => "font-weight: bold; font-size: 18px;" %><br/>
   <table style="margin-bottom: 20px; width: auto; font-size: 16px;">
     <tr>
-      <td colspan="2" style="font-weight: bold;">
+      <td style="font-weight: bold;">
         <%= t(:exhibitors) %>
+      </td>
+      <td style="font-weight: bold;">
+        <%= "#{"%.1f" % (@event.attendee_expositions.count * 100 / @attendees_total)}%" %>
       </td>
     </tr>
     <% @event.exhibitors.each do |exhibitor| %>

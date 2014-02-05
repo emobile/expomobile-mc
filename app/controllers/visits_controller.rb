@@ -122,9 +122,21 @@ class VisitsController < ApplicationController
         pdf.move_down 20
         pdf.text I18n.t(:attendances), :style => :bold, :size => 10
         pdf.move_down 10
-        table_data_2 = [[I18n.t(:exhibitors), "#{"%.1f" % (@event.attendee_expositions.count * 100 / @attendees_total)}%"], [I18n.t("visit.users_using_the_app"), @event.nips.count]]
-        table_data_2.insert 1, [I18n.t(:workshops), "#{"%.1f" % (@event.attendee_workshops.count * 100 / @attendees_total)}%"] if @event.has_workshop
+        table_data_2 = [[I18n.t(:exhibitors), "#{"%.1f" % (@event.attendee_expositions.count * 100 / @attendees_total)}%"]] +
+        @event.exhibitors.map do |exhibitor|
+          [exhibitor.name, "#{"%.1f" % (exhibitor.attendee_expositions.count * 100 / @attendees_total)}%"]
+        end.select do |exhibitor, attendance|
+          attendance != "0.0%"
+        end
         pdf.table(table_data_2) do
+          row(0).font_style = :bold
+          column(1).font_style = :bold
+          self.cell_style = { :size => 7 }
+        end
+        pdf.move_down 20
+        table_data_3 = [[I18n.t("visit.users_using_the_app"), @event.nips.count]]
+        table_data_3.insert 0, [I18n.t(:workshops), "#{"%.1f" % (@event.attendee_workshops.count * 100 / @attendees_total)}%"] if @event.has_workshop
+        pdf.table(table_data_3) do
           column(1).font_style = :bold
           self.cell_style = { :size => 7 }
         end
