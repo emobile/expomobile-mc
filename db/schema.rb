@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140128221410) do
+ActiveRecord::Schema.define(:version => 20140128221411) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",         :null => false
@@ -127,12 +127,12 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
   add_index "diaries", ["event_id"], :name => "diaries_event_id_fk"
 
   create_table "events", :force => true do |t|
-    t.string   "name",                                   :null => false
-    t.string   "r_name",                                 :null => false
-    t.string   "r_enterprise",                           :null => false
-    t.string   "r_social_reason",                        :null => false
+    t.string   "name",                                       :null => false
+    t.string   "r_name",                                     :null => false
+    t.string   "r_enterprise",                               :null => false
+    t.string   "r_social_reason",                            :null => false
     t.string   "r_phone"
-    t.string   "r_email",                                :null => false
+    t.string   "r_email",                                    :null => false
     t.string   "r_job"
     t.string   "r_work_street"
     t.string   "r_work_street_number"
@@ -149,10 +149,10 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
     t.boolean  "has_facetoface"
     t.boolean  "has_offert"
     t.boolean  "has_workshop"
-    t.datetime "start_date",                             :null => false
-    t.datetime "end_date",                               :null => false
-    t.boolean  "is_free",              :default => true, :null => false
-    t.string   "place",                                  :null => false
+    t.datetime "start_date",                                 :null => false
+    t.datetime "end_date",                                   :null => false
+    t.boolean  "is_free",                  :default => true, :null => false
+    t.string   "place",                                      :null => false
     t.string   "e_work_street"
     t.string   "e_work_street_number"
     t.string   "e_work_colony"
@@ -160,9 +160,9 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
     t.string   "e_city"
     t.string   "e_state"
     t.string   "e_country"
-    t.string   "token_for_id",                           :null => false
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.string   "token_for_id",                               :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
@@ -171,6 +171,10 @@ ActiveRecord::Schema.define(:version => 20140128221410) do
     t.string   "banner_content_type"
     t.integer  "banner_file_size"
     t.datetime "banner_updated_at"
+    t.string   "logo_bellow_file_name"
+    t.string   "logo_bellow_content_type"
+    t.integer  "logo_bellow_file_size"
+    t.datetime "logo_bellow_updated_at"
   end
 
   create_table "exhibitors", :force => true do |t|

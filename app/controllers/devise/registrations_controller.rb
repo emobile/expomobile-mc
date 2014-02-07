@@ -13,8 +13,8 @@ class Devise::RegistrationsController < DeviseController
   # POST /resource
   def create
     @user = build_resource
-    @user.password = SecureRandom.hex(4) 
-    @user.password_confirmation = @user.password
+    @user.password, @user.password_confirmation = SecureRandom.hex(4), @user.password
+    
     if !signed_in? && @user.event_id != 1
       flash[:error] = t(:cant_realize)
       redirect_to new_user_session_path and return
