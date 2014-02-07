@@ -62,6 +62,10 @@ class AttendeesController < ApplicationController
   # POST /attendees
   # POST /attendees.json
   def create
+    inc_id = 1
+    unless @event.attendees.blank?
+      inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
+    end
     params[:attendee][:attendee_id] = @event.token_for_id + "%04d" % inc_id
     params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
     params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
