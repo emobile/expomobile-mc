@@ -52,6 +52,8 @@ class EventsController < ApplicationController
     params[:event][:r_city] = params[:event][:users_attributes]["0"][:city]
     params[:event][:r_state] = params[:event][:users_attributes]["0"][:state]
     params[:event][:r_country] = params[:event][:users_attributes]["0"][:country]
+    params[:event][:users_attributes]["0"][:password], params[:event][:users_attributes]["0"][:password_confirmation] = SecureRandom.hex(4), params[:event][:users_attributes]["0"][:password]
+
     @event = Event.new(params[:event])
 
     respond_to do |format|

@@ -1,4 +1,4 @@
-gnore bundler config
+#Ignore bundler config
 /.bundle
 
 # Ignore the default SQLite database.
@@ -16,6 +16,7 @@ gnore bundler config
 /public/system
 /public/assets
 /vendor/bundle
+
 # Ignore this MacOs file.
 .DS_Store
 

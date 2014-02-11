@@ -81,6 +81,11 @@
       <%= f.label t("event.banner") %>
       <%= f.file_field :banner, :required => @file_required %><span class="required">*</span>
     </p>
+    <p class="field">
+      <%= f.label t("event.logo_bellow") %>
+      <% @file_required = controller.action_name == "new" %>
+      <%= f.file_field :logo_bellow, :required => @file_required %><span class="required">*</span>
+    </p>
     <div class="has">
       <%= image_tag "/assets/#{t(:activities).downcase}.png", :height => 64 %>
       <%= f.label t("event.has_activity") %>
