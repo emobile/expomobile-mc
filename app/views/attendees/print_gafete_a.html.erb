@@ -3,7 +3,7 @@
     <title><%= t("atten.print_gafete") %></title>
   </head>
   <body style="margin: 0;">
-    <div id="gafete-container" style="height: 415px; margin: 0px; float: right; min-height: 400px; color: #000;">
+    <div id="gafete-container" style="height: 415px; margin: 0px; min-height: 400px; color: #000;">
       <% @system_configuration = SystemConfiguration.first %>
       <% @logo_url = @event.logo.url %>
       <% @banner_url = @event.banner.url %>
