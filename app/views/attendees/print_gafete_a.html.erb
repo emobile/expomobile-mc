@@ -3,14 +3,14 @@
     <title><%= t("atten.print_gafete") %></title>
   </head>
   <body style="margin: 0;">
-    <div id="gafete-container" style="height: 415px; margin: 0px; min-height: 400px; color: #000;">
+    <div id="gafete-container" style="height: 415px; margin: 0px; float: right; min-height: 400px; color: #000;">
       <% @system_configuration = SystemConfiguration.first %>
       <% @logo_url = @event.logo.url %>
       <% @banner_url = @event.banner.url %>
       <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
       <% @gafete_qr_code_visibility = (@with_qr_code == "true")? "visible": "hidden" %>
       <% @gafete_text_padding_top = (@with_logos == "true")? "0": "1px" %>
-      <div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px;">
+      <div id="gafete" style="width: 305px; height: 415px;">
         <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: <%= @gafete_logo_visibility %>;">
           <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
           <%#= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;; visibility: #{@gafete_qr_code_visibility};" %> 
