@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
   has_attached_file :logo_bellow,
     :styles => {:medium => "x300",
     :thumb => "x64"},
-    :default_url => "/assets/logoexpo.png"
+    :default_url => "/assets/expomobile.png"
   has_attached_file :logo,
     :styles => {:medium => "x300",
     :thumb => "x100"},
