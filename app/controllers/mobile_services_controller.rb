@@ -370,14 +370,13 @@ class MobileServicesController < ApplicationController
   end
   
   def index_face_to_face_days
-    
+
     if !session[:attendee_id].blank?
       @attendee = Attendee.find_by_id(session[:attendee_id])
       unless @attendee.nil?
         @days = FaceToFace.where(:attendee_id => session[:attendee_id]).pluck(:start_date).map{ |f| f.strftime("%d/%m/%Y") }.uniq
         render json: @days
       end
-      
     end
     
   end
