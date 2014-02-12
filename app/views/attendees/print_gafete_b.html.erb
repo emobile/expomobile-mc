@@ -11,7 +11,7 @@
           <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @conferences.each do |conference| %>
-          <div class="conference" style="padding: 10px 0px; border-bottom: 1px solid #aaa;">
+          <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa;">
             <div class="conferencist-photo" style="width: 40px; display: inline-block;">
               <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
                 <%= image_tag conference.photo.url(:thumb), :width => 40, :style => "width: 40px; -ms-interpolation-mode: bicubic;" %>

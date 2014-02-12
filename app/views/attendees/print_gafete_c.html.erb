@@ -11,7 +11,7 @@
           <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @diaries.each do |diary| %>
-          <div class="diary" style="padding: 10px 0px; border-bottom: 1px solid #aaa;">
+          <div class="diary" style="margin: 10px; border-bottom: 1px solid #aaa;">
             <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
             <div class="diary-details" style="width: 220px; padding-left: 10px; vertical-align: top; display: inline-block;">
               <span style="font-weight: bold;"><%= diary.description %></span><br/>
