@@ -29,7 +29,7 @@
       </li>
       <% if current_user.role.is_super_admin %>
         <li>     
-          <%= link_to t(:configuration), edit_system_configuration_path(SystemConfiguration.first), :class=> "nav-top-item no-submenu" + (controller_name == "system_configurations" ? " current": ""), :id => "2main" %>
+          <%= link_to t(:configuration).mb_chars.upcase, edit_system_configuration_path(SystemConfiguration.first), :class=> "nav-top-item no-submenu" + (controller_name == "system_configurations" ? " current": ""), :id => "2main" %>
         </li>
         <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{events}.include?(controller_name) %>" id="3main"> <!-- Add the class "current" to current menu item -->
