@@ -166,6 +166,7 @@ a.remove-link:hover {
     cursor: pointer;
     display: block;
     text-decoration: none;
+    text-align: center;
 }
 
 #sidebar #main-nav li a.current {

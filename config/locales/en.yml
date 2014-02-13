@@ -375,6 +375,8 @@ en:
       facetoface: "This option also enables sponsors and allows attendees to have face to face dates with exhibitors and sponsors of the event."
       offert: "This option allows you to manage a catalog of exhibitors offers."
       workshop: "This option allows to manage workshops, workshop attendances and also have access to stadistical data of attendances."
+    e_facebook: "Facebook"
+    e_twitter: "Twitter"
     email: "Email"
     end_date: "End date"
     enterprise: "Enterprise"

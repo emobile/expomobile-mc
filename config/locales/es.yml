@@ -375,6 +375,8 @@ es:
       facetoface: "Esta opción habilita también a los patrocinadores y permite que los asistentes puedan tener citas cara a cara con expositores y patrocinadores del evento."
       offert: "Esta opción permite manejar un catálogo de ofertas de los expositores."
       workshop: "Esta opción permite manejar los talleres, las asistencias a taller y asimismo tener acceso a datos estadísticos de asistencias."
+    e_facebook: "Facebook"
+    e_twitter: "Twitter"
     email: "Correo electrónico"
     end_date: "Fecha final"
     enterprise: "Empresa"

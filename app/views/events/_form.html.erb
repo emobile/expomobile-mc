@@ -72,6 +72,14 @@
       <%= f.label t("event.time_zone") %>
       <%= time_zone_select :event, :time_zone, ["International Date Line West", "Midway Island", "American Samoa", "Hawaii", "Alaska", "Pacific Time (US & Canada)", "Tijuana", "Mountain Time (US & Canada)", "Arizona", "Chihuahua", "Mazatlan", "Central Time (US & Canada)", "Saskatchewan", "Guadalajara", "Mexico City", "Monterrey", "Central America", "Eastern Time (US & Canada)", "Indiana (East)", "Bogota", "Lima", "Quito", "Atlantic Time (Canada)", "Caracas", "La Paz", "Santiago", "Newfoundland", "Brasilia", "Buenos Aires", "Georgetown"].map{ |t| ActiveSupport::TimeZone[t] }.sort_by{ |t| t.name }, :default => "Chihuahua" %>
     </p>
+    <p class="field">
+      <%= f.label t("event.e_facebook") %>
+      <%= f.text_field :e_facebook, :class=>"text-input medium-input" %>
+    </p>
+    <p class="field">
+      <%= f.label t("event.e_twitter") %>
+      <%= f.text_field :e_twitter, :class=>"text-input medium-input" %>
+    </p>
     <div style="width: 650px; height: 490px;">
       <div style="width: 275px; height: 100%; display: inline-block;">
         <p class="field" style="position: relative; top: 120px;">
