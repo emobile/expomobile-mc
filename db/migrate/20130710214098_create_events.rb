@@ -35,8 +35,6 @@ class CreateEvents < ActiveRecord::Migration
       t.string :e_state
       t.string :e_country
       t.string :token_for_id,                           :null => false
-      t.string :e_facebook
-      t.string :e_twitter
 
       t.timestamps
     end
