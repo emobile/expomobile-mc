@@ -25,7 +25,7 @@
         $.ajax({
           url: "/attendees/attend",
           type: "post",
-          data: { attendee_id: $(this).val(), attend: "true" },
+          data: {attendee_id: $(this).val(), attend: "true"},
           error: function(xhr, status, error) {
             alert(error);
           }
@@ -37,7 +37,7 @@
         $.ajax({
           url: "/attendees/attend",
           type: "post",
-          data: { attendee_id: $(this).val(), attend: "false" },
+          data: {attendee_id: $(this).val(), attend: "false"},
           error: function(xhr, status, error) {
             alert(error);
           }

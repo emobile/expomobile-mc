@@ -3,38 +3,70 @@
     <title><%= t("atten.print_gafete") %></title>
   </head>
   <body style="margin: 0;">
-    <div id="gafete-container" style="height: 415px; margin: 0px; min-height: 400px; color: #000;">
-      <% @system_configuration = SystemConfiguration.first %>
-      <% @logo_url = @event.logo.url %>
-      <% @banner_url = @event.banner.url %>
-      <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
-      <% @gafete_text_padding_top = (@with_logos == "true")? "0": "1px" %>
-      <div id="gafete" style="width: 305px; height: 415px;">
-        <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: <%= @gafete_logo_visibility %>;">
-          <%= image_tag @logo_url, :style => "#{(@with_qr_code == "true")? "height: auto; max-width: 200px;": "height: 64px;"} -ms-interpolation-mode: bicubic; margin: 7px;" %>
-          <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right; display: #{(@with_qr_code == "true")? "block": "none"};" %> 
-        </div>
-        <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
-          <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
-          <%= image_tag @banner_url, :height => @banner_height, :width => @banner_width, :style => "height: #{@banner_height}px; width: #{@banner_width}px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
-          <% if @is_exhibitor %>
-            <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
-          <% end %>
-        </div>
-        <div id="gafete-text" style="height: 115px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 30px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">
-          <span style="font-weight: bold; font-size: 20px; top: 15px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
-          <span style="font-size: 20px; top: 15px; position: relative;"><%= @e_tradename %></span>
-        </div>
-        <div class="gafete-logo" style="height: 80px; width: 305px; visibility: <%= @gafete_logo_visibility %>;">
-          <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
-          <div style="float: right; display: inline-block; margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-      <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
-      <span style="position: relative; bottom: 5px;">VinculoTIC</span><br/>
-      <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
-      <span style="position: relative; bottom: 5px;">@vinculotic</span>
+    <% @system_configuration = SystemConfiguration.first %>
+    <% @logo_url = @event.logo.url %>
+    <% @banner_url = @event.banner.url %>
+    <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
+    <% @gafete_text_padding_top = (@with_logos == "true")? "0": "1px" %>
+    <% if @gafete_big %>
+      <div id="gafete-container" style="height: 13cm; margin: 0px; min-height: 13cm; color: #000;">
+        <div id="gafete-big" style="width: 10cm; height: 13cm; margin: 0 auto 30px; border: 1px solid #000; color: #000;" class="big">
+          <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; text-align: center; visibility: <%= @gafete_logo_visibility %>;" id="gafete-logo-first-big">
+            <%= image_tag @logo_url, :style => "#{(@with_qr_code == "true")? "height: auto; max-width: 270px;": "height: 60px;"} -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
+            <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right; display: #{(@with_qr_code == "true")? "block": "none"};", :id => "gafete-qr-img-big" %>    
+          </div>
+          <div class="gafete-logo" style="height: 160px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
+            <% @banner_height = @is_exhibitor? "135px": "auto" %>
+            <%= image_tag @banner_url, :style => "height: #{@banner_height}; width: 100%; -ms-interpolation-mode: bicubic;" %>
+            <% if @is_exhibitor %>
+              <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
+            <% end %>
+          </div>
+          <div id="gafete-text-big" style="height: 130px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">
+            <span style="font-weight: bold; font-size: 24px; top: 10px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
+            <span style="font-size: 24px; top: 10px; position: relative;"><%= @e_tradename %></span>
+          </div>
+          <div class="gafete-logo" style="height: 112px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
+            <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
+            <div style="margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+              <span style="margin-right: 30px;"><b>Web:</b> vinculotic.com</span>
+              <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+              <span style="margin-right: 30px;">VinculoTIC</span>
+              <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+              <span>@vinculotic</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <div id="gafete-container" style="height: 415px; margin: 0px; min-height: 400px; color: #000;">
+        <div id="gafete" style="width: 305px; height: 415px;">
+          <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: <%= @gafete_logo_visibility %>;">
+            <%= image_tag @logo_url, :style => "#{(@with_qr_code == "true")? "height: auto; max-width: 200px;": "height: 64px;"} -ms-interpolation-mode: bicubic; margin: 7px;" %>
+            <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right; display: #{(@with_qr_code == "true")? "block": "none"};" %> 
+          </div>
+          <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
+            <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
+            <%= image_tag @banner_url, :height => @banner_height, :width => @banner_width, :style => "height: #{@banner_height}px; width: #{@banner_width}px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
+            <% if @is_exhibitor %>
+              <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
+            <% end %>
+          </div>
+          <div id="gafete-text" style="height: 115px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 30px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">
+            <span style="font-weight: bold; font-size: 20px; top: 15px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
+            <span style="font-size: 20px; top: 15px; position: relative;"><%= @e_tradename %></span>
+          </div>
+          <div class="gafete-logo" style="height: 80px; width: 305px; visibility: <%= @gafete_logo_visibility %>;">
+            <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
+            <div style="float: right; display: inline-block; margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+              <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+              <span style="position: relative; bottom: 5px;">VinculoTIC</span><br/>
+              <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+              <span style="position: relative; bottom: 5px;">@vinculotic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </body>
 </html>

@@ -164,6 +164,7 @@ class AttendeesController < ApplicationController
     @with_logos = params[:with_logos]
     @with_qr_code = params[:with_qr_code]
     @is_exhibitor = params[:is_exhibitor] == "true"
+    @gafete_big = params[:gafete_big] == "true"
     @event = Event.find_by_id(session[:current_event_id])
     render layout: false
   end
@@ -172,6 +173,7 @@ class AttendeesController < ApplicationController
     @offset = params[:offset]
     @conferences = @event.conferences.order(:start_date).limit(5).offset(@offset)
     @with_logos = params[:with_logos]
+    @gafete_big = params[:gafete_big] == "true"
     @event = Event.find_by_id(session[:current_event_id])
     render layout: false
   end
@@ -180,6 +182,7 @@ class AttendeesController < ApplicationController
     @offset = params[:offset]
     @diaries = @event.diaries.order(:event_date).limit(5).offset(@offset)
     @with_logos = params[:with_logos]
+    @gafete_big = params[:gafete_big] == "true"
     @event = Event.find_by_id(session[:current_event_id])
     render layout: false
   end
