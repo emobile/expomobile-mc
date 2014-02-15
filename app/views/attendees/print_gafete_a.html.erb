@@ -10,7 +10,7 @@
     <% @gafete_text_padding_top = (@with_logos == "true")? "0": "1px" %>
     <% if @gafete_big %>
       <div id="gafete-container" style="height: 13cm; margin: 0px; min-height: 13cm; color: #000;">
-        <div id="gafete-big" style="width: 10cm; height: 13cm; margin: 0 auto 30px; border: 1px solid #000; color: #000;" class="big">
+        <div id="gafete-big" style="width: 10cm; height: 13cm;" class="big">
           <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; text-align: center; visibility: <%= @gafete_logo_visibility %>;" id="gafete-logo-first-big">
             <%= image_tag @logo_url, :style => "#{(@with_qr_code == "true")? "height: auto; max-width: 270px;": "height: 60px;"} -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
             <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right; display: #{(@with_qr_code == "true")? "block": "none"};", :id => "gafete-qr-img-big" %>    
