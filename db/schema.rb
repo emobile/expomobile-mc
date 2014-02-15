@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140128221411) do
+ActiveRecord::Schema.define(:version => 20140128221412) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",         :null => false
@@ -175,6 +175,8 @@ ActiveRecord::Schema.define(:version => 20140128221411) do
     t.string   "logo_bellow_content_type"
     t.integer  "logo_bellow_file_size"
     t.datetime "logo_bellow_updated_at"
+    t.string   "facebook"
+    t.string   "twitter"
   end
 
   create_table "exhibitors", :force => true do |t|
