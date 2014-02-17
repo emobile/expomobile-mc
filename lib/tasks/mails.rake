@@ -1,7 +1,7 @@
 namespace :mails do
   task :welcome_email, :event_id do |t, args|
     @event = Event.find_by_id(args[:event_id])
-    #output = File.open "mail-output.txt", "w"
+    #output = File.open "mail_output.txt", "w"
     #output.puts(Date.today.to_s)
     @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
@@ -15,7 +15,7 @@ namespace :mails do
 
   task :acknowledgment_email, :event_id do |t, args|
     @event = Event.find_by_id(args[:event_id])
-    #output = File.open "mail-output.txt", "w"
+    #output = File.open "mail_output.txt", "w"
     #output.puts(Date.today.to_s)
     @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
@@ -29,7 +29,7 @@ namespace :mails do
   
   task :invitation_email, :event_id do |t, args|
     @event = Event.find_by_id(args[:event_id])
-    #output = File.open "mail-output.txt", "w"
+    #output = File.open "mail_output.txt", "w"
     #output.puts(Date.today.to_s)
     @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
@@ -44,7 +44,7 @@ namespace :mails do
   
   task :general_email, :event_id do |t, args|
     @event = Event.find_by_id(args[:event_id])
-    #output = File.open "mail-output.txt", "w"
+    #output = File.open "mail_output.txt", "w"
     #output.puts(Date.today.to_s)
     @event.attendees.where(:a_want_email => true).each do |attendee|
       #output.puts(@attendee.id)
