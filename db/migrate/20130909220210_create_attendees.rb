@@ -10,8 +10,8 @@ class CreateAttendees < ActiveRecord::Migration
       t.string :e_colony,                :null => false
       t.string :e_municipality,          :null => false
       t.string :e_city,                  :null => false
-      t.string :e_state,                 :null => false
-      t.integer :e_zip_code,             :null => false
+      t.string :e_state#,                 :null => false
+      t.string :e_zip_code,             :null => false
       t.string :e_rfc#,                   :null => false
       t.integer :e_lada,                 :null => false
       t.string :e_phone,                 :null => false

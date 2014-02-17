@@ -10,10 +10,9 @@ class Attendee < ActiveRecord::Base
   has_many :attendee_expositions, :dependent => :destroy
   has_many :attendee_workshops, :dependent => :destroy
   
-  validates :a_email, :a_name, :e_city, :e_colony, :e_ext_number, :e_lada, :e_municipality, :e_name, :e_phone, :e_state, :e_street, :e_zip_code, :event_id, :confirmation_token, :a_sector, :a_job, :presence => true
+  validates :a_email, :a_name, :e_city, :e_colony, :e_ext_number, :e_lada, :e_municipality, :e_name, :e_phone, :e_street, :e_zip_code, :event_id, :confirmation_token, :a_sector, :a_job, :presence => true
   validates_numericality_of :a_num_employees, :if => :a_num_employees
   validates_numericality_of :e_ext_number, :if => :e_ext_number
-  validates_numericality_of :e_zip_code, :if => :e_zip_code
   validates_numericality_of :e_lada, :if => :e_lada
   validates_format_of :attendee_id, :with => /\A[A-Z]{2}\d{4}\z/, :if => :attendee_id
   validates :attendee_id, :uniqueness => { :scope => :event_id }
