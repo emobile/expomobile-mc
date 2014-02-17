@@ -15,10 +15,11 @@ module MassiveLoadsHelper
 
     2.upto(s.last_row) do |line|
       begin
-        unless @event.attendees.blank?
-          inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
-        end
+#        unless @event.attendees.blank?
+#          inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
+#        end
         attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
+        inc_id += 1
         subgroup_key = "S1"#s.cell(line, "B")
         #e_name = s.cell(line, "C")
         e_tradename = s.cell(line, "A")#s.cell(line, "D")
