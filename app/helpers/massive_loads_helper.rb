@@ -91,7 +91,7 @@ module MassiveLoadsHelper
         a_want_email = "NO" if a_want_email.nil?
         a_want_email = a_want_email.upcase == "SI"
         a_job = "N/A" if a_job.nil?
-        subgroup_id = @event.subgroup.find_by_subgroup_key(subgroup_key).id
+        subgroup_id = @event.subgroups.find_by_subgroup_key(subgroup_key).id
         if attendee_id[0, 2] == @event.token_for_id
           @attendee = Attendee.new(subgroup_id: subgroup_id, e_name: e_name, e_tradename: e_tradename, e_street: e_street, e_ext_number: e_ext_number, e_int_number: e_int_number, e_colony: e_colony, e_municipality: e_municipality, e_city: e_city, e_state: e_state, e_zip_code: e_zip_code, e_rfc: e_rfc, e_lada: e_lada, e_phone: e_phone, a_name: a_name, a_email: a_email, a_chat: a_chat, a_cellphone: a_cellphone, a_tel_nextel: a_tel_nextel, a_radio_nextel: a_radio_nextel, a_is_director: a_is_director, a_platform: a_platform, e_main_line: e_main_line, a_sec_line: a_sec_line, a_num_employees: a_num_employees, a_other_line: a_other_line, a_web: a_web, a_market_segment: a_market_segment, attendee_id: attendee_id, event_id: session[:current_event_id], confirmation_token: Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join, a_sector: a_sector, a_want_email: a_want_email, a_job: a_job)
           if @attendee.save
