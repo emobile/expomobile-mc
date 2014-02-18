@@ -7,19 +7,19 @@
     <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
     <% if @gafete_big %>
       <div id="gafete-container" style="height: 12cm; margin: 0px; min-height: 13cm; color: #000;">
-        <div style="width: 10cm; height: 12cm; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif; line-height: 14px; color: #000;">
+        <div style="width: 8.5cm; height: 12cm; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif; line-height: 13px; color: #000;">
           <div class="gafete-logo" style="height: 85px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
             <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
           </div>
           <% @conferences.each do |conference| %>
-            <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
+            <div class="conference" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 12px; vertical-align: top;">
               <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
               <div class="conferencist-photo" style="width: 50px; display: inline-block;">
                 <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
                   <%= image_tag conference.photo.url(:thumb), :width => 40, :style => "width: 40px; -ms-interpolation-mode: bicubic;" %>
                 <% end %>
               </div>
-              <div class="conference-details" style="width: 200px; padding-left: 10px; display: inline-block;">
+              <div class="conference-details" style="width: 160px; padding-left: 5px; display: inline-block;">
                 <span style="font-weight: bold;"><%= conference.name %></span><br/>
                 <span style="color: #c00205;"><%= conference.conferencist %></span>
               </div>

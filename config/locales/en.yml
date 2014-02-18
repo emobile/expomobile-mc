@@ -242,7 +242,7 @@ en:
       street: "STREET"
       tradename: "TRADENAME"
       zip_code: "ZIP CODE"
-    gafete_big: "Change size to 3.9in x 4.7in"
+    gafete_big: "Change size to 3.3in x 4.7in"
     gafete: "Gafete"
     generate_gafete: "Generate"
     id_ok: "You have provided your ID correctly"

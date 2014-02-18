@@ -7,12 +7,12 @@
     <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
     <% if @gafete_big %>
       <div id="gafete-container" style="height: 415px; margin: 0px; min-height: 400px; color: #000;">
-        <div style="width: 10cm; height: 12cm; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
+        <div style="width: 8.5cm; height: 12cm; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
           <div class="gafete-logo" style="height: 85px; text-align: center; <%= @gafete_logo_visibility %>;">
             <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
           </div>
           <% @diaries.each do |diary| %>
-            <div class="diary" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
+            <div class="diary" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 12px; vertical-align: top;">
               <div class="hour" style="display: inline-block; width: 70px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
               <div class="diary-details" style="width: 220px; padding-left: 10px; display: inline-block;">
                 <span style="font-weight: bold;"><%= diary.description %></span><br/>

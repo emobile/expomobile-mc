@@ -28,7 +28,7 @@
         if ($("#with_logos").prop("checked")) {
           $("#gafete-qr-img, #gafete-qr-img-big").css({display: "block"});
           $("#gafete-logo-first-img").css({"max-width": "200px", height: "auto"});
-          $("#gafete-logo-first-img-big").css({"max-width": "270px", height: "auto"});
+          $("#gafete-logo-first-img-big").css({"max-width": "215px", height: "auto"});
           var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=false", "&with_qr_code=true");
           $(".generate-gafete").attr("href", generate_gafete_href);
         }
@@ -37,7 +37,7 @@
         if ($("#with_logos").prop("checked")) {
           $("#gafete-qr-img, #gafete-qr-img-big").css({display: "none"});
           $("#gafete-logo-first-img").css({"max-width": "none", height: "65px"});
-          $("#gafete-logo-first-img-big").css({"max-width": "none", height: "60px"});
+          $("#gafete-logo-first-img-big").css({"max-width": "none", height: "50px"});
           var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=true", "&with_qr_code=false");
           $(".generate-gafete").attr("href", generate_gafete_href);
         }
@@ -124,28 +124,28 @@
     </div>
   </div>
 </div>
-<div id="gafete-big" style="width: 10cm; height: 12cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
+<div id="gafete-big" style="width: 8.5cm; height: 12cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
   <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible; text-align: center;" id="gafete-logo-first-big">
-    <%= image_tag @logo_url, :style => "height: auto; max-width: 270px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
+    <%= image_tag @logo_url, :style => "height: auto; max-width: 215px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
     <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
   </div>
-  <div class="gafete-logo" style="height: 160px; text-align: center; visibility: visible;">
+  <div class="gafete-logo" style="height: 135px; text-align: center; visibility: visible;">
     <% @banner_height = @is_exhibitor? "135px": "auto" %>
     <%= image_tag @banner_url, :style => "height: #{@banner_height}; width: 100%; -ms-interpolation-mode: bicubic;" %>
     <% if @is_exhibitor %>
       <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
     <% end %>
   </div>
-  <div id="gafete-text-big" style="height: 95px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
+  <div id="gafete-text-big" style="height: 120px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
     <span style="font-weight: bold; font-size: 24px; top: 10px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
     <span style="font-size: 24px; top: 10px; position: relative;"><%= @e_tradename %></span>
   </div>
   <div class="gafete-logo" style="height: 112px; visibility: visible; text-align: center;">
     <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
     <div style="margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-      <span style="margin-right: 30px;"><b>Web:</b> vinculotic.com</span>
+      <span style="margin-right: 5px;"><b>Web:</b> vinculotic.com</span>
       <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
-      <span style="margin-right: 30px;">VinculoTIC</span>
+      <span style="margin-right: 5px;">VinculoTIC</span>
       <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
       <span>@vinculotic</span>
     </div>
@@ -192,19 +192,19 @@
   <% @offset = 0 %>
   <% until @conferences.blank? %>
     <div style="display: inline-block; margin: 0 30px;">
-      <div style="width: 10cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 14px; color: #000;">
+      <div style="width: 8.5cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 13px; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible; text-align: center;">
           <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @conferences.each do |conference| %>
-          <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
+          <div class="conference" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 12px; vertical-align: top;">
             <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
             <div class="conferencist-photo" style="width: 50px; display: inline-block;">
               <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
-                <%= image_tag conference.photo.url(:thumb), :width => 40, :style => "width: 40px; -ms-interpolation-mode: bicubic;" %>
+                <%= image_tag conference.photo.url(:thumb), :width => 50, :style => "width: 50px; -ms-interpolation-mode: bicubic;" %>
               <% end %>
             </div>
-            <div class="conference-details" style="width: 200px; padding-left: 10px; display: inline-block;">
+            <div class="conference-details" style="width: 160px; padding-left: 5px; display: inline-block;">
               <span style="font-weight: bold;"><%= conference.name %></span><br/>
               <span style="color: #c00205;"><%= conference.conferencist %></span>
             </div>
@@ -252,12 +252,12 @@
   <% @offset = 0 %>
   <% until @diaries.blank? %>
     <div style="display: inline-block; margin: 0 30px;">
-      <div style="width: 10cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
+      <div style="width: 8.5cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible; text-align: center;">
           <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @diaries.each do |diary| %>
-          <div class="diary" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
+          <div class="diary" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
             <div class="hour" style="display: inline-block; width: 70px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
             <div class="diary-details" style="width: 220px; padding-left: 10px; display: inline-block;">
               <span style="font-weight: bold;"><%= diary.description %></span><br/>
