@@ -242,7 +242,7 @@ es:
       street: "CALLE"
       tradename: "NOMBRE COMERCIAL"
       zip_code: "C. P."
-    gafete_big: "Cambiar tamaño a 10cm x 13cm"
+    gafete_big: "Cambiar tamaño a 10cm x 12cm"
     gafete: "Gafete"
     generate_gafete: "Generar"
     id_ok: "Has proporcionado tu ID correctamente"
