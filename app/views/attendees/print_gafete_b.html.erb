@@ -6,13 +6,13 @@
     <% @logo_url = @event.logo.url %>
     <% @gafete_logo_visibility = (@with_logos == "true")? "visible": "hidden" %>
     <% if @gafete_big %>
-      <div id="gafete-container" style="height: 13cm; margin: 0px; min-height: 13cm; color: #000;">
-        <div style="width: 10cm; height: 13cm; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif; line-height: 15px; color: #000;">
+      <div id="gafete-container" style="height: 12cm; margin: 0px; min-height: 13cm; color: #000;">
+        <div style="width: 10cm; height: 12cm; margin-bottom: 30px; font-family: Arial, Helvetica, sans-serif; line-height: 14px; color: #000;">
           <div class="gafete-logo" style="height: 85px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
             <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
           </div>
           <% @conferences.each do |conference| %>
-            <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 14px; vertical-align: top;">
+            <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
               <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
               <div class="conferencist-photo" style="width: 50px; display: inline-block;">
                 <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>

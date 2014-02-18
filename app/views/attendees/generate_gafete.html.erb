@@ -124,7 +124,7 @@
     </div>
   </div>
 </div>
-<div id="gafete-big" style="width: 10cm; height: 13cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
+<div id="gafete-big" style="width: 10cm; height: 12cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
   <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible; text-align: center;" id="gafete-logo-first-big">
     <%= image_tag @logo_url, :style => "height: auto; max-width: 270px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
     <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
@@ -136,7 +136,7 @@
       <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
     <% end %>
   </div>
-  <div id="gafete-text-big" style="height: 130px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
+  <div id="gafete-text-big" style="height: 95px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
     <span style="font-weight: bold; font-size: 24px; top: 10px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
     <span style="font-size: 24px; top: 10px; position: relative;"><%= @e_tradename %></span>
   </div>
@@ -192,12 +192,12 @@
   <% @offset = 0 %>
   <% until @conferences.blank? %>
     <div style="display: inline-block; margin: 0 30px;">
-      <div style="width: 10cm; height: 13cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 15px; color: #000;">
+      <div style="width: 10cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 14px; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible; text-align: center;">
           <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @conferences.each do |conference| %>
-          <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 14px; vertical-align: top;">
+          <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
             <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
             <div class="conferencist-photo" style="width: 50px; display: inline-block;">
               <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
@@ -252,12 +252,12 @@
   <% @offset = 0 %>
   <% until @diaries.blank? %>
     <div style="display: inline-block; margin: 0 30px;">
-      <div style="width: 10cm; height: 13cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
+      <div style="width: 10cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible; text-align: center;">
           <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @diaries.each do |diary| %>
-          <div class="diary" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 14px; vertical-align: top;">
+          <div class="diary" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
             <div class="hour" style="display: inline-block; width: 70px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
             <div class="diary-details" style="width: 220px; padding-left: 10px; display: inline-block;">
               <span style="font-weight: bold;"><%= diary.description %></span><br/>
