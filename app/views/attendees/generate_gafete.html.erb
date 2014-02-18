@@ -258,15 +258,15 @@
         </div>
         <% @diaries.each do |diary| %>
           <div class="diary" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
-            <div class="hour" style="display: inline-block; width: 70px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
-            <div class="diary-details" style="width: 220px; padding-left: 10px; display: inline-block;">
+            <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
+            <div class="diary-details" style="width: 210px; padding-left: 5px; display: inline-block;">
               <span style="font-weight: bold;"><%= diary.description %></span><br/>
               <span style="color: #c00205;"><%= diary.place %></span>
             </div>
           </div>
         <% end %>
       </div>
-      <div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
+      <div id="buttons" style="width: 270px; margin: 0 auto 30px; text-align: center;">
         <%= link_to t("atten.print_gafete"), attendees_print_gafete_c_path(:offset => @offset, :with_logos => "true", :gafete_big => "false"), :class => "button generate-gafete", :target => "_blank" %>
       </div>
     </div>
