@@ -30,10 +30,10 @@ class MobileServicesController < ApplicationController
 #        @times_sent = (@nip.times_sent.nil?) ? 0: @nip.times_sent
 #      
 #        if @times_sent < 10
-          @can_send_email = false
-          @can_send_email = ((Time.now - @nip.sent) >= 0) unless @nip.sent.nil?
+          #@can_send_email = false
+          #@can_send_email = ((Time.now - @nip.sent) >= 0) unless @nip.sent.nil?
       
-          if @nip.sent.nil? || @can_send_email
+          if @nip.sent.nil?# || @can_send_email
             @name = @attendee.a_name
             @email = @attendee.a_email
             @subgroup_name = @attendee.subgroup.name
