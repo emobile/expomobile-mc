@@ -350,7 +350,7 @@ es:
   expositions: "Exposiciones"
   
   errors:
-    atten_email_already_sended: "Tu NIP ya fue enviado a tu email, porfavor espera al menos 5 minutos para solicitarlo de nuevo"
+    atten_email_already_sended: "Tu NIP ya fue enviado a tu email, no puede ser solicitado de nuevo"
     atten_email_dont_sended: "Tu NIP no pudo ser enviado a tu email"
     atten_email_maximum_sends: "Se ha excedido el máximo de solicitudes del NIP"
     atten_invalid_id: "No proporcionaste tu ID correctamente"
