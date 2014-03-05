@@ -6,7 +6,7 @@
     <%= link_to image_tag("/assets/expomobile.png", :id => "logo", :alt => ""), "/", :style => "display: block;" %>
     <!-- Sidebar Profile links -->
     <div id="profile-links">
-      <% if @event.nil? %>
+      <% if session[:current_event_id].nil? %>
         <div id="current_time"><%= Time.now %></div>
       <% else %>
         <div><%= link_to @event.name, @event %></div>
@@ -48,7 +48,7 @@
           <%= link_to t(:configuration).mb_chars.upcase, edit_event_path(session[:current_event_id]), :class=> "nav-top-item no-submenu" + (controller_name == "events" ? " current": ""), :id => "2main" %>
         </li>
       <% end %>
-      <% unless @event.nil? %>
+      <% unless session[:current_event_id].nil? %>
         <li>
           <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups mail_templates massive_loads}.include?(controller_name) && !@is_exhibitor %>" id="4main"> <!-- Add the class "current" to current menu item -->

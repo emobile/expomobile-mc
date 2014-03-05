@@ -18,7 +18,12 @@
 <% elsif controller.action_name == "show" %>
   <%= link_to(t(:return_to_index, :model => eval("t(:#{controller_name})").downcase), eval("#{controller_name}_path"), :class=>"button") if can_index %>
   <% if %w{massive_loads}.exclude?(controller_name) %>
-    <%= link_to t(:edit_record, :record => eval("t('activerecord.models.#{controller_name.singularize}')")), eval("edit_#{controller_name.singularize}_path(@#{controller_name.singularize})"), :class=>"button" %>
+    <% if current_user == @user %>
+      <% @edit_path = "edit_registration_path(@user)" %>
+    <% else %>
+      <% @edit_path = "edit_#{controller_name.singularize}_path(@#{controller_name.singularize})" %>
+    <% end %>
+    <%= link_to t(:edit_record, :record => eval("t('activerecord.models.#{controller_name.singularize}')")), eval(@edit_path), :class=>"button" %>
   <% end %>
   <% if current_user.role.is_super_admin || current_user.role.is_admin %>
     <% if %w{mail_templates system_configurations}.exclude?(controller_name) %>

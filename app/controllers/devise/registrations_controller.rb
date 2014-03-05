@@ -44,7 +44,12 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/edit
   def edit
-    render :edit
+    @user = User.find(params[:id])
+    if current_user == @user
+      render :edit
+    else
+      redirect_to edit_user_path(@user)
+    end
   end
 
   # PUT /resource
