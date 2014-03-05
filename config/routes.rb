@@ -117,9 +117,9 @@ Expomobile::Application.routes.draw do
 
   get "welcome/index"
   
-  resources :users
-  
   devise_for :users
+  
+  resources :users
 
   devise_scope :user do
     get "devise/sessions/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
