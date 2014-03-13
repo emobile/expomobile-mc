@@ -59,7 +59,7 @@ class MobileServicesController < ApplicationController
           end
       
         else
-          @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "already" }
+          @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "already" }
         end
         
         #        else
