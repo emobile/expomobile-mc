@@ -40,7 +40,6 @@
 
 <% workshops = Workshop.where(:event_id => session[:current_event_id]).order(:name) %>
 <% i = 1 %>
-<%= debug Hour.where(:event_id => session[:current_event_id]) %>
 <% Hour.where(:event_id => session[:current_event_id]).order(:start_date).pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq.each do |d| %>
   <% if flash[:schedule_start_date].nil? %>
     <% default_tab = 1 %>

@@ -120,10 +120,10 @@
           <div class="content-box-header">
             <h3><%= eval("t(:#{controller_name})") if %w{welcome}.exclude?(controller_name) %></h3>
             <% if controller_name == "schedules" && action_name == "associate_workshop_group" %>
-              <% if Hour.any? %>
+              <% if Hour.where(:event_id => session[:current_event_id]).any? %>
                 <ul class="content-box-tabs">
                   <% i = 1 %>
-                  <% Hour.order(:start_date).pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq.each do |d| %>
+                  <% Hour.where(:event_id => session[:current_event_id]).order(:start_date).pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq.each do |d| %>
                     <% if flash[:schedule_start_date].nil? %>
                       <% default_tab = 1 %>
                     <% else %>
