@@ -16,4 +16,5 @@ class Attendee < ActiveRecord::Base
   validates_numericality_of :e_lada, :if => :e_lada
   validates_format_of :attendee_id, :with => /\A[A-Z]{2}\d{4}\z/, :if => :attendee_id
   validates :attendee_id, :uniqueness => { :scope => :event_id }
+  validates :a_email, :uniqueness => { :scope => :event_id }
 end
