@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource# :except => [:sign_up]
   
   def index
-    @users = User.order('first_name ASC').paginate(:per_page => 10, :page => params[:page])
+    @users = User.where(:event_id => session[:current_event_id]).order('first_name ASC').paginate(:per_page => 10, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
