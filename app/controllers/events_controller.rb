@@ -58,7 +58,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        @group = Group.create(name: t("group.main_group"), event_id: session[:current_event_id])
+        @group = Group.create(name: t("group.main_group"), event_id: params[:id])
         Subgroup.create(name: t("subgroup.main_subgroup"), leader: "Leader", subgroup_key: "S1", group_id: @group.id, event_id: session[:current_event_id])
         MailTemplate.create([
             { :name => "acknowledgment_template", :content => "", :event_id => @event.id },
