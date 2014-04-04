@@ -6,18 +6,18 @@
     <%= link_to image_tag("/assets/expomobile.png", :id => "logo", :alt => ""), "/", :style => "display: block;" %>
     <!-- Sidebar Profile links -->
     <div id="profile-links">
-      <%# if session[:current_event_id].nil? %>
-        <%#*<div id="current_time"><%= Time.now %></div>%>
-      <%# else %>
-        <%#*<div><%= link_to @event.name, @event %></div>%>
-        <%#*<div id="current_time">%>
-          <%# if current_user.role.is_super_admin? %>
-            <%#*<div id="current_time"><%= Time.now %></div>%>
-          <%# else %>
-            <%#*<div id="current_time"><%= Time.now.in_time_zone(@event.time_zone) %></div>%>
-          <%# end %>
-        <%#*</div>%>
-      <%# end %>
+      <% if session[:current_event_id].nil? %>
+        <div id="current_time"><%= Time.now %></div>
+      <% else %>
+        <div><%= link_to @event.name, @event %></div>
+        <div id="current_time">
+          <% if current_user.role.is_super_admin? %>
+            <div id="current_time"><%= Time.now %></div>
+          <% else %>
+            <div id="current_time"><%= Time.now.in_time_zone(@event.time_zone) %></div>
+          <% end %>
+        </div>
+      <% end %>
       <div><%= link_to current_user.fullname, current_user %>, <%= t(:signed_in) %></div>
       <br />
       <%= link_to t(:home), root_path %> | 
