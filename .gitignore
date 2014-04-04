@@ -25,3 +25,5 @@
 
 # Ignore the database configuration settings.
 config/database.yml
+
+massive_load_out.txt
