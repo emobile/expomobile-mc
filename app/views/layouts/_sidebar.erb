@@ -9,6 +9,7 @@
       <% if session[:current_event_id].nil? %>
         <div id="current_time"><%= Time.now %></div>
       <% else %>
+        <% @event = Event.find_by_id(session[:current_event_id]) %>
         <div><%= link_to @event.name, @event %></div>
         <div id="current_time">
           <% if current_user.role.is_super_admin? %>
