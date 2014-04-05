@@ -4,19 +4,19 @@ class CreateAttendees < ActiveRecord::Migration
       t.string :attendee_id,             :null => false
       t.string :e_name,                  :null => false
       t.string :e_tradename#,             :null => false
-      t.string :e_street,                :null => false
-      t.integer :e_ext_number,           :null => false
+      t.string :e_street#,                :null => false
+      t.integer :e_ext_number#,           :null => false
       t.string :e_int_number
-      t.string :e_colony,                :null => false
-      t.string :e_municipality,          :null => false
-      t.string :e_city,                  :null => false
+      t.string :e_colony#,                :null => false
+      t.string :e_municipality#,          :null => false
+      t.string :e_city#,                  :null => false
       t.string :e_state#,                 :null => false
-      t.string :e_zip_code,             :null => false
+      t.string :e_zip_code#,             :null => false
       t.string :e_rfc#,                   :null => false
-      t.integer :e_lada,                 :null => false
-      t.string :e_phone,                 :null => false
+      t.integer :e_lada#,                 :null => false
+      t.string :e_phone#,                 :null => false
       t.string :a_name,                  :null => false
-      t.string :a_email,                 :null => false
+      t.string :a_email#,                 :null => false
       t.string :a_chat
       t.string :a_cellphone
       t.string :a_tel_nextel
@@ -29,13 +29,13 @@ class CreateAttendees < ActiveRecord::Migration
       t.string :a_other_line
       t.string :a_web
       t.string :a_market_segment#,        :null => false
-      t.boolean :confirmed,              :null => false, :default => false
-      t.string :confirmation_token,      :null => false
-      t.references :subgroup,            :null => false
+      t.boolean :confirmed#,              :null => false, :default => false
+      t.string :confirmation_token#,      :null => false
+      t.references :subgroup#,            :null => false
       t.references :event,               :null => false
-      t.integer :a_sector,               :null => false
-      t.boolean :a_want_email,           :null => false, :default => false
-      t.string :a_job,                   :null => false
+      t.integer :a_sector#,               :null => false
+      t.boolean :a_want_email#,           :null => false, :default => false
+      t.string :a_job#,                   :null => false
       t.boolean :attended,               :null => false, :default => false
       t.datetime :attended_date
 
