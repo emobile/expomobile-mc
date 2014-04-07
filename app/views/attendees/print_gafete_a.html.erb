@@ -19,7 +19,7 @@
             <% @banner_height = @is_exhibitor? "135px": "auto" %>
             <%= image_tag @banner_url, :style => "height: #{@banner_height}; width: 100%; -ms-interpolation-mode: bicubic;" %>
             <% if @is_exhibitor %>
-              <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.sponsor").mb_chars.upcase %></span>
+              <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
             <% end %>
           </div>
           <div id="gafete-text-big" style="height: 120px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">

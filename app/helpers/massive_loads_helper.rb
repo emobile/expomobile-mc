@@ -14,42 +14,42 @@ module MassiveLoadsHelper
     inc_id = 1
 
     2.upto(s.last_row) do |line|
-#      begin
+      begin
         unless @event.attendees.blank?
           inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
         end
         attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
-        subgroup_key = "S1"#s.cell(line, "B")
-#        e_name = s.cell(line, "C")
-        e_tradename = s.cell(line, "A")#s.cell(line, "D")
-#        e_street = s.cell(line, "E")
-#        e_ext_number = s.cell(line, "F")
-#        e_int_number = s.cell(line, "G")
-#        e_colony = s.cell(line, "H")
-#        e_municipality = s.cell(line, "I")
-#        e_city = s.cell(line, "J")
-#        e_state = s.cell(line, "K") 
-#        e_zip_code = s.cell(line, "L")
-#        e_rfc = s.cell(line, "M")
-#        e_lada = s.cell(line, "N")
-#        e_phone = s.cell(line, "O")
+        subgroup_key = s.cell(line, "B")
+        e_name = s.cell(line, "C")
+        e_tradename = s.cell(line, "D")
+        e_street = s.cell(line, "E")
+        e_ext_number = s.cell(line, "F")
+        e_int_number = s.cell(line, "G")
+        e_colony = s.cell(line, "H")
+        e_municipality = s.cell(line, "I")
+        e_city = s.cell(line, "J")
+        e_state = s.cell(line, "K") 
+        e_zip_code = s.cell(line, "L")
+        e_rfc = s.cell(line, "M")
+        e_lada = s.cell(line, "N")
+        e_phone = s.cell(line, "O")
         a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
-#        a_email = s.cell(line, "Q")
+        a_email = s.cell(line, "Q")
         a_chat = s.cell(line, "R")
-#        a_cellphone = s.cell(line, "S")
-#        a_tel_nextel = s.cell(line, "T")
-#        a_radio_nextel = s.cell(line, "U")
-#        a_is_director = s.cell(line, "V")
-#        a_platform = s.cell(line, "W")
-#        e_main_line = s.cell(line, "X")
-#        a_sec_line = s.cell(line, "Y")
-#        a_num_employees = s.cell(line, "Z")
-#        a_other_line = s.cell(line, "AA")
+        a_cellphone = s.cell(line, "S")
+        a_tel_nextel = s.cell(line, "T")
+        a_radio_nextel = s.cell(line, "U")
+        a_is_director = s.cell(line, "V")
+        a_platform = s.cell(line, "W")
+        e_main_line = s.cell(line, "X")
+        a_sec_line = s.cell(line, "Y")
+        a_num_employees = s.cell(line, "Z")
+        a_other_line = s.cell(line, "AA")
         a_web = s.cell(line, "AB")
-#        a_market_segment = s.cell(line, "AC")
-#        a_sector =  s.cell(line, "AD")
-#        a_want_email =  s.cell(line, "AE")
-#        a_job =  s.cell(line, "AF")
+        a_market_segment = s.cell(line, "AC")
+        a_sector =  s.cell(line, "AD")
+        a_want_email =  s.cell(line, "AE")
+        a_job =  s.cell(line, "AF")
         e_name = "N/A" if e_name.nil?
         e_tradename = "N/A" if e_tradename.nil?
         e_street = "N/A" if e_street.nil?
@@ -95,14 +95,14 @@ module MassiveLoadsHelper
         if attendee_id[0, 2] == @event.token_for_id
           @attendee = @event.attendees.new(subgroup_id: subgroup_id, e_name: e_name, e_tradename: e_tradename, e_street: e_street, e_ext_number: e_ext_number, e_int_number: e_int_number, e_colony: e_colony, e_municipality: e_municipality, e_city: e_city, e_state: e_state, e_zip_code: e_zip_code, e_rfc: e_rfc, e_lada: e_lada, e_phone: e_phone, a_name: a_name, a_email: a_email, a_chat: a_chat, a_cellphone: a_cellphone, a_tel_nextel: a_tel_nextel, a_radio_nextel: a_radio_nextel, a_is_director: a_is_director, a_platform: a_platform, e_main_line: e_main_line, a_sec_line: a_sec_line, a_num_employees: a_num_employees, a_other_line: a_other_line, a_web: a_web, a_market_segment: a_market_segment, attendee_id: attendee_id, confirmation_token: Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join, a_sector: a_sector, a_want_email: a_want_email, a_job: a_job)
           if @attendee.save
-            #AttendeeMailer.welcome_email(@attendee).deliver!
+            AttendeeMailer.welcome_email(@attendee).deliver!
           else
             out.puts @attendee.inspect
           end
         end
-#      rescue
-#        @has_error = true
-#      end
+      rescue
+        @has_error = true
+      end
     end
     out.close
   end
