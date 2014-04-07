@@ -11,7 +11,7 @@
       <% if @event.nil? %>
         <%= "EXPOMOBILE: " + eval("t(:" + controller_name + ")") %>
       <% else %>
-        <%= #{@event.name}" %>
+        <%= "#{@event.name}" %>
       <% end %>
     </title>
     <%= stylesheet_link_tag "application", :media => "all" %>
