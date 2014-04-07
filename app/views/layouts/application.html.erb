@@ -8,10 +8,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
     <title>
+      <% @event = Event.find_by_id(session[:current_event_id]) unless session[:current_event_id].nil? %>
       <% if @event.nil? %>
         <%= "EXPOMOBILE: " + eval("t(:" + controller_name + ")") %>
       <% else %>
-        <%= "#{@event.name}" %>
+        <%= "#{@event.name}: " + eval("t(:" + controller_name + ")") %>
       <% end %>
     </title>
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -36,7 +37,6 @@
   </head>
 
   <body>
-    <% @event = Event.find_by_id(session[:current_event_id]) unless session[:current_event_id].nil? %>
     <div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
       <%= render "layouts/sidebar" %>
       <div id="main-content"> <!-- Main Content Section with everything -->
