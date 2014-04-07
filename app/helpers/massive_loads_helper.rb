@@ -14,7 +14,7 @@ module MassiveLoadsHelper
     inc_id = 1
 
     2.upto(s.last_row) do |line|
-      begin
+#      begin
         unless @event.attendees.blank?
           inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
         end
@@ -35,7 +35,7 @@ module MassiveLoadsHelper
 #        e_phone = s.cell(line, "O")
         a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
 #        a_email = s.cell(line, "Q")
-#        a_chat = s.cell(line, "R")
+        a_chat = s.cell(line, "R")
 #        a_cellphone = s.cell(line, "S")
 #        a_tel_nextel = s.cell(line, "T")
 #        a_radio_nextel = s.cell(line, "U")
@@ -45,7 +45,7 @@ module MassiveLoadsHelper
 #        a_sec_line = s.cell(line, "Y")
 #        a_num_employees = s.cell(line, "Z")
 #        a_other_line = s.cell(line, "AA")
-#        a_web = s.cell(line, "AB")
+        a_web = s.cell(line, "AB")
 #        a_market_segment = s.cell(line, "AC")
 #        a_sector =  s.cell(line, "AD")
 #        a_want_email =  s.cell(line, "AE")
@@ -100,9 +100,9 @@ module MassiveLoadsHelper
             out.puts @attendee.inspect
           end
         end
-      rescue
-        @has_error = true
-      end
+#      rescue
+#        @has_error = true
+#      end
     end
     out.close
   end
