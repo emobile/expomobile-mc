@@ -14,7 +14,7 @@ module MassiveLoadsHelper
     inc_id = 1
 
     2.upto(s.last_row) do |line|
-      begin
+      #begin
         unless @event.attendees.blank?
           inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
         end
@@ -100,9 +100,9 @@ module MassiveLoadsHelper
             out.puts @attendee.inspect
           end
         end
-      rescue
-        @has_error = true
-      end
+      #rescue
+      #  @has_error = true
+      #end
     end
     out.close
   end
