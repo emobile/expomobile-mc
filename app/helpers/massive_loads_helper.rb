@@ -19,9 +19,9 @@ module MassiveLoadsHelper
           inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
         end
         attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
-        subgroup_key = s.cell(line, "B")
-        e_name = s.cell(line, "C")
-        e_tradename = s.cell(line, "D")
+        subgroup_key = "S1"#s.cell(line, "B")
+        #e_name = s.cell(line, "C")
+        e_tradename = s.cell(line, "A")#s.cell(line, "D")
         e_street = s.cell(line, "E")
         e_ext_number = s.cell(line, "F")
         e_int_number = s.cell(line, "G")

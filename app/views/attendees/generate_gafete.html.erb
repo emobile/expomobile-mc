@@ -1,5 +1,16 @@
 <script type="text/javascript">
   $(function() {
+    $(".gafete-logo").css({visibility: "hidden"});
+    $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "hidden"});
+    $("#gafete-text, #gafete-text-big").css({border: "none", "padding-top": "1px"});
+    $(".generate-gafete").each(function() {
+      var generate_gafete_href = $(this).attr("href").replace("&with_logos=true", "&with_logos=false");
+      $(this).attr("href", generate_gafete_href);
+    });
+    $("#gafete-logo-first-img").css({"max-width": "none", height: "71px"});
+    $("#gafete-logo-first-img-big").css({"max-width": "none", height: "50px"});
+    var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=true", "&with_qr_code=false");
+    $(".generate-gafete").attr("href", generate_gafete_href);
     $("#with_logos").change(function() {
       if ($(this).prop("checked")) {
         $(".gafete-logo").css({visibility: "visible"});
@@ -26,7 +37,7 @@
     $("#with_qr").change(function() {
       if ($(this).prop("checked")) {
         if ($("#with_logos").prop("checked")) {
-          $("#gafete-qr-img, #gafete-qr-img-big").css({display: "block"});
+          $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "visible"});
           $("#gafete-logo-first-img").css({"max-width": "200px", height: "auto"});
           $("#gafete-logo-first-img-big").css({"max-width": "215px", height: "auto"});
           var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=false", "&with_qr_code=true");
@@ -35,7 +46,7 @@
       }
       else {
         if ($("#with_logos").prop("checked")) {
-          $("#gafete-qr-img, #gafete-qr-img-big").css({display: "none"});
+          $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "hidden"});
           $("#gafete-logo-first-img").css({"max-width": "none", height: "71px"});
           $("#gafete-logo-first-img-big").css({"max-width": "none", height: "50px"});
           var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=true", "&with_qr_code=false");
@@ -84,8 +95,8 @@
 </script>
 <h2 style="text-align: center; margin-bottom: 20px;"><%= "#{t("atten.generate_gafete")} gafete" %></h2>
 <%= label_tag t("atten.with_logos"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
-<%= check_box_tag "with_logos", nil, true, :style => "margin-right: 15px;" %>
-<%= label_tag t("atten.with_qr_code"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
+<%= check_box_tag "with_logos", nil, false, :style => "margin-right: 15px;" %>
+<%= label_tag t("atten.with_qr_code"), false, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
 <%= check_box_tag "with_qr", nil, true, :style => "margin-right: 15px;" %>
 <%= label_tag t("atten.with_conferences"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
 <%= check_box_tag "with_conferences", nil, true, :style => "margin-right: 15px;" %>

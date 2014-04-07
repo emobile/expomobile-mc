@@ -10,8 +10,8 @@ class Sponsor < ActiveRecord::Base
   
   before_save :name_to_upcase
   
-  #validates :name, :phone, :email, :social_reason, :contact, :job, :event_id, :presence => true
-  #validates :name, :uniqueness => true
+  validates :name, :phone, :email, :social_reason, :contact, :job, :event_id, :presence => true
+  validates :name, :uniqueness => true
   
   private
   
