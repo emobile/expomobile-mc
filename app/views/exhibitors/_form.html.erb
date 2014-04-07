@@ -32,22 +32,22 @@
 
     <p class="field">
       <%= f.label t("exhibitor.contact") %>
-      <%= f.text_field :contact, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :contact, :class=>"text-input medium-input"#, :required => true %><span class="required">*</span>
     </p>
 
     <p class="field">
       <%= f.label t("exhibitor.email") %>
-      <%= f.email_field :email, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.email_field :email, :class=>"text-input medium-input"#, :required => true %><span class="required">*</span>
     </p>
 
     <p class="field">
       <%= f.label t("exhibitor.job") %>
-      <%= f.text_field :job, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :job, :class=>"text-input small-input"#, :required => true %><span class="required">*</span>
     </p>
 
     <p class="field">
       <%= f.label t("exhibitor.phone") %>
-      <%= f.text_field :phone, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :phone, :class=>"text-input small-input"#, :required => true %><span class="required">*</span>
     </p>
   </fieldset>
   <fieldset class="column-right">
@@ -68,7 +68,7 @@
 
     <p class="field">
       <%= f.label t("exhibitor.work_zip") %>
-      <%= f.text_field :work_zip, :class=>"text-input small-input", :style => "width: 10% !important;", :required => true, :pattern => "[0-9]{5}" %><span class="required">*</span>
+      <%= f.text_field :work_zip, :class=>"text-input small-input", :style => "width: 10% !important;"#, :required => true, :pattern => "[0-9]{5}" %><span class="required">*</span>
     </p>
 
     <p class="field">
