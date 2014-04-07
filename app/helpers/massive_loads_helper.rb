@@ -10,7 +10,7 @@ module MassiveLoadsHelper
     else
       s = Roo::Excelx.new(file_name)
     end
-    out = File.open "massive_load_out.txt", "a"
+    out = File.open "massive_load_out.txt", "w"
     inc_id = 1
 
     2.upto(s.last_row) do |line|
@@ -20,36 +20,36 @@ module MassiveLoadsHelper
         end
         attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
         subgroup_key = "S1"#s.cell(line, "B")
-        #e_name = s.cell(line, "C")
+#        e_name = s.cell(line, "C")
         e_tradename = s.cell(line, "A")#s.cell(line, "D")
-        e_street = s.cell(line, "E")
-        e_ext_number = s.cell(line, "F")
-        e_int_number = s.cell(line, "G")
-        e_colony = s.cell(line, "H")
-        e_municipality = s.cell(line, "I")
-        e_city = s.cell(line, "J")
-        e_state = s.cell(line, "K") 
-        e_zip_code = s.cell(line, "L")
-        e_rfc = s.cell(line, "M")
-        e_lada = s.cell(line, "N")
-        e_phone = s.cell(line, "O")
+#        e_street = s.cell(line, "E")
+#        e_ext_number = s.cell(line, "F")
+#        e_int_number = s.cell(line, "G")
+#        e_colony = s.cell(line, "H")
+#        e_municipality = s.cell(line, "I")
+#        e_city = s.cell(line, "J")
+#        e_state = s.cell(line, "K") 
+#        e_zip_code = s.cell(line, "L")
+#        e_rfc = s.cell(line, "M")
+#        e_lada = s.cell(line, "N")
+#        e_phone = s.cell(line, "O")
         a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
-        a_email = s.cell(line, "Q")
-        a_chat = s.cell(line, "R")
-        a_cellphone = s.cell(line, "S")
-        a_tel_nextel = s.cell(line, "T")
-        a_radio_nextel = s.cell(line, "U")
-        a_is_director = s.cell(line, "V")
-        a_platform = s.cell(line, "W")
-        e_main_line = s.cell(line, "X")
-        a_sec_line = s.cell(line, "Y")
-        a_num_employees = s.cell(line, "Z")
-        a_other_line = s.cell(line, "AA")
-        a_web = s.cell(line, "AB")
-        a_market_segment = s.cell(line, "AC")
-        a_sector =  s.cell(line, "AD")
-        a_want_email =  s.cell(line, "AE")
-        a_job =  s.cell(line, "AF")
+#        a_email = s.cell(line, "Q")
+#        a_chat = s.cell(line, "R")
+#        a_cellphone = s.cell(line, "S")
+#        a_tel_nextel = s.cell(line, "T")
+#        a_radio_nextel = s.cell(line, "U")
+#        a_is_director = s.cell(line, "V")
+#        a_platform = s.cell(line, "W")
+#        e_main_line = s.cell(line, "X")
+#        a_sec_line = s.cell(line, "Y")
+#        a_num_employees = s.cell(line, "Z")
+#        a_other_line = s.cell(line, "AA")
+#        a_web = s.cell(line, "AB")
+#        a_market_segment = s.cell(line, "AC")
+#        a_sector =  s.cell(line, "AD")
+#        a_want_email =  s.cell(line, "AE")
+#        a_job =  s.cell(line, "AF")
         e_name = "N/A" if e_name.nil?
         e_tradename = "N/A" if e_tradename.nil?
         e_street = "N/A" if e_street.nil?
