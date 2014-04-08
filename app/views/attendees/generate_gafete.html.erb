@@ -1,12 +1,23 @@
 <script type="text/javascript">
   $(function() {
+    $(".gafete-logo").css({visibility: "hidden"});
+    $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "hidden"});
+    $("#gafete-text, #gafete-text-big").css({border: "none", "padding-top": "1px"});
+    $(".generate-gafete").each(function() {
+      var generate_gafete_href = $(this).attr("href").replace("&with_logos=true", "&with_logos=false");
+      $(this).attr("href", generate_gafete_href);
+    });
+    $("#gafete-logo-first-img").css({"max-width": "none", height: "71px"});
+    $("#gafete-logo-first-img-big").css({"max-width": "none", height: "50px"});
+    var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=true", "&with_qr_code=false");
+    $(".generate-gafete").attr("href", generate_gafete_href);
     $("#with_logos").change(function() {
       if ($(this).prop("checked")) {
         $(".gafete-logo").css({visibility: "visible"});
         if ($("#with_qr").prop("checked")) {
-          $("#gafete-qr-img").css({visibility: "visible"});
+          $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "visible"});
         }
-        $("#gafete-text").css({"border-top": "1px solid #000", "border-bottom": "1px solid #000", "padding-top": "0"});
+        $("#gafete-text, #gafete-text-big").css({"border-top": "1px solid #000", "border-bottom": "1px solid #000", "padding-top": "0"});
         $(".generate-gafete").each(function() {
           var generate_gafete_href = $(this).attr("href").replace("&with_logos=false", "&with_logos=true");
           $(this).attr("href", generate_gafete_href);
@@ -14,8 +25,8 @@
       }
       else {
         $(".gafete-logo").css({visibility: "hidden"});
-        $("#gafete-qr-img").css({visibility: "hidden"});
-        $("#gafete-text").css({border: "none", "padding-top": "1px"});
+        $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "hidden"});
+        $("#gafete-text, #gafete-text-big").css({border: "none", "padding-top": "1px"});
         $(".generate-gafete").each(function() {
           var generate_gafete_href = $(this).attr("href").replace("&with_logos=true", "&with_logos=false");
           $(this).attr("href", generate_gafete_href);
@@ -26,14 +37,18 @@
     $("#with_qr").change(function() {
       if ($(this).prop("checked")) {
         if ($("#with_logos").prop("checked")) {
-          $("#gafete-qr-img").css({visibility: "visible"});
+          $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "visible"});
+          $("#gafete-logo-first-img").css({"max-width": "200px", height: "auto"});
+          $("#gafete-logo-first-img-big").css({"max-width": "215px", height: "auto"});
           var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=false", "&with_qr_code=true");
           $(".generate-gafete").attr("href", generate_gafete_href);
         }
       }
       else {
         if ($("#with_logos").prop("checked")) {
-          $("#gafete-qr-img").css({visibility: "hidden"});
+          $("#gafete-qr-img, #gafete-qr-img-big").css({visibility: "hidden"});
+          $("#gafete-logo-first-img").css({"max-width": "none", height: "71px"});
+          $("#gafete-logo-first-img-big").css({"max-width": "none", height: "50px"});
           var generate_gafete_href = $("#qr-link").attr("href").replace("&with_qr_code=true", "&with_qr_code=false");
           $(".generate-gafete").attr("href", generate_gafete_href);
         }
@@ -42,54 +57,75 @@
 
     $("#with_conferences").change(function() {
       if ($(this).prop("checked")) {
-        $("#conferences").show();
+        $("#conferences, #conferences-big").show();
       }
       else {
-        $("#conferences").hide();
+        $("#conferences, #conferences-big").hide();
       }
     });
 
     $("#with_diary").change(function() {
       if ($(this).prop("checked")) {
-        $("#diary").show();
+        $("#diary, #diary-big").show();
       }
       else {
-        $("#diary").hide();
+        $("#diary, #diary-big").hide();
+      }
+    });
+
+    $("#gafete_big").change(function() {
+      if ($(this).prop("checked")) {
+        $(".small").hide();
+        $(".big").show();
+        $(".generate-gafete").each(function() {
+          var generate_gafete_href = $(this).attr("href").replace("&gafete_big=false", "&gafete_big=true").replace("?gafete_big=false", "?gafete_big=true");
+          $(this).attr("href", generate_gafete_href);
+        });
+      }
+      else {
+        $(".big").hide();
+        $(".small").show();
+        $(".generate-gafete").each(function() {
+          var generate_gafete_href = $(this).attr("href").replace("&gafete_big=true", "&gafete_big=false").replace("?gafete_big=true", "?gafete_big=false");
+          $(this).attr("href", generate_gafete_href);
+        });
       }
     });
   });
 </script>
 <h2 style="text-align: center; margin-bottom: 20px;"><%= "#{t("atten.generate_gafete")} gafete" %></h2>
 <%= label_tag t("atten.with_logos"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
-<%= check_box_tag "with_logos", nil, true, :style => "margin-right: 15px;" %>
-<%#= label_tag t("atten.with_qr_code"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
-<%#= check_box_tag "with_qr", nil, true, :style => "margin-right: 15px;" %>
+<%= check_box_tag "with_logos", nil, false, :style => "margin-right: 15px;" %>
+<%= label_tag t("atten.with_qr_code"), false, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
+<%= check_box_tag "with_qr", nil, false, :style => "margin-right: 15px;" %>
 <%= label_tag t("atten.with_conferences"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
 <%= check_box_tag "with_conferences", nil, true, :style => "margin-right: 15px;" %>
 <%= label_tag t("atten.with_diary"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
 <%= check_box_tag "with_diary", nil, true, :style => "margin-right: 15px;" %>
+<%= label_tag t("atten.gafete_big"), nil, :style => "font-size: 14px; font-weight: bold; color: #000;" %>
+<%= check_box_tag "gafete_big", nil, false, :style => "margin-right: 15px;" %>
 <div style="margin: 15px 0px; font-size: 14px; color: #000;">
   <span style="font-weight: bold;"><%= t(:note) %>:</span><span> <%= t(:gafete_note) %>.</span>
 </div>
 <% @logo_url = @event.logo.url %>
 <% @banner_url = @event.banner.url %>
-<div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px; border: 1px solid #000; color: #000;">
-  <div class="gafete-logo" style="height: 85px; width: 305px; border-bottom: 1px solid #000; visibility: visible;" id="gafete-logo-first">
-    <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img" %>
-    <%#= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
+<div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px; border: 1px solid #000; color: #000;" class="small">
+  <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible;" id="gafete-logo-first">
+    <%= image_tag @logo_url, :style => "height: auto; max-width: 200px; max-height: 71px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img" %>
+    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
   </div>
-  <div class="gafete-logo" style="height: 135px; width: 305px; text-align: center; visibility: visible;">
+  <div class="gafete-logo" style="height: 135px; text-align: center; visibility: visible;">
     <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
     <%= image_tag @banner_url, :height => @banner_height, :width => @banner_width, :style => "height: #{@banner_height}px; width: #{@banner_width}px; -ms-interpolation-mode: bicubic; margin: 5px;" %>
     <% if @is_exhibitor %>
       <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
     <% end %>
   </div>
-  <div id="gafete-text" style="height: 115px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 20px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
-          <span style="font-weight: bold; font-size: 20px; top: 15px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
-          <span style="font-size: 20px; top: 15px; position: relative;"><%= @e_tradename %></span>
+  <div id="gafete-text" style="height: 115px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
+    <span style="font-weight: bold; font-size: 24px; top: 15px; position: relative; left: -7px;"><%= @a_name.mb_chars.upcase %></span><br/>
+    <span style="font-size: 24px; top: 15px; position: relative; left: -7px;"><%= @e_tradename %></span>
   </div>
-  <div class="gafete-logo" style="height: 80px; width: 305px; visibility: visible;">
+  <div class="gafete-logo" style="height: 80px; visibility: visible;">
     <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
     <div style="float: right; display: inline-block; margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
       <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
@@ -99,20 +135,47 @@
     </div>
   </div>
 </div>
-<div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
-  <%= link_to t("atten.print_gafete"), attendees_print_gafete_a_path(:a_name => @a_name, :e_tradename => @e_tradename, :e_phone => @e_phone, :a_email => @a_email, :e_address => @e_address, :a_web => @a_web, :with_logos => "true", :with_qr_code => "true", :is_exhibitor => @is_exhibitor? "true": "false"), :class => "button generate-gafete", :target => "_blank", :id => "qr-link" %>
+<div id="gafete-big" style="width: 8.5cm; height: 12cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
+  <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible; text-align: center;" id="gafete-logo-first-big">
+    <%= image_tag @logo_url, :style => "height: auto; max-width: 215px; max-height: 71px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
+    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
+  </div>
+  <div class="gafete-logo" style="height: 135px; text-align: center; visibility: visible;">
+    <% @banner_height = @is_exhibitor? "135px": "auto" %>
+    <%= image_tag @banner_url, :style => "height: #{@banner_height}; width: 100%; -ms-interpolation-mode: bicubic;" %>
+    <% if @is_exhibitor %>
+      <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
+    <% end %>
+  </div>
+  <div id="gafete-text-big" style="height: 120px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
+    <span style="font-weight: bold; font-size: 24px; top: 10px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
+    <span style="font-size: 24px; top: 10px; position: relative;"><%= @e_tradename %></span>
+  </div>
+  <div class="gafete-logo" style="height: 112px; visibility: visible; text-align: center;">
+    <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
+    <div style="margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+      <span style="margin-right: 5px;"><b>Web:</b> vinculotic.com</span>
+      <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+      <span style="margin-right: 5px;">VinculoTIC</span>
+      <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+      <span>@vinculotic</span>
+    </div>
+  </div>
 </div>
-<div id="conferences">
+<div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
+  <%= link_to t("atten.print_gafete"), attendees_print_gafete_a_path(:a_name => @a_name, :e_tradename => @e_tradename, :e_phone => @e_phone, :a_email => @a_email, :e_address => @e_address, :a_web => @a_web, :with_logos => "true", :with_qr_code => "true", :is_exhibitor => @is_exhibitor? "true": "false", :gafete_big => "false"), :class => "button generate-gafete", :target => "_blank", :id => "qr-link" %>
+</div>
+<div id="conferences" class="small">
   <h3 style="margin-bottom: 20px;"><%= t(:conferences) %></h3>
   <% @offset = 0 %>
   <% until @conferences.blank? %>
     <div style="display: inline-block; margin: 0 30px;">
-      <div style="width: 305px; height: 415px; margin-bottom: 30px; border: 1px solid #000; padding: 0 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #000;">
+      <div style="width: 305px; height: 415px; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible;">
           <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @conferences.each do |conference| %>
-          <div class="conference" style="padding: 10px 0px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
+          <div class="conference" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
             <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
             <div class="conferencist-photo" style="width: 40px; display: inline-block;">
               <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
@@ -127,24 +190,57 @@
         <% end %>
       </div>
       <div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
-        <%= link_to t("atten.print_gafete"), attendees_print_gafete_b_path(:offset => @offset, :with_logos => "true"), :class => "button generate-gafete", :target => "_blank" %>
+        <%= link_to t("atten.print_gafete"), attendees_print_gafete_b_path(:offset => @offset, :with_logos => "true", :gafete_big => "false"), :class => "button generate-gafete", :target => "_blank" %>
       </div>
     </div>
     <% @offset += 5 %>
     <% @conferences = @event.conferences.order(:start_date).limit(5).offset(@offset) %>
   <% end %>
 </div>
-<div id="diary">
+<% @conferences = @event.conferences.order(:start_date).limit(5) %>
+<div id="conferences-big" class="big" style="display: none;">
+  <h3 style="margin-bottom: 20px;"><%= t(:conferences) %></h3>
+  <% @offset = 0 %>
+  <% until @conferences.blank? %>
+    <div style="display: inline-block; margin: 0 30px;">
+      <div style="width: 8.5cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 13px; color: #000;">
+        <div class="gafete-logo" style="height: 85px; visibility: visible; text-align: center;">
+          <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
+        </div>
+        <% @conferences.each do |conference| %>
+          <div class="conference" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 12px; vertical-align: top;">
+            <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{conference.start_date.strftime("%I:%M%p")} - #{conference.end_date.strftime("%I:%M%p")}" %></div>
+            <div class="conferencist-photo" style="width: 50px; display: inline-block;">
+              <% if conference.photo.url(:thumb) != "/assets/missing.jpg" %>
+                <%= image_tag conference.photo.url(:thumb), :width => 50, :style => "width: 50px; -ms-interpolation-mode: bicubic;" %>
+              <% end %>
+            </div>
+            <div class="conference-details" style="width: 160px; padding-left: 5px; display: inline-block;">
+              <span style="font-weight: bold;"><%= conference.name %></span><br/>
+              <span style="color: #c00205;"><%= conference.conferencist %></span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
+        <%= link_to t("atten.print_gafete"), attendees_print_gafete_b_path(:offset => @offset, :with_logos => "true", :gafete_big => "false"), :class => "button generate-gafete", :target => "_blank" %>
+      </div>
+    </div>
+    <% @offset += 5 %>
+    <% @conferences = @event.conferences.order(:start_date).limit(5).offset(@offset) %>
+  <% end %>
+</div>
+<div id="diary" class="small">
   <h3 style="margin-bottom: 20px;"><%= t("activerecord.models.diary").capitalize %></h3>
   <% @offset = 0 %>
   <% until @diaries.blank? %>
     <div style="display: inline-block; margin: 0 30px;">
-      <div style="width: 305px; height: 415px; margin-bottom: 30px; border: 1px solid #000; padding: 0 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #000;">
+      <div style="width: 305px; height: 415px; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #000;">
         <div class="gafete-logo" style="height: 85px; visibility: visible;">
           <%= image_tag @logo_url, :height => 65, :style => "height: 65px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
         </div>
         <% @diaries.each do |diary| %>
-          <div class="diary" style="padding: 10px 0px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
+          <div class="diary" style="margin: 10px; border-bottom: 1px solid #aaa; font-size: 10px; vertical-align: top;">
             <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
             <div class="diary-details" style="width: 150px; padding-left: 10px; display: inline-block;">
               <span style="font-weight: bold;"><%= diary.description %></span><br/>
@@ -154,7 +250,35 @@
         <% end %>
       </div>
       <div id="buttons" style="width: 290px; margin: 0 auto 30px; text-align: center;">
-        <%= link_to t("atten.print_gafete"), attendees_print_gafete_c_path(:offset => @offset, :with_logos => "true"), :class => "button generate-gafete", :target => "_blank" %>
+        <%= link_to t("atten.print_gafete"), attendees_print_gafete_c_path(:offset => @offset, :with_logos => "true", :gafete_big => "false"), :class => "button generate-gafete", :target => "_blank" %>
+      </div>
+    </div>
+    <% @offset += 5 %>
+    <% @diaries = @event.diaries.order(:event_date).limit(5).offset(@offset) %>
+  <% end %>
+</div>
+<% @diaries = @event.diaries.order(:event_date).limit(5) %>
+<div id="diary-big" class="big" style="display: none;">
+  <h3 style="margin-bottom: 20px;"><%= t("activerecord.models.diary").capitalize %></h3>
+  <% @offset = 0 %>
+  <% until @diaries.blank? %>
+    <div style="display: inline-block; margin: 0 30px;">
+      <div style="width: 8.5cm; height: 12cm; margin-bottom: 30px; border: 1px solid #000; font-family: Arial, Helvetica, sans-serif; line-height: 20px; color: #000;">
+        <div class="gafete-logo" style="height: 85px; visibility: visible; text-align: center;">
+          <%= image_tag @logo_url, :height => 60, :style => "height: 60px; -ms-interpolation-mode: bicubic; margin: 7px;" %>
+        </div>
+        <% @diaries.each do |diary| %>
+          <div class="diary" style="margin: 5px; border-bottom: 1px solid #aaa; font-size: 13px; vertical-align: top;">
+            <div class="hour" style="display: inline-block; width: 70px; font-size: 8px;"><%= "#{diary.event_date.strftime("%I:%M%p")} - #{diary.event_end_date.strftime("%I:%M%p")}" %></div>
+            <div class="diary-details" style="width: 210px; padding-left: 5px; display: inline-block;">
+              <span style="font-weight: bold;"><%= diary.description %></span><br/>
+              <span style="color: #c00205;"><%= diary.place %></span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div id="buttons" style="width: 270px; margin: 0 auto 30px; text-align: center;">
+        <%= link_to t("atten.print_gafete"), attendees_print_gafete_c_path(:offset => @offset, :with_logos => "true", :gafete_big => "false"), :class => "button generate-gafete", :target => "_blank" %>
       </div>
     </div>
     <% @offset += 5 %>

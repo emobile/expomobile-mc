@@ -242,6 +242,7 @@ en:
       street: "STREET"
       tradename: "TRADENAME"
       zip_code: "ZIP CODE"
+    gafete_big: "Change size to 3.3in x 4.7in"
     gafete: "Gafete"
     generate_gafete: "Generate"
     id_ok: "You have provided your ID correctly"
@@ -349,7 +350,7 @@ en:
   expositions: "Expositions"
   
   errors:
-    atten_email_already_sended: "Your PIN was already sent to your email, please wait at least 5 minutes to request again"
+    atten_email_already_sended: "Your PIN was already sent to your email, it can't be requested again"
     atten_email_dont_sended: "Your PIN can not be sent to your email"
     atten_email_maximum_sends: "Maximum NIP requests is exceeded"
     atten_invalid_id: "You did not provide your ID correctly"
@@ -375,6 +376,8 @@ en:
       facetoface: "This option also enables sponsors and allows attendees to have face to face dates with exhibitors and sponsors of the event."
       offert: "This option allows you to manage a catalog of exhibitors offers."
       workshop: "This option allows to manage workshops, workshop attendances and also have access to stadistical data of attendances."
+    e_facebook: "Facebook"
+    e_twitter: "Twitter"
     email: "Email"
     end_date: "End date"
     enterprise: "Enterprise"

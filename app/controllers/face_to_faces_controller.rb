@@ -93,14 +93,14 @@ class FaceToFacesController < ApplicationController
   end
   
   def get_interviewee
-    @interviewee = Sponsor.where(:name => params[:name]).select([:contact, :job]).first
-    @interviewee = Exhibitor.where(:name => params[:name]).select([:contact, :job]).first if @interviewee.blank?
+    @interviewee = Sponsor.where(:event_id => session[:current_event_id], :name => params[:name]).select([:contact, :job]).first
+    @interviewee = Exhibitor.where(:event_id => session[:current_event_id], :name => params[:name]).select([:contact, :job]).first if @interviewee.blank?
     
     render json: @interviewee
   end
   
   def generate_diary
-    @face_to_faces = FaceToFace.where(:int_contact => params[:int_contact])
+    @face_to_faces = FaceToFace.where(:event_id => session[:current_event_id], :int_contact => params[:int_contact])
     
     render layout: false
   end

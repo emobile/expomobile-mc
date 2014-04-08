@@ -1,5 +1,6 @@
 class MassiveLoadsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :load_event, :only => [:create]
   load_and_authorize_resource
   include MassiveLoadsHelper
 
@@ -72,4 +73,9 @@ class MassiveLoadsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def load_event
+    @event = Event.find_by_id(session[:current_event_id])
+  end
+  
 end

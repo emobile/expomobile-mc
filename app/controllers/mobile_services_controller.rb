@@ -27,43 +27,44 @@ class MobileServicesController < ApplicationController
           end
         end
       
-#        @times_sent = (@nip.times_sent.nil?) ? 0: @nip.times_sent
-#      
-#        if @times_sent < 10
-          @can_send_email = false
-          @can_send_email = ((Time.now - @nip.sent) >= 0) unless @nip.sent.nil?
+        #        @times_sent = (@nip.times_sent.nil?) ? 0: @nip.times_sent
+        #      
+        #        if @times_sent < 10
+        #@can_send_email = false
+        #@can_send_email = ((Time.now - @nip.sent) >= 0) unless @nip.sent.nil?
       
-          if @nip.sent.nil? || @can_send_email
-            @name = @attendee.a_name
-            @email = @attendee.a_email
-            @subgroup_name = @attendee.subgroup.name
-            @group_name = @attendee.subgroup.group.name
-            @subgroup_leader = @attendee.subgroup.leader
-            @domain = @email.gsub(/^.*@/, "")
-            @enterprise = @attendee.e_name
-            @phone = @attendee.e_phone
-            @address = "#{@attendee.e_street} #{@attendee.e_ext_number} #{@attendee.e_colony}"
-    
-            if !@attendee.a_email.nil?
-            
-              if AttendeeMailer.send_nip(@attendee, @nip).deliver!
-                @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
-                @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
-              else
-                @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
-              end
-              
-            else
-              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_not_registered"), sent: "no" }
-            end
-      
-          else
-            @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "no" }
-          end
+        @name = @attendee.a_name
+        @email = @attendee.a_email
+        @subgroup_name = @attendee.subgroup.name
+        @group_name = @attendee.subgroup.group.name
+        @subgroup_leader = @attendee.subgroup.leader
+        @domain = @email.gsub(/^.*@/, "")
+        @enterprise = @attendee.e_name
+        @phone = @attendee.e_phone
+        @address = "#{@attendee.e_street} #{@attendee.e_ext_number} #{@attendee.e_colony}"
         
-#        else
-#          @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_maximum_sends"), sent: "no" }
-#        end
+        if @nip.sent.nil?# || @can_send_email
+    
+          if !@attendee.a_email.nil?
+            
+            if AttendeeMailer.send_nip(@attendee, @nip).deliver!
+              @nip.update_attributes(:sent => Time.now, :times_sent => (@nip.times_sent.nil?) ? 1: @nip.times_sent += 1 )
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("atten.nip_sended", :email => @email), sent: "ok" }
+            else
+              @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_dont_sended"), sent: "no" }
+            end
+              
+          else
+            @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_not_registered"), sent: "no" }
+          end
+      
+        else
+          @msg = { name: @name, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_already_sended"), sent: "already" }
+        end
+        
+        #        else
+        #          @msg = { name: nil, email: @email, subgroup_name: @subgroup_name, group_name: @group_name, subgroup_leader: @subgroup_leader, domain: @domain, enterprise: @enterprise, phone: @phone, address: @address, msg: t("errors.atten_email_maximum_sends"), sent: "no" }
+        #        end
     
       else
         @msg = { name: nil, email: nil, subgroup_name: nil, group_name: nil, subgroup_leader: nil, domain: nil, enterprise: nil, phone: nil, address: nil, msg: t("errors.atten_not_exists"), sent: "no" }
@@ -370,14 +371,13 @@ class MobileServicesController < ApplicationController
   end
   
   def index_face_to_face_days
-    
+
     if !session[:attendee_id].blank?
       @attendee = Attendee.find_by_id(session[:attendee_id])
       unless @attendee.nil?
         @days = FaceToFace.where(:attendee_id => session[:attendee_id]).pluck(:start_date).map{ |f| f.strftime("%d/%m/%Y") }.uniq
         render json: @days
       end
-      
     end
     
   end

@@ -6,7 +6,7 @@
     <%= link_to image_tag("/assets/expomobile.png", :id => "logo", :alt => ""), "/", :style => "display: block;" %>
     <!-- Sidebar Profile links -->
     <div id="profile-links">
-      <% if @event.nil? %>
+      <% if session[:current_event_id].nil? %>
         <div id="current_time"><%= Time.now %></div>
       <% else %>
         <div><%= link_to @event.name, @event %></div>
@@ -25,15 +25,15 @@
     </div>
     <ul id="main-nav">  <!-- Accordion Menu -->
       <li>     
-        <%= link_to t(:home), root_path, :class=> "nav-top-item no-submenu" + (controller_name == "welcome" ? " current": ""), :id => "1main" %>
+        <%= link_to t(:home).mb_chars.upcase, root_path, :class=> "nav-top-item no-submenu" + (controller_name == "welcome" ? " current": ""), :id => "1main" %>
       </li>
       <% if current_user.role.is_super_admin %>
         <li>     
-          <%= link_to t(:configuration), edit_system_configuration_path(SystemConfiguration.first), :class=> "nav-top-item no-submenu" + (controller_name == "system_configurations" ? " current": ""), :id => "2main" %>
+          <%= link_to t(:configuration).mb_chars.upcase, edit_system_configuration_path(SystemConfiguration.first), :class=> "nav-top-item no-submenu" + (controller_name == "system_configurations" ? " current": ""), :id => "2main" %>
         </li>
         <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{events}.include?(controller_name) %>" id="3main"> <!-- Add the class "current" to current menu item -->
-            <%= t(:events) %>
+            <%= t(:events).mb_chars.upcase %>
           </a>
           <ul>
             <% @models = %w{Event} %>
@@ -45,14 +45,14 @@
         </li>
       <% elsif current_user.role.is_admin %>
         <li>     
-          <%= link_to t(:configuration), edit_event_path(session[:current_event_id]), :class=> "nav-top-item no-submenu" + (controller_name == "events" ? " current": ""), :id => "2main" %>
+          <%= link_to t(:configuration).mb_chars.upcase, edit_event_path(session[:current_event_id]), :class=> "nav-top-item no-submenu" + (controller_name == "events" ? " current": ""), :id => "2main" %>
         </li>
       <% end %>
-      <% unless @event.nil? %>
+      <% unless session[:current_event_id].nil? %>
         <li>
           <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups mail_templates massive_loads}.include?(controller_name) && !@is_exhibitor %>" id="4main"> <!-- Add the class "current" to current menu item -->
-            <%= t(:attendees) %>
+            <%= t(:attendees).mb_chars.upcase %>
           </a>
           <ul>
             <% @models = %w{Attendee Group Subgroup Massive_Load Mail_Template} %>
@@ -73,7 +73,7 @@
         <% if @event.has_workshop %>
           <li>
             <a href="#" class="nav-top-item mainlinks<%= " current" if %{workshops rooms hours schedules}.include?(controller_name) %>" id="5main"> <!-- Add the class "current" to current menu item -->
-              <%= t(:workshops) %>
+              <%= t(:workshops).mb_chars.upcase %>
             </a>
             <ul>
               <% @models = %w{Workshop Room Hour} %>
@@ -88,7 +88,7 @@
         <li>
           <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{expositions stands exhibitors offerts}.include?(controller_name) || @is_exhibitor %>" id="6main"> <!-- Add the class "current" to current menu item -->
-            <%= t(:expositions) %>
+            <%= t(:expositions).mb_chars.upcase %>
           </a>
           <ul>
             <% @models = %w{Exposition Exhibitor Offert} %>
@@ -107,7 +107,7 @@
         </li>
         <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{face_to_faces sponsors}.include?(controller_name) %>" id="7main"> <!-- Add the class "current" to current menu item -->
-            <%= (@event.has_facetoface)? t(:face_to_faces): t(:sponsors) %>
+            <%= (@event.has_facetoface)? t(:face_to_faces).mb_chars.upcase: t(:sponsors).mb_chars.upcase %>
           </a>
           <ul>
             <% @models = %w{Face_To_Face Sponsor} %>
@@ -121,7 +121,7 @@
         </li>
         <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{diaries conferences activities}.include?(controller_name) %>" id="8main"> <!-- Add the class "current" to current menu item -->
-            <%= (t"activerecord.models.diary").capitalize %>
+            <%= (t"activerecord.models.diary").mb_chars.upcase %>
           </a>
           <ul>
             <% @models = %w{Diary Conference Activity} %>
@@ -140,7 +140,7 @@
         </li>
         <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "visits" %>" id="9main"> <!-- Add the class "current" to current menu item -->
-            <%= t(:attendances) %>
+            <%= t(:attendances).mb_chars.upcase %>
           </a>
           <ul>
             <% if @event.has_workshop %>
@@ -153,7 +153,7 @@
         <% if current_user.role.is_super_admin %>
           <li>
             <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "users" %>" id="10main"> <!-- Add the class "current" to current menu item -->
-              <%= t(:users) %>
+              <%= t(:users).mb_chars.upcase %>
             </a>
             <ul>
               <li><%= link_to t(:users), users_path, :class => controller_name == "users" && controller.action_name == "index" ? "current": "" %></li>
@@ -162,7 +162,7 @@
           </li>
           <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "rating" %>" id="11main"> <!-- Add the class "current" to current menu item -->
-            <%= t(:rating) %>
+            <%= t(:rating).mb_chars.upcase %>
           </a>
           <ul>
             <li><%= link_to t("ratings.application_rating"), rating_show_application_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_application_rating") ? "current": "" %></li>

@@ -48,7 +48,7 @@
   <% end %>
   <div class="tab-content<%= " default-tab" if i == default_tab %>" id="tab<%= i %>">
     <% i += 1 %>
-    <% hours = Hour.order(:start_date).select { |h| h.start_date.strftime('%d/%m/%Y') == d } %>
+    <% hours = Hour.where(:event_id => session[:current_event_id]).order(:start_date).select { |h| h.start_date.strftime('%d/%m/%Y') == d } %>
     <table id="schedule">
       <thead>
         <tr>

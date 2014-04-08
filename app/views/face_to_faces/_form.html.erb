@@ -18,27 +18,28 @@
       </ul>
     </div>
   <% end %>
+  <% @attendee = @face_to_face.attendee %>
   <fieldset class="column-left">
     <h3 style="text-align: center;"><%= t(:applicant) %></h3><br/>
     <p class="field">
       <%= f.label t(:type_attendee_name), nil, :style => "font-size: 14px;" %>
-      <%= text_field_tag "app_name", nil, :class =>"text-input medium-input" %>
+      <%= text_field_tag "app_name", @attendee.nil? ? nil: @attendee.a_name, :class =>"text-input medium-input" %>
     </p>
     <p class="field">
       <%= label_tag t("face_to_face.app_attendee_id") %>
-      <%= text_field_tag "app_attendee_id", nil, :readonly => true, :class=>"text-input small-input" %>
+      <%= text_field_tag "app_attendee_id", @attendee.nil? ? nil: @attendee.attendee_id, :readonly => true, :class=>"text-input small-input" %>
     </p>
     <p class="field">
       <%= label_tag t("face_to_face.app_enterprise") %>
-      <%= text_field_tag "app_enterprise", nil, :readonly => true, :class=>"text-input medium-input" %>
+      <%= text_field_tag "app_enterprise", @attendee.nil? ? nil: @attendee.e_name, :readonly => true, :class=>"text-input medium-input" %>
     </p>
     <p class="field">
       <%= label_tag t("face_to_face.app_email") %>
-      <%= text_field_tag "app_email", nil, :readonly => true, :class=>"text-input small-input" %>
+      <%= text_field_tag "app_email", @attendee.nil? ? nil: @attendee.a_email, :readonly => true, :class=>"text-input small-input" %>
     </p>
     <p class="field">
       <%= label_tag t("face_to_face.app_phone") %>
-      <%= text_field_tag "app_phone", nil, :readonly => true, :class=>"text-input small-input" %>
+      <%= text_field_tag "app_phone", @attendee.nil? ? nil: @attendee.e_phone, :readonly => true, :class=>"text-input small-input" %>
     </p>
     <%= f.hidden_field :attendee_id %>
   </fieldset>

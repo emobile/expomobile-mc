@@ -116,8 +116,7 @@ Expomobile::Application.routes.draw do
   resources :attendees
 
   get "welcome/index"
-
-#  get "users/sign_up"
+  
   devise_for :users
   
   resources :users
@@ -125,7 +124,7 @@ Expomobile::Application.routes.draw do
   devise_scope :user do
     get "devise/sessions/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
     get "devise/sessions/links" => "devise/sessions#links", :as => :links
-    match 'devise/registrations/:id/edit' => 'devise/registrations#edit', :as => :edit_user
+    match 'devise/registrations/:id/edit' => 'devise/registrations#edit', :as => :edit_registration
     #match 'devise/registrations/new' => 'devise/registrations#new', :as => :new_user
   end
 

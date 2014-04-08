@@ -7,7 +7,14 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-    <title><%= "ANADIC: " + eval("t(:" + controller_name + ")") %></title>
+    <title>
+      <% @event = Event.find_by_id(session[:current_event_id]) unless session[:current_event_id].nil? %>
+      <% if @event.nil? %>
+        <%= "EXPOMOBILE: " + eval("t(:" + controller_name + ")") %>
+      <% else %>
+        <%= "#{@event.name}: " + eval("t(:" + controller_name + ")") %>
+      <% end %>
+    </title>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -30,7 +37,6 @@
   </head>
 
   <body>
-    <% @event = Event.find_by_id(session[:current_event_id]) unless session[:current_event_id].nil? %>
     <div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
       <%= render "layouts/sidebar" %>
       <div id="main-content"> <!-- Main Content Section with everything -->
@@ -120,10 +126,10 @@
           <div class="content-box-header">
             <h3><%= eval("t(:#{controller_name})") if %w{welcome}.exclude?(controller_name) %></h3>
             <% if controller_name == "schedules" && action_name == "associate_workshop_group" %>
-              <% if Hour.any? %>
+              <% if Hour.where(:event_id => session[:current_event_id]).any? %>
                 <ul class="content-box-tabs">
                   <% i = 1 %>
-                  <% Hour.order(:start_date).pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq.each do |d| %>
+                  <% Hour.where(:event_id => session[:current_event_id]).order(:start_date).pluck(:start_date).map{ |s| s.strftime("%d/%m/%Y") }.uniq.each do |d| %>
                     <% if flash[:schedule_start_date].nil? %>
                       <% default_tab = 1 %>
                     <% else %>

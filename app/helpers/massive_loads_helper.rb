@@ -10,36 +10,47 @@ module MassiveLoadsHelper
     else
       s = Roo::Excelx.new(file_name)
     end
-    out = File.open "/home/emobile/massive_load_out.txt", "a"
+    out = File.open "massive_load_out.txt", "w"
+    inc_id = 1
+
     2.upto(s.last_row) do |line|
       begin
-        e_name = s.cell(line, "B")      
-        e_tradename = s.cell(line, "C")
-        e_street = s.cell(line, "D")
-        e_ext_number = s.cell(line, "E")
-        e_int_number = s.cell(line, "F")
-        e_colony = s.cell(line, "G")
-        e_municipality = s.cell(line, "H")
-        e_city = s.cell(line, "I")
-        e_state = s.cell(line, "J") 
-        e_zip_code = s.cell(line, "K")
-        e_rfc = s.cell(line, "L")
-        e_lada = s.cell(line, "M")
-        e_phone = s.cell(line, "N")
-        a_name = s.cell(line, "O")
-        a_email = s.cell(line, "P")
-        a_chat = s.cell(line, "Q")
-        a_cellphone = s.cell(line, "R")
-        a_tel_nextel = s.cell(line, "S")
-        a_radio_nextel = s.cell(line, "T")
-        a_is_director = s.cell(line, "U")
-        a_platform = s.cell(line, "V")
-        e_main_line = s.cell(line, "W")
-        a_sec_line = s.cell(line, "X")
-        a_num_employees = s.cell(line, "Y")
-        a_other_line = s.cell(line, "Z")
-        a_web = s.cell(line, "AA")
-        subgroup_key = s.cell(line, "A")
+        unless @event.attendees.blank?
+          inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
+        end
+        attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
+        subgroup_key = s.cell(line, "B")
+        e_name = s.cell(line, "C")
+        e_tradename = s.cell(line, "D")
+        e_street = s.cell(line, "E")
+        e_ext_number = s.cell(line, "F")
+        e_int_number = s.cell(line, "G")
+        e_colony = s.cell(line, "H")
+        e_municipality = s.cell(line, "I")
+        e_city = s.cell(line, "J")
+        e_state = s.cell(line, "K") 
+        e_zip_code = s.cell(line, "L")
+        e_rfc = s.cell(line, "M")
+        e_lada = s.cell(line, "N")
+        e_phone = s.cell(line, "O")
+        a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
+        a_email = s.cell(line, "Q")
+        a_chat = s.cell(line, "R")
+        a_cellphone = s.cell(line, "S")
+        a_tel_nextel = s.cell(line, "T")
+        a_radio_nextel = s.cell(line, "U")
+        a_is_director = s.cell(line, "V")
+        a_platform = s.cell(line, "W")
+        e_main_line = s.cell(line, "X")
+        a_sec_line = s.cell(line, "Y")
+        a_num_employees = s.cell(line, "Z")
+        a_other_line = s.cell(line, "AA")
+        a_web = s.cell(line, "AB")
+        a_market_segment = s.cell(line, "AC")
+        a_sector =  s.cell(line, "AD")
+        a_want_email =  s.cell(line, "AE")
+        a_job =  s.cell(line, "AF")
+        e_name = "N/A" if e_name.nil?
         e_tradename = "N/A" if e_tradename.nil?
         e_street = "N/A" if e_street.nil?
         e_ext_number = e_ext_number.to_i.to_s if e_ext_number.is_a? Float
@@ -49,8 +60,9 @@ module MassiveLoadsHelper
         e_colony = "N/A" if e_colony.nil?
         e_municipality = "N/A" if e_municipality.nil?
         e_city = "N/A" if e_city.nil?
+        e_state = "N/A" if e_state.nil?
         e_zip_code = e_zip_code.to_i.to_s if e_zip_code.is_a? Float
-        e_zip_code = 0 if e_zip_code.nil?
+        e_zip_code = "00000" if e_zip_code.nil?
         e_rfc = "N/A" if e_rfc.nil?
         e_lada = e_lada.to_i.to_s if e_lada.is_a? Float
         e_lada = 0 if e_lada.nil?
@@ -74,17 +86,14 @@ module MassiveLoadsHelper
         a_num_employees = 0 if a_num_employees.nil?
         a_other_line = "N/A" if a_other_line.nil?
         a_other_line.mb_chars.upcase!
-        a_market_segments = { "AB" => "Gobierno", "AC" => "Corporativo", "AD" => "PyMEs", "AE" => "Educación", "AF" => "Salud", "AG" => "Retail", "AH" => "Web" }
-        a_market_segment = ""
-        a_market_segments.keys.each do |k|
-          a_market_segment += "#{a_market_segments[k]};" if !s.cell(line, k).nil?
-        end
         a_market_segment = "N/A" if a_market_segment.blank?
-        subgroup_id = Subgroup.find_by_subgroup_key(subgroup_key).id
-        attendee_id = s.cell(line, "AI")
-        @event = Event.find_by_id(session[:current_event_id])
+        a_sector= "N/A" if a_sector.nil?
+        a_want_email = "NO" if a_want_email.nil?
+        a_want_email = a_want_email.upcase == "SI"
+        a_job = "N/A" if a_job.nil?
+        subgroup_id = @event.subgroups.find_by_subgroup_key(subgroup_key).id
         if attendee_id[0, 2] == @event.token_for_id
-          @attendee = Attendee.new(subgroup_id: subgroup_id, e_name: e_name, e_tradename: e_tradename, e_street: e_street, e_ext_number: e_ext_number, e_int_number: e_int_number, e_colony: e_colony, e_municipality: e_municipality, e_city: e_city, e_state: e_state, e_zip_code: e_zip_code, e_rfc: e_rfc, e_lada: e_lada, e_phone: e_phone, a_name: a_name, a_email: a_email, a_chat: a_chat, a_cellphone: a_cellphone, a_tel_nextel: a_tel_nextel, a_radio_nextel: a_radio_nextel, a_is_director: a_is_director, a_platform: a_platform, e_main_line: e_main_line, a_sec_line: a_sec_line, a_num_employees: a_num_employees, a_other_line: a_other_line, a_web: a_web, a_market_segment: a_market_segment, attendee_id: attendee_id, event_id: session[:current_event_id], confirmation_token: Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join)
+          @attendee = @event.attendees.new(subgroup_id: subgroup_id, e_name: e_name, e_tradename: e_tradename, e_street: e_street, e_ext_number: e_ext_number, e_int_number: e_int_number, e_colony: e_colony, e_municipality: e_municipality, e_city: e_city, e_state: e_state, e_zip_code: e_zip_code, e_rfc: e_rfc, e_lada: e_lada, e_phone: e_phone, a_name: a_name, a_email: a_email, a_chat: a_chat, a_cellphone: a_cellphone, a_tel_nextel: a_tel_nextel, a_radio_nextel: a_radio_nextel, a_is_director: a_is_director, a_platform: a_platform, e_main_line: e_main_line, a_sec_line: a_sec_line, a_num_employees: a_num_employees, a_other_line: a_other_line, a_web: a_web, a_market_segment: a_market_segment, attendee_id: attendee_id, confirmation_token: Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join, a_sector: a_sector, a_want_email: a_want_email, a_job: a_job)
           if @attendee.save
             AttendeeMailer.welcome_email(@attendee).deliver!
           else

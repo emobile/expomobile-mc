@@ -2,7 +2,12 @@
     <img src="/assets/icons/information.png" alt="Edit" />
   <%end%></td>
 <% if !%w{massive_loads}.include?(controller_name) %>
-  <td><%=link_to eval("edit_#{controller_name.singularize}_path(@model)"), :class=>"nav-header" do%>
+  <% if current_user == @model %>
+    <% @edit_path = "edit_registration_path(@model)" %>
+  <% else %>
+    <% @edit_path = "edit_#{controller_name.singularize}_path(@model)" %>
+  <% end %>
+  <td><%=link_to eval(@edit_path), :class=>"nav-header" do%>
       <img src="/assets/icons/pencil.png" alt="Edit" />
     <%end%></td>
 <% end %>

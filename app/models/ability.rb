@@ -24,7 +24,7 @@ class Ability
       @models.each do |m|
         if %w{Activity Attendee Conference Diary Exhibitor Exposition FaceToFace Group Hour Offert MailTemplate MassiveLoad Room Sponsor Workshop}.include? m
           can :manage, eval(m) do |object|
-            if %w{Activity Conference FaceToFace MailTemplate Offert Workshop}.include? m
+            if %w{Activity Conference FaceToFace Workshop}.include? m
               object.event_id == @user.event_id && eval("@user.event.has_#{m.downcase}")
             else
               object.event_id == @user.event_id

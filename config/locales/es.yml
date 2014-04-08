@@ -242,6 +242,7 @@ es:
       street: "CALLE"
       tradename: "NOMBRE COMERCIAL"
       zip_code: "C. P."
+    gafete_big: "Cambiar tamaño a 8.5cm x 12cm"
     gafete: "Gafete"
     generate_gafete: "Generar"
     id_ok: "Has proporcionado tu ID correctamente"
@@ -349,7 +350,7 @@ es:
   expositions: "Exposiciones"
   
   errors:
-    atten_email_already_sended: "Tu NIP ya fue enviado a tu email, porfavor espera al menos 5 minutos para solicitarlo de nuevo"
+    atten_email_already_sended: "Tu NIP ya fue enviado a tu email, no puede ser solicitado de nuevo"
     atten_email_dont_sended: "Tu NIP no pudo ser enviado a tu email"
     atten_email_maximum_sends: "Se ha excedido el máximo de solicitudes del NIP"
     atten_invalid_id: "No proporcionaste tu ID correctamente"
@@ -375,6 +376,8 @@ es:
       facetoface: "Esta opción habilita también a los patrocinadores y permite que los asistentes puedan tener citas cara a cara con expositores y patrocinadores del evento."
       offert: "Esta opción permite manejar un catálogo de ofertas de los expositores."
       workshop: "Esta opción permite manejar los talleres, las asistencias a taller y asimismo tener acceso a datos estadísticos de asistencias."
+    e_facebook: "Facebook"
+    e_twitter: "Twitter"
     email: "Correo electrónico"
     end_date: "Fecha final"
     enterprise: "Empresa"
