@@ -52,9 +52,9 @@
               <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
             <% end %>
           </div>
-          <div id="gafete-text" style="height: 115px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 30px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">
-            <span style="font-weight: bold; font-size: 20px; top: 15px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
-            <span style="font-size: 20px; top: 15px; position: relative;"><%= @e_tradename %></span>
+          <div id="gafete-text" style="height: 115px;<%= " border-top: 1px solid #000; border-bottom: 1px solid #000;" if @with_logos == "true" %> line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center; padding-top: <%= @gafete_text_padding_top %>;">
+            <span style="font-weight: bold; font-size: 24px; top: 15px; position: relative; left: -7px;"><%= @a_name.mb_chars.upcase %></span><br/>
+            <span style="font-size: 24px; top: 15px; position: relative; left: -7px;"><%= @e_tradename %></span>
           </div>
           <div class="gafete-logo" style="height: 80px; width: 305px; visibility: <%= @gafete_logo_visibility %>;">
             <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
