@@ -70,11 +70,15 @@ class AttendeesController < ApplicationController
     params[:attendee][:a_platform] = params[:attendee][:a_platform].join(";") unless params[:attendee][:a_platform].nil?
     params[:attendee][:a_market_segment] = params[:attendee][:a_market_segment].join(";") unless params[:attendee][:a_market_segment].nil?
     params[:attendee][:confirmation_token] = Array.new(10) {[*'0'..'9', *'a'..'z'].sample}.join
+    params[:attendee][:a_sector] = "N/A"
+    params[:attendee][:e_ext_number] = 0
+    params[:attendee][:e_lada] = 0
+    params[:attendee][:e_zip_code] = "N/A"
     @attendee = Attendee.new(params[:attendee])
     
     respond_to do |format|
       if @attendee.save
-        AttendeeMailer.welcome_email(@attendee).deliver!
+        #AttendeeMailer.welcome_email(@attendee).deliver!
         format.html { redirect_to @attendee, notice: t(:successfully_created) }
         format.json { render json: @attendee, status: :created, location: @attendee }
       else
