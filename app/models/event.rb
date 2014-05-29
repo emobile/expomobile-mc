@@ -30,7 +30,8 @@ class Event < ActiveRecord::Base
     :default_url => "/assets/expomobile.png"
   has_attached_file :logo,
     :styles => {:medium => "x300",
-    :thumb => "x100"},
+    :thumb => "x100",
+    :mobile => "x60"},
     :default_url => "/assets/default.jpg"
   has_attached_file :banner,
     :styles => {:medium => "x300",

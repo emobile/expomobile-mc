@@ -586,6 +586,14 @@ class MobileServicesController < ApplicationController
     render json: @msg
   end
   
+  def get_event_logo
+    
+    if !session[:attendee_id].blank?
+      render json: @event.logo.url(:mobile)
+    end
+
+  end
+  
   #  def detect_platform
   #    if request.env['HTTP_USER_AGENT'] == ""
   #      access = true

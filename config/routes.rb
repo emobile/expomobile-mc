@@ -47,6 +47,7 @@ Expomobile::Application.routes.draw do
 
   resources :expositions
   
+  get "mobile_services/get_event_logo"
   get "mobile_services/get_enabled_options"
   get "mobile_services/rate_conference"
   get "mobile_services/rate_workshop"
