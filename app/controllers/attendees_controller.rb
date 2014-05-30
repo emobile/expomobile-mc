@@ -2,8 +2,8 @@
 
 class AttendeesController < ApplicationController
   before_filter :authenticate_user!, :except => [:register, :register_attendee, :confirm, :get_subgroups]
-  before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c, :attend]
-  load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups, :confirm]
+  before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c, :attend, :general_attendances_report]
+  load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups, :confirm, :general_attendances_report]
 
   def index
     if params[:search].blank?
@@ -277,6 +277,26 @@ class AttendeesController < ApplicationController
       @attendee.update_attributes(attended: false)
     end
     render nothing: true
+  end
+  
+  def general_attendances_report
+    if params[:report_options] == "1"
+      @attendees = @event.attendees.where(:attended => true).order(:id)
+    elsif params[:report_options] == "2"
+      @attendees = @event.attendees.order("attended DESC")
+    end 
+        
+    respond_to do |format|
+      format.html
+      format.xls do
+        t = Time.now.strftime("%d-%m-%Y")
+        document_columns = [:id, :attendee_id, :e_name, :e_tradename, :a_name, :created_at, :attended_date]
+        document_headers = ["ID", t('atten.atten.register_id'), t('atten.enter.name'), t('atten.enter.tradename'), t('atten.atten.name'), t('atten.registration_date'), t('atten.attended_date')]
+        file = @attendees.to_xls(columns: document_columns, headers: document_headers)
+        send_data file,
+          filename: "attendees-report-#{t}.xls"
+      end
+    end
   end
   
   def load_event

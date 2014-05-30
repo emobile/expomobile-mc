@@ -51,7 +51,7 @@
       <% unless session[:current_event_id].nil? %>
         <li>
           <% @is_exhibitor = @is_exhibitor.nil? ? false: @is_exhibitor %>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups mail_templates massive_loads}.include?(controller_name) && !@is_exhibitor %>" id="4main"> <!-- Add the class "current" to current menu item -->
+          <a href="#" class="nav-top-item mainlinks<%= " current" if %{attendees groups subgroups mail_templates massive_loads}.include?(controller_name) && !@is_exhibitor && !(controller_name == "attendees" && controller.action_name == "general_attendances_report") %>" id="4main"> <!-- Add the class "current" to current menu item -->
             <%= t(:attendees).mb_chars.upcase %>
           </a>
           <ul>
@@ -139,7 +139,7 @@
           </ul>
         </li>
         <li>
-          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "visits" %>" id="9main"> <!-- Add the class "current" to current menu item -->
+          <a href="#" class="nav-top-item mainlinks<%= " current" if controller_name == "visits" || (controller_name == "attendees" && controller.action_name == "general_attendances_report") %>" id="9main"> <!-- Add the class "current" to current menu item -->
             <%= t(:attendances).mb_chars.upcase %>
           </a>
           <ul>
@@ -148,6 +148,7 @@
             <% end %>
             <li><%= link_to t("visit.attendances_to_exhibitors"), visits_visits_to_exhibitors_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_exhibitors_index" || controller.action_name == "visits_to_exhibitors" || controller.action_name == "visits_to_exhibitors_by_subgroup" || controller.action_name == "visits_to_exhibitors_by_exhibitor") ? "current": "" %></li>
             <li><%= link_to t("visit.control_numbers_report"), visits_control_numbers_report_html_path, :class => controller_name == "visits" && (controller.action_name == "control_numbers_report_html") ? "current": "" %></li>
+            <li><%= link_to t("general_attendances_report"), attendees_general_attendances_report_path, :class => controller_name == "attendees" && (controller.action_name == "general_attendances_report") ? "current": "" %></li>
           </ul>
         </li>
         <% if current_user.role.is_super_admin %>

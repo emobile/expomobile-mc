@@ -18,6 +18,7 @@
  *= require_tree ./redmond
  *= require jHtmlArea
  *= require jHtmlArea.ColorPickerMenu
+ *= require jquery.dataTables
  */
 
 

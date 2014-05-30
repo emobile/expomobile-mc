@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  show_attendees: "Show attendees"
+  download_xls: "Download XLS"
+  all: "All"
+  only_attended: "Only attendeed"
+  generate_report: "Generate report"
+  general_attendances_report: "General attendances report"
   about_enter: "ABOUT ENTERPRISE"
   accept: "Accept"
   
@@ -224,6 +230,7 @@ en:
       tel_nextel: "NEXTEL PHONE (10 NUMBERS)"
       want_email: "SOMETIMES WE HAVE IMPORTANT INFORMATION OF INTEREST TO YOU, DO YOU WANT TO RECEIVE BY E-MAIL?"
       web: "WEB"
+    attended_date: "ATTENDED DATE"
     confirmation:
       already_confirmed: "You already have been confirmed."
       confirmed: "You have been confirmed successfully."
@@ -251,6 +258,7 @@ en:
       nip_subject: "PIN to access to the application"
     nip_sended: "Your PIN code was sent to %{email}, Please check your email"
     print_gafete: "Print gafete"
+    registration_date: "REGISTRATION DATE"
     registration_ok: "Your registration has been succesfully, your registration ID is:"
     select_email_type: "Select an email type:"
     thanks_for_joining: "Thanks for joining and have a great day!"

@@ -1,0 +1,73 @@
+<div style="line-height: 30px;">
+  <%= form_tag("general_attendances_report", :method => "GET") do %>
+    <div style="text-align: center; margin: 20px 0 40px;">
+      <h2><%= label_tag t("general_attendances_report") %></h2>
+    </div>
+    <%= t("only_attended") %>  <%= radio_button_tag "report_options", 1, params[:report_options] == "1" %><br/>
+    <%= t("all") %>  <%= radio_button_tag "report_options", 2, params[:report_options] == "2" %><br/><br/>
+    <%= submit_tag t("show_attendees"), :class => "button", :style => "display: inline-block;" %>
+    <% unless params[:report_options].blank? %>
+      <%= link_to t("download_xls"), "#", :id => "download_xls", :class => "button" %>
+    <% end %>
+  <% end %>
+</div>
+<div class="tab-content default-tab" id="tab1" style="margin-top: 20px;">
+  <% unless @attendees.blank? %>
+    <table class="datatable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th><%= t'atten.atten.register_id' %></th>
+          <th><%= t'atten.enter.name' %></th>
+          <th><%= t'atten.enter.tradename' %></th>
+          <th><%= t'atten.atten.name' %></th>
+          <th><%= t'atten.registration_date' %></th>
+          <th><%= t'atten.attended_date' %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @attendees.each do |attendee| %>
+          <tr>
+            <td><%= label attendee.id, attendee.id %></td>
+
+            <td><%= attendee.attendee_id %></td>   
+
+            <td><%= attendee.e_name %></td>
+
+            <td><%= attendee.e_tradename %></td>
+
+            <td><%= attendee.a_name %></td>
+
+            <td><%= attendee.created_at %></td>
+
+            <td><%= attendee.attended_date %></td>
+
+          <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $(function() {
+    $(".datatable").dataTable({
+      searching: false,
+      language: {
+        lengthMenu: "Mostrar _MENU_ registros",
+        info: "Mostrando _START_ - _END_ de _TOTAL_ en total",
+        infoEmpty: "Ninguno encontrado",
+        emptyTable: " ",
+        paginate: {
+          previous: "← Anteriores",
+          next: "Siguientes →"
+        }
+      },
+    });
+    
+    $("#download_xls").click(function() {
+      var report_options = $("input[type='radio']:checked").val();
+      location.href = "/attendees/general_attendances_report.xls?report_options=" + report_options;
+    });
+
+  });
+</script>
