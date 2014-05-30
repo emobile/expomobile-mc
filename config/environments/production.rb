@@ -46,7 +46,7 @@ Expomobile::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w(jquery-1.9.0.js jquery-1.3.2.min.js attendees.js facebox.js groups.js hours.js  jquery.datetimeentry.js jquery.wysiwyg.js offerts.js rooms.js schedules.js simpla.jquery.configuration.js subgroups.js workshops.js highcharts.js )
+  config.assets.precompile += %w(jquery-1.9.0.js jquery-1.3.2.min.js attendees.js facebox.js groups.js hours.js  jquery.datetimeentry.js jquery.wysiwyg.js offerts.js rooms.js schedules.js simpla.jquery.configuration.js subgroups.js workshops.js highcharts.js jquery.dataTables.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
