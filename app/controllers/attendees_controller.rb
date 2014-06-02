@@ -289,7 +289,7 @@ class AttendeesController < ApplicationController
     respond_to do |format|
       format.html
       format.xls do
-        t = Time.now.strftime("%d-%m-%Y")
+        t = Date.today.strftime("%d-%m-%Y")
         document_columns = [:id, :attendee_id, :e_name, :e_tradename, :a_name, :created_at, :attended_date]
         document_headers = ["ID", t('atten.atten.register_id'), t('atten.enter.name'), t('atten.enter.tradename'), t('atten.atten.name'), t('atten.registration_date'), t('atten.attended_date')]
         file = @attendees.to_xls(columns: document_columns, headers: document_headers)
