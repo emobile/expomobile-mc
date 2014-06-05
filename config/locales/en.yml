@@ -619,6 +619,7 @@ en:
   type_attendee_name: "Type attendee name:"
   unhappy: "Unhappy?"
   unlock_instructions: "Didn't receive unlock instructions?"
+  unlocks: "Unlocks"
   users: "Users"
   
   user:
@@ -642,6 +643,7 @@ en:
     zip: "Zip"
     
   user_data: "Datos del usuario"
+  username: "Username"  
   
   visit:
     attendances_to_exhibitors: "Attendances to exhibitors"

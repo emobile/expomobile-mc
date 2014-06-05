@@ -7,8 +7,8 @@
 <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true, :class=>"text-input"%></p>
+  <p><%= f.label :username %>
+  <%= f.text_field :username, :autofocus => true, :class=>"text-input"%></p>
 
     <div class="clear"></div>
   <p><%= f.submit t("devise.resend_unlock_instructions"), :class=>"button" %></p>

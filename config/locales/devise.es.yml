@@ -29,6 +29,8 @@ es:
       failure: 'No fue posible autorizarlo desde %{kind} debido a "%{reason}".'
       success: 'Exitosamente autorizado desde la cuenta %{kind}.'
     passwords:
+      confirm_new_password: "Confirmar nueva contraseña"
+      new_password: "Nueva contraseña"
       no_token: 'No puede acceder a esta página si no proviene de un correo de reestablecimiento de contraseña. Si usted proviene de un correo de reestablecimiento de contraseña, por favor asegúrese que está utilizando la URL completa."'
       send_instructions: 'En unos minutos usted recibirá un correo electrónico con instrucciones sobre cómo reiniciar su contraseña.'
       send_paranoid_instructions: "Si su correo electrónico existe en nuestra base de datos, en unos minutos usted recibirá un correo con un enlace para reestablecer su contraseña."

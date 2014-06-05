@@ -619,6 +619,7 @@ es:
   type_attendee_name: "Introduce el nombre del asistente:"
   unhappy: "¿No estas contento?"
   unlock_instructions: "¿No has recibido las instrucciones de desbloqueo?"
+  unlocks: "Desbloqueos"
   users: "Usuarios"
   
   user:
@@ -642,6 +643,7 @@ es:
     zip: "Código postal"
     
   user_data: "Datos del usuario"
+  username: "Usuario"
   
   visit:
     attendances_to_exhibitors: "Asistencias a expositores"

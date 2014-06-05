@@ -35,9 +35,9 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  #config.case_insensitive_keys = [ :email ]
+  config.case_insensitive_keys = [ :login ]
   config.authentication_keys = [ :login ]
-  config.confirmation_keys = [ :email ]
+  config.confirmation_keys = [ :username ]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
@@ -138,7 +138,7 @@ Devise.setup do |config|
   config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
-  config.unlock_keys = [ :login ]
+  config.unlock_keys = [ :username ]
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
@@ -149,7 +149,7 @@ Devise.setup do |config|
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  config.maximum_attempts = 4
+  config.maximum_attempts = 7
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   config.unlock_in = 1.minutes
@@ -157,7 +157,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  config.reset_password_keys = [ :email ]
+  config.reset_password_keys = [ :username ]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
