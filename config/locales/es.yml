@@ -11,6 +11,7 @@ es:
   general_attendances_report: "Reporte de asistencias en general"
   about_enter: "ACERCA DE LA EMPRESA"
   accept: "Aceptar"
+  account_has_been_locked: "Tu cuenta ha sido bloqueada debido a un excesivo número de intentos fállidos de inicio de sesión."
   
   activerecord:
     attributes:
@@ -281,7 +282,9 @@ es:
   cant_realize: "No puedes realizar esta acción"
   catalogs: "Menú de catálogos"
   cellphone: "Celular"
+  change_my_password: "Cambiar mi contraseña"
   choose_action: "Elige una acción"
+  click_the_link_bellow_to_unlock: "Da click en la liga de abajo para desbloquear tu cuenta:"
   comments: "Comentarios"
   
   conference:
@@ -457,6 +460,7 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   
+  hello: "Hola %{user}!"
   home: "Inicio"
   
   hour:
@@ -471,6 +475,7 @@ es:
     workshop_name: "Nombre del taller"
     
   hours: "Horarios"
+  if_you_didnt_request_this: "Si no solicitaste esto, porfavor ignora este email."
   images: "Imágenes"
   interviewee: "Entrevistado"
   login: "Usuario"
@@ -573,6 +578,7 @@ es:
   sign_in_with: "Iniciar sesión con %{provider}"
   sign_up: "Registrarse"
   signed_in: "En línea"
+  someone_has_requested_a_link: "Alguien a solicitado una liga para cambiar tu contraseña. Puedes hacerlo a través de la liga de abajo."
   
   sponsor:
     contact: "Contacto"
@@ -618,6 +624,7 @@ es:
   true_value: "Si"
   type_attendee_name: "Introduce el nombre del asistente:"
   unhappy: "¿No estas contento?"
+  unlock_my_account: "Desbloquear mi cuenta"
   unlock_instructions: "¿No has recibido las instrucciones de desbloqueo?"
   unlocks: "Desbloqueos"
   users: "Usuarios"
@@ -699,4 +706,5 @@ es:
   
   workshops: "Talleres"
   workshops_disabled: "Tu evento tiene los talleres deshabilitados."
+  your_password_wont_change: "Tu contraseña no cambiará, hasta que acceses a la liga de abajo y crees una nueva."
   your_register_id_is: "Tu ID de registro es"

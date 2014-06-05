@@ -11,6 +11,7 @@ en:
   general_attendances_report: "General attendances report"
   about_enter: "ABOUT ENTERPRISE"
   accept: "Accept"
+  account_has_been_locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
   
   activerecord:
     attributes:
@@ -281,7 +282,9 @@ en:
   cant_realize: "You can't realize this action"
   catalogs: "Catalogue menu"
   cellphone: "Cellphone"
+  change_my_password: "Change my password"
   choose_action: "Choose action"
+  click_the_link_bellow_to_unlock: "Click the link below to unlock your account:"
   comments: "Comments"
   
   conference:
@@ -457,6 +460,7 @@ en:
       create: "Create %{model}"
       update: "Update %{model}"
   
+  hello: "Hello %{user}!"
   home: "Home"
   
   hour:
@@ -471,6 +475,7 @@ en:
     workshop_name: "Workshop name"
   
   hours: "Schedules"
+  if_you_didnt_request_this: "If you didn't request this, please ignore this email."
   images: "Images"
   interviewee: "Interviewee"
   login: "Login"
@@ -573,6 +578,7 @@ en:
   sign_in_with: "Sign in with %{provider}"
   sign_up: "Sign up"
   signed_in: "Signed in"
+  someone_has_requested_a_link: "Someone has requested a link to change your password. You can do this through the link below."
   
   sponsor:
     contact: "Contact"
@@ -618,6 +624,7 @@ en:
   true_value: "Yes"
   type_attendee_name: "Type attendee name:"
   unhappy: "Unhappy?"
+  unlock_my_account: "Unlock my account"
   unlock_instructions: "Didn't receive unlock instructions?"
   unlocks: "Unlocks"
   users: "Users"
@@ -699,4 +706,5 @@ en:
   
   workshops: "Workshops"
   workshops_disabled: "Your event has workshops disabled."
+  your_password_wont_change: "Your password won't change until you access the link above and create a new one."
   your_register_id_is: "Your register ID is"
