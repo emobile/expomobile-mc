@@ -2,8 +2,8 @@ class CreateAttendees < ActiveRecord::Migration
   def change
     create_table :attendees do |t|
       t.string :attendee_id,             :null => false
-      t.string :e_name,                  :null => false
-      t.string :e_tradename#,             :null => false
+      t.string :e_name#,                  :null => false
+      t.string :e_tradename,             :null => false
       t.string :e_street#,                :null => false
       t.integer :e_ext_number#,           :null => false
       t.string :e_int_number
