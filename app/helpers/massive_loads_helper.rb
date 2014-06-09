@@ -93,17 +93,11 @@ module MassiveLoadsHelper
       #        a_job = "N/A" if a_job.nil?
       #        subgroup_id = @event.subgroups.find_by_subgroup_key(subgroup_key).id
       if attendee_id[0, 2] == @event.token_for_id
-#        @attendee = @event.attendees.new(subgroup_id: 29, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
-#        if @attendee.save
-#          #            AttendeeMailer.welcome_email(@attendee).deliver!
-#        else
-#          out.puts @attendee.inspect
-#        end
-        @sponsor = @event.sponsors.new(name: e_tradename, social_reason: e_tradename, contact: a_name)
-        if @sponsor.save
+        @attendee = @event.attendees.new(subgroup_id: 29, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
+        if @attendee.save
           #            AttendeeMailer.welcome_email(@attendee).deliver!
         else
-          out.puts @sponsor.inspect
+          out.puts @attendee.inspect
         end
       end
       #      rescue
