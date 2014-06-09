@@ -13,7 +13,7 @@ module MassiveLoadsHelper
     out = File.open "massive_load_out.txt", "w"
     inc_id = 1
 
-    389.upto(s.last_row) do |line|
+    2.upto(s.last_row) do |line|
       #      begin
       unless @event.attendees.blank?
         inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
@@ -21,7 +21,7 @@ module MassiveLoadsHelper
       attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
       #        subgroup_key = s.cell(line, "B")
       #        e_name = s.cell(line, "C")
-      e_tradename = s.cell(line, "A")
+      e_tradename = s.cell(line, "C")
       #        e_street = s.cell(line, "E")
       #        e_ext_number = s.cell(line, "F")
       #        e_int_number = s.cell(line, "G")
@@ -33,7 +33,7 @@ module MassiveLoadsHelper
       #        e_rfc = s.cell(line, "M")
       #        e_lada = s.cell(line, "N")
       #        e_phone = s.cell(line, "O")
-      a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
+      a_name = "#{s.cell(line, "A")} #{s.cell(line, "B")}"
       #        a_email = s.cell(line, "Q")
       #        a_chat = s.cell(line, "R")
       #        a_cellphone = s.cell(line, "S")
@@ -93,7 +93,7 @@ module MassiveLoadsHelper
       #        a_job = "N/A" if a_job.nil?
       #        subgroup_id = @event.subgroups.find_by_subgroup_key(subgroup_key).id
       if attendee_id[0, 2] == @event.token_for_id
-        @attendee = @event.attendees.new(subgroup_id: 1, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
+        @attendee = @event.attendees.new(subgroup_id: 29, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
         if @attendee.save
           #            AttendeeMailer.welcome_email(@attendee).deliver!
         else

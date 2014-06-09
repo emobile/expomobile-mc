@@ -3,9 +3,9 @@ class CreateSponsors < ActiveRecord::Migration
     create_table :sponsors do |t|
       t.string :name,                                  :null => false
       t.string :contact,                               :null => false
-      t.string :social_reason,                         :null => false
-      t.string :phone,                                 :null => false
-      t.string :email,                                 :null => false
+      t.string :social_reason
+      t.string :phone
+      t.string :email
       t.string :job
       t.string :work_street
       t.string :work_street_number
