@@ -13,7 +13,7 @@ module MassiveLoadsHelper
     out = File.open "massive_load_out.txt", "w"
     inc_id = 1
 
-    2.upto(s.last_row) do |line|
+    389.upto(s.last_row) do |line|
       #      begin
       unless @event.attendees.blank?
         inc_id = @event.attendees.last.attendee_id.gsub(@event.token_for_id, "").to_i + 1
