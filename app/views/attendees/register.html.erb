@@ -20,13 +20,25 @@
 
     updateSubgroups();
     $("#attendee_event_id").change(updateSubgroups);
-    
+
     $('#_a_want_email_true').change(function() {
       $('#attendee_a_want_email').val(1);
     });
-    
+
     $('#_a_want_email_false').change(function() {
       $('#attendee_a_want_email').val(0);
+    });
+
+    $('#privacy_policy_link').on('click', function() {
+      $('#privacy_policy_modal').dialog({
+        title: 'POLÍTICAS DE PRIVACIDAD',
+        width: 600,
+        buttons: {
+          "Cerrar": function() {
+            $(this).dialog("close");
+          }
+        }
+      });
     });
   });
 </script>
@@ -286,10 +298,21 @@
   <div class="form-actions">
     <%= f.submit nil, :class => 'button', :style => "width: 200px; height: 35px; font-size: 14px !important;" %>
   </div>
-  
+
   <div>
     <br/><br/><br/>
-    <%= link_to 'Ver politica de privacidad', 'javascript:void(0);' %>
+    <%= link_to 'Ver politica de privacidad', '#privacy_policy', :id => 'privacy_policy_link' %>
+    <div id="privacy_policy_modal" style='display: none;'>
+      <div>
+        <h4>Manejo de datos personales</h4>
+        <br/>
+        <p>En cumplimiento con lo establecido por la <a href='http://www.ifai.org.mx/transparencia/LFTAIPG.pdf' style='color: #00a;'>Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental</a> te informamos nuestra política de privacidad y manejo de datos personales y hacemos el siguiente compromiso:</p>
+        <p>1) Los datos que te solicitamos tanto en nuestro sistema de soporte en línea únicamente <b>serán utilizados para poder establecer contacto contigo en relación a tu petición como asistente al evento.</b></p>
+        <p>2) Los datos que ingreses en nuestro sistema de soporte en línea <b>no serán difundidos, distribuidos o comercializados.</b></p>
+        <p>3) En caso de que desees ser removido de nuestra base de datos podrás, en cualquier momento, <b>solicitar la baja de tus datos</b> mediante correo electrónico a: <a href='mailto:ventas@emobile.com.mx'><u>ventas@emobile.com.mx</u></a> Esta dirección de correo electrónico está protegida contra robots de spam. Necesitas activar JavaScript para poder verla // o por escrito a: EMOBILE, H Colegio Militar 5917-3, Col, Nombre de Dios, Chihuahua,Chih C.P. 3165,</p>
+        <p>4) Tus datos personales podrán ser proporcionados a terceros de acuerdo con lo estrictamente señalado en el art. 22 de la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental.</p>
+      </div>
+    </div>
   </div>
 
 <% end %>
