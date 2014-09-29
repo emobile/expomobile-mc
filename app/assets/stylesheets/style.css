@@ -630,12 +630,12 @@ body#login {
     width: 100%;
 }
 
-#login-wrapper #logo-bellow {
+#logo-bellow {
     text-align: right;
     margin-top: 10px;
 }
 
-#login-wrapper #logo-bellow-img {
+#logo-bellow-img {
     width: 180px;
 }
 
