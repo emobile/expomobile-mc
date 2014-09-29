@@ -28,3 +28,4 @@ config/database.yml
 
 massive_load_out.txt
 log/development.log
+public/assets
