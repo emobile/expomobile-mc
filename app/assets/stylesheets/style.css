@@ -623,9 +623,7 @@ body#login {
 }
 
 #login-wrapper #login-top #logo-foro-div {
-    position: absolute;
-    width: 100%;
-    text-align: center;
+    
 }
 
 #login-wrapper #login-content {
