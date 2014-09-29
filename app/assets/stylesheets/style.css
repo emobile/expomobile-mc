@@ -609,12 +609,11 @@ body#login {
 
 #login-wrapper #login-top {
     width: 100%;
-    padding: 140px 0 50px 0;
-    text-align: center;
+    padding: 140px 0 50px 80px;
 }
 
 #login-wrapper #login-top #logo {
-    width: 180px;
+    width: 250px;
     height: auto;
     -ms-interpolation-mode: bicubic;
     padding: 0 10px;
