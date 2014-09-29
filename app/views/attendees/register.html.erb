@@ -20,12 +20,20 @@
 
     updateSubgroups();
     $("#attendee_event_id").change(updateSubgroups);
+    
+    $('#_a_want_email_true').change(function() {
+      $('#attendee_a_want_email').val(1);
+    });
+    
+    $('#_a_want_email_false').change(function() {
+      $('#attendee_a_want_email').val(0);
+    });
   });
 </script>
 
 <div style="text-align: center; font-size: 26px; font-weight: bold; margin-bottom: 50px;"><%= t(:attendee_registration) %></div>
 <div id='required-fields'>
-  <span class="required">*</span>Campos obligatorios
+  <span class="required">*</span>&nbsp;&nbsp;&nbsp;<%= t(:required) %>
 </div>
 <%= form_for(@attendee, :url => "/register_attendee", :html => { :style => "text-align: left;" }) do |f| %>
   <% if @attendee.errors.any? %>
@@ -45,7 +53,7 @@
   <div style="text-align: center; font-size: 20px; margin-bottom: 30px;"><%= t'general_info' %></div><br/>
   <p class="field">
     <%= f.label :event_id, t("system_configuration.select_event").upcase %>
-    <%# Implement logic to show form if there are any event available %>
+  <%# Implement logic to show form if there are any event available %>
     <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name, {:selected => 9}, {:disabled => true}  %><span class="required">*</span>
   </p><br/><br/>
   <fieldset class="column-left">
@@ -197,10 +205,6 @@
       <%= f.select :e_main_line, options_for_select(["APLICACIONES WEB", "ASESORIA FONDO PYME", "AULAS EDUCATIVAS / LABORATORIOS", "CABLEADO ESTRUCTURADO", "CAPACITACION", "CCTV", "CONMUTADORES", "CONSULTORIA EN SISTEMAS", "DESARROLLO APL. MOVILES", "DESARROLLO SOFTWARE", "DISEÑO WEB", "ENCICLOMEDIA", "ERP", "FACTURAS ELECTRONICAS", "IMPRESION DIGITAL", "INSTALACION", "INTEGRADOR", "MARKETING DIGITAL", "MICROSOFT", "OTRO", "REDES", "REDES MICROONDAS", "ROBOTICA", "SEGURIDAD INFORMATICA", "SEGURIDAD PERIMETRAL", "SERVICIO / MANTENIMIENTO", "SERVICIO EPSON", "SERVICIOS MOVILES", "SOFTWARE AGENCIAS ADUANALES", "SOFTWARE CONTABLE", "SOFTWARE MICROFINANCIERA", "SOFTWARE AHORRO IMPRENTAS", "SOLUCIONES", "SOPORTE", "TELECOMUNICACIONES", "TELEFONIA", "VENTA DE ACCESORIOS", "VENTA DE CONSUMIBLES", "VENTA DE SOFTWARE", "VENTA EQUIPO DE COMPUTO", "VENTA DE PUNTO DE VENTA", "VENTA DE PUNTO DE VENTA RESTAURANTES", "VIRTUALIZACION", "N/A"], (f.object.e_main_line.blank?)? "": f.object.e_main_line), {prompt: t(:please_select).upcase} %>
     </p>
     <p class="field">
-      <%= f.label :a_sec_line, t("atten.atten.sec_line") %>
-      <%= f.select :a_sec_line, options_for_select(["APLICACIONES WEB", "ASESORIA FONDO PYME", "AULAS EDUCATIVAS / LABORATORIOS", "CABLEADO ESTRUCTURADO", "CAPACITACION", "CCTV", "CONMUTADORES", "CONSULTORIA EN SISTEMAS", "DESARROLLO APL. MOVILES", "DESARROLLO SOFTWARE", "DISEÑO WEB", "ENCICLOMEDIA", "ERP", "FACTURAS ELECTRONICAS", "IMPRESION DIGITAL", "INSTALACION", "INTEGRADOR", "MARKETING DIGITAL", "MICROSOFT", "OTRO", "REDES", "REDES MICROONDAS", "ROBOTICA", "SEGURIDAD INFORMATICA", "SEGURIDAD PERIMETRAL", "SERVICIO / MANTENIMIENTO", "SERVICIO EPSON", "SERVICIOS MOVILES", "SOFTWARE AGENCIAS ADUANALES", "SOFTWARE CONTABLE", "SOFTWARE MICROFINANCIERA", "SOFTWARE AHORRO IMPRENTAS", "SOLUCIONES", "SOPORTE", "TELECOMUNICACIONES", "TELEFONIA", "VENTA DE ACCESORIOS", "VENTA DE CONSUMIBLES", "VENTA DE SOFTWARE", "VENTA EQUIPO DE COMPUTO", "VENTA DE PUNTO DE VENTA", "VENTA DE PUNTO DE VENTA RESTAURANTES", "VIRTUALIZACION", "N/A"], (f.object.a_sec_line.blank?)? "": f.object.a_sec_line), {prompt: t(:please_select).upcase} %>
-    </p>
-    <p class="field">
       <%= f.label :a_num_employees, t("atten.atten.num_employees") %>
       <%= f.text_field :a_num_employees, :class=>"text-input small-input", :style => "width: 10% !important;", :pattern => "[0-9]+" %><!--<span class="required">*</span>-->
     </p>
@@ -268,15 +272,19 @@
       <% end %>
     </p>
   </fieldset>
-  <div class="clear"><div>
-      <p class="field">
-        <%= f.label :a_want_email, t("atten.atten.want_email"), :style => "display: inline-block;" %>
-        <%= f.check_box :a_want_email %>
-      </p>
-      <p><span class="required">*</span>&nbsp;&nbsp;&nbsp;<%= t(:required) %></p>
+  <div class="clear"></div>
+  <p class="field">
+    <%= f.label :a_want_email, t("atten.atten.want_email"), :style => "display: inline-block;" %>
+    <br/>
+    SI <%= radio_button nil, 'a_want_email', true %>
+    NO <%= radio_button nil, 'a_want_email', false %>
+    <%= f.hidden_field :a_want_email, :value => true %>
+  </p>
+  <br/><br/><br/>
+  <p><span class="required">*</span>&nbsp;&nbsp;&nbsp;<%= t(:required) %></p>
 
-      <div class="form-actions">
-        <%= f.submit nil, :class => 'button' %>
-      </div>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'button' %>
+  </div>
 
-    <% end %>
+<% end %>

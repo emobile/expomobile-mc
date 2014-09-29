@@ -27,7 +27,7 @@ es:
         a_market_segment: "SEGMENTO DEL MERCADO QUE ATIENDEN"
         a_name: "NOMBRE DEL ASISTENTE"
         a_num_employees: "NÚMERO DE EMPLEADOS"
-        a_platform: "PLATAFORMA"
+        a_platform: "PLATAFORMA MÓBIL"
         a_sector: "SECTOR"
         a_want_email: "¿DESEA RECIBIR EMAIL?"
         e_city: "CIUDAD"
@@ -230,7 +230,7 @@ es:
       sector: "SECTOR"
       subgroup: "SUBGRUPO"
       tel_nextel: "TEL. NEXTEL (A 10 DIGITOS)"
-      want_email: "EN OCASIONES TENEMOS INFORMACIÓN IMPORTANTE DE INTERÉS PARA TÍ ¿DESEAS RECIBIRLA MEDIANTE E-MAIL?"
+      want_email: "EN OCASIONES LOS PATROCINADORES Y EXPOSITORES TIENEN INFORMACIÓN DE INTERÉS PARA TÍ ¿TE GUSTARÍA RECIBIRLA MEDIANTE E-MAIL?"
       web: "WEB"
     attended_date: "FECHA DE ASISTENCIA"
     confirmation:
