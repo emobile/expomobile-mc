@@ -622,6 +622,12 @@ body#login {
     border-radius: 10px;
 }
 
+#login-wrapper #login-top #logo-foro-div {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
 #login-wrapper #login-content {
     text-align: left;
     width: 300px;
