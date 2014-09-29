@@ -46,12 +46,12 @@
   <p class="field">
     <%= f.label :event_id, t("system_configuration.select_event").upcase %>
     <%# Implement logic to show form if there are any event available %>
-    <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name, {:selected => 9}, {:readonly => true}  %><span class="required">*</span>
+    <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name, {:selected => 9}, {:disabled => true}  %><span class="required">*</span>
   </p><br/><br/>
   <fieldset class="column-left">
     <p class="field">
       <%= f.label :subgroup_id, t("atten.atten.subgroup") %>
-      <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name, {:selected => 31}, {:readonly => true} %><span class="required">*</span>
+      <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name, {}, {:disabled => true} %><span class="required">*</span>
     </p>
     <p class="field">
       <%= f.label :e_name, t("atten.enter.name") %>
