@@ -105,6 +105,7 @@ Expomobile::Application.routes.draw do
   post "attendees/send_mails"
   get "attendees/confirm"
   get "attendees/get_subgroups"
+  match "foro-ti-chihuahua" => "attendees#register"
   match "register" => "attendees#register"
   match "register_attendee" => "attendees#register_attendee"
   get "attendees/print_gafete_c"
