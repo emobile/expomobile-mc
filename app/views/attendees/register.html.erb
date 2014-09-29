@@ -46,7 +46,7 @@
   <p class="field">
     <%= f.label :event_id, t("system_configuration.select_event").upcase %>
     <%# Implement logic to show form if there are any event available %>
-    <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name, :selected => 9, :readonly => true %><span class="required">*</span>
+    <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name, {:selected => 9}, {:readonly => true}  %><span class="required">*</span>
   </p><br/><br/>
   <fieldset class="column-left">
     <p class="field">
@@ -89,7 +89,7 @@
     </p>
     <p class="field">
       <%= f.label :e_state, t("atten.enter.state") %>
-      <%= f.select :e_state, options_for_select(["AGUASCALIENTES", "BAJA CALIFORNIA NORTE", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIAPAS", "CHIHUAHUA", "COAHUILA", "COLIMA", "DISTRITO FEDERAL", "DURANGO", "ESTADO DE MEXICO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MICHOACAN", "MORELOS", "NAYARIT", "NUEVO LEON", "OAXACA", "PUEBLA", "QUERETARO", "QUINTANA ROO", "SAN LUIS POTOSI", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATAN"], (f.object.e_state.blank?)? "": f.object.e_state), {}, {selected: 'CHIHUAHUA'} %>
+      <%= f.select :e_state, options_for_select(["AGUASCALIENTES", "BAJA CALIFORNIA NORTE", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIAPAS", "CHIHUAHUA", "COAHUILA", "COLIMA", "DISTRITO FEDERAL", "DURANGO", "ESTADO DE MEXICO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MICHOACAN", "MORELOS", "NAYARIT", "NUEVO LEON", "OAXACA", "PUEBLA", "QUERETARO", "QUINTANA ROO", "SAN LUIS POTOSI", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATAN"], (f.object.e_state.blank?)? "": f.object.e_state), {selected: 'CHIHUAHUA'} %>
     </p>
     <p class="field">
       <%= f.label :e_zip_code, t("atten.enter.zip_code") %>
