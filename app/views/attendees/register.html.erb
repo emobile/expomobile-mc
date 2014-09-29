@@ -24,7 +24,9 @@
 </script>
 
 <div style="text-align: center; font-size: 26px; font-weight: bold; margin-bottom: 50px;"><%= t(:attendee_registration) %></div>
-
+<div>
+  <span class="required">*</span> Campos obligatorios
+</div>
 <%= form_for(@attendee, :url => "/register_attendee", :html => { :style => "text-align: left;" }) do |f| %>
   <% if @attendee.errors.any? %>
     <div id="error_explanation">
@@ -43,13 +45,13 @@
   <div style="text-align: center; font-size: 20px; margin-bottom: 30px;"><%= t'general_info' %></div><br/>
   <p class="field">
     <%= f.label :event_id, t("system_configuration.select_event").upcase %>
-  <%# Implement logic to show form if there are any event available %>
-    <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name %><span class="required">*</span>
+    <%# Implement logic to show form if there are any event available %>
+    <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name, :selected => 9, :readonly => true %><span class="required">*</span>
   </p><br/><br/>
   <fieldset class="column-left">
     <p class="field">
       <%= f.label :subgroup_id, t("atten.atten.subgroup") %>
-      <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name %><span class="required">*</span>
+      <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name, :selected => 31, :readonly => true %><span class="required">*</span>
     </p>
     <p class="field">
       <%= f.label :e_name, t("atten.enter.name") %>
@@ -61,11 +63,11 @@
     </p>
     <p class="field">
       <%= f.label :e_street, t("atten.enter.street") %>
-      <%= f.text_field :e_street, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_street, :class=>"text-input medium-input" %>
     </p>
     <p class="field">
       <%= f.label :e_ext_number, t("atten.enter.ext_number") %>
-      <%= f.text_field :e_ext_number, :class=>"text-input small-input", :style => "width: 10% !important;", :required => true, :pattern => "[1-9][0-9]{0,4}" %><span class="required">*</span>
+      <%= f.text_field :e_ext_number, :class=>"text-input small-input", :style => "width: 10% !important;", :pattern => "[1-9][0-9]{0,4}" %>
     </p>
     <p class="field">
       <%= f.label :e_int_number, t("atten.enter.int_number") %>
@@ -73,25 +75,25 @@
     </p>
     <p class="field">
       <%= f.label :e_colony, t("atten.enter.colony") %>
-      <%= f.text_field :e_colony, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_colony, :class=>"text-input medium-input" %>
     </p>
     <p class="field">
       <%= f.label :e_municipality, t("atten.enter.municipality") %>
-      <%= f.text_field :e_municipality, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_municipality, :class=>"text-input medium-input" %>
     </p>
   </fieldset>
   <fieldset class="column-right">
     <p class="field">
       <%= f.label :e_city, t("atten.enter.city") %>
-      <%= f.text_field :e_city, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_city, :class=>"text-input medium-input" %>
     </p>
     <p class="field">
       <%= f.label :e_state, t("atten.enter.state") %>
-      <%= f.select :e_state, options_for_select(["AGUASCALIENTES", "BAJA CALIFORNIA NORTE", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIAPAS", "CHIHUAHUA", "COAHUILA", "COLIMA", "DISTRITO FEDERAL", "DURANGO", "ESTADO DE MEXICO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MICHOACAN", "MORELOS", "NAYARIT", "NUEVO LEON", "OAXACA", "PUEBLA", "QUERETARO", "QUINTANA ROO", "SAN LUIS POTOSI", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATAN"], (f.object.e_state.blank?)? "": f.object.e_state), {prompt: t(:please_select).upcase}, :required => true %><span class="required">*</span>
+      <%= f.select :e_state, options_for_select(["AGUASCALIENTES", "BAJA CALIFORNIA NORTE", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIAPAS", "CHIHUAHUA", "COAHUILA", "COLIMA", "DISTRITO FEDERAL", "DURANGO", "ESTADO DE MEXICO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MICHOACAN", "MORELOS", "NAYARIT", "NUEVO LEON", "OAXACA", "PUEBLA", "QUERETARO", "QUINTANA ROO", "SAN LUIS POTOSI", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATAN"], (f.object.e_state.blank?)? "": f.object.e_state), {selected: 'CHIHUAHUA', prompt: t(:please_select).upcase} %>
     </p>
     <p class="field">
       <%= f.label :e_zip_code, t("atten.enter.zip_code") %>
-      <%= f.text_field :e_zip_code, :class=>"text-input small-input", :style => "width: 10% !important;", :required => true, :pattern => "[1-9][0-9]{4}" %><span class="required">*</span>
+      <%= f.text_field :e_zip_code, :class=>"text-input small-input", :style => "width: 10% !important;", :pattern => "[1-9][0-9]{4}" %>
     </p>
     <p class="field">
       <%= f.label :e_rfc, t("atten.enter.rfc") %>
@@ -99,11 +101,11 @@
     </p>
     <p class="field">
       <%= f.label :e_lada, t("atten.enter.lada") %>
-      <%= f.text_field :e_lada, :class=>"text-input small-input", :style => "width: 10% !important;", :required => true, :pattern => "[1-9][0-9]{1,2}" %><span class="required">*</span>
+      <%= f.text_field :e_lada, :class=>"text-input small-input", :style => "width: 10% !important;", :pattern => "[1-9][0-9]{1,2}" %>
     </p>
     <p class="field">
       <%= f.label :e_phone, t("atten.enter.phone") %>
-      <%= f.text_field :e_phone, :class=>"text-input small-input", :required => true %><span class="required">*</span>
+      <%= f.text_field :e_phone, :class=>"text-input small-input" %>
     </p>
   </fieldset>
   <div class="clear"></div>
