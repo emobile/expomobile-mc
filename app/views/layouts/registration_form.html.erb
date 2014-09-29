@@ -44,7 +44,9 @@
         <!--<h1>Simpla Admin</h1>-->
         <!-- Logo (221px width) -->
         <img id="logo" src="/assets/expomobile.png" alt="Simpla Admin logo" />
-        <img id='logo-foro' src='/assets/logodeliiiforo.png' alt='Logo foro de seguridad' />
+        <div id='logo-foro-div'>
+          <img id='logo-foro' src='/assets/logodeliiiforo.png' alt='Logo foro de seguridad' />
+        </div>
       </div> <!-- End #logn-top -->
 
       <div style="padding: 50px 100px;">
@@ -84,6 +86,10 @@
     <% if controller_name == "sessions" && action_name == "new" %>
       <%= render "devise/shared/links" %>
     <% end %>
+    <div id='logo-bellow'>
+      <div id='logo-bellow-text'>Powered by:</div>
+      <img id='logo-bellow-img' src='/assets/emobile-logo.png' />
+    </div>
   </body>
 
 </html>

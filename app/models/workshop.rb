@@ -8,7 +8,6 @@ class Workshop < ActiveRecord::Base
   has_many :attendee_workshops, :dependent => :destroy
   
   validates :name, :workshop_key, :room_id, :teacher_name, :event_id, :presence => true
-  validates :room_id, :uniqueness => true
   before_destroy :workshop_with_subgroups?
   
   private

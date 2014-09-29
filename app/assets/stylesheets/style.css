@@ -609,7 +609,7 @@ body#login {
 
 #login-wrapper #login-top {
     width: 100%;
-    padding: 140px 0 50px 80px;
+    padding: 140px 0 50px 0px;
 }
 
 #login-wrapper #login-top #logo {
@@ -620,10 +620,24 @@ body#login {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    position: absolute;
+    margin-left: 80px;
 }
 
 #login-wrapper #login-top #logo-foro-div {
-    
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#login-wrapper #logo-bellow {
+    text-align: right;
+    padding-right: 80px;
+    margin-top: 10px;
+}
+
+#login-wrapper #logo-bellow-img {
+    width: 180px;
 }
 
 #login-wrapper #login-content {
