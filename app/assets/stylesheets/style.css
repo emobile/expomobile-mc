@@ -640,6 +640,14 @@ body#login {
     width: 180px;
 }
 
+#required-fields {
+    text-align: left;
+}
+
+#required-fields .required {
+    margin-right: 15px;
+}
+
 #login-wrapper #login-content {
     text-align: left;
     width: 300px;

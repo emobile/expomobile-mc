@@ -24,8 +24,8 @@
 </script>
 
 <div style="text-align: center; font-size: 26px; font-weight: bold; margin-bottom: 50px;"><%= t(:attendee_registration) %></div>
-<div>
-  <span class="required">*</span> Campos obligatorios
+<div id='required-fields'>
+  <span class="required">*</span>Campos obligatorios
 </div>
 <%= form_for(@attendee, :url => "/register_attendee", :html => { :style => "text-align: left;" }) do |f| %>
   <% if @attendee.errors.any? %>
@@ -51,7 +51,7 @@
   <fieldset class="column-left">
     <p class="field">
       <%= f.label :subgroup_id, t("atten.atten.subgroup") %>
-      <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name, :selected => 31, :readonly => true %><span class="required">*</span>
+      <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name, {:selected => 31}, {:readonly => true} %><span class="required">*</span>
     </p>
     <p class="field">
       <%= f.label :e_name, t("atten.enter.name") %>
