@@ -6,7 +6,7 @@
     <%= link_to image_tag("/assets/expomobile.png", :id => "logo", :alt => ""), "/", :style => "display: block;" %>
     <!-- Sidebar Profile links -->
     <div id="profile-links">
-      <% if session[:current_event_id].nil? %>
+      <% if @event.nil? %>
         <div id="current_time"><%= Time.now %></div>
       <% else %>
         <div><%= link_to @event.name, @event %></div>
@@ -70,7 +70,7 @@
             <li><%= link_to t(:send_mails), attendees_select_email_type_path %></li>
           </ul>
         </li>
-        <% if @event.has_workshop %>
+        <% if @event.try(:has_workshop) %>
           <li>
             <a href="#" class="nav-top-item mainlinks<%= " current" if %{workshops rooms hours schedules}.include?(controller_name) %>" id="5main"> <!-- Add the class "current" to current menu item -->
               <%= t(:workshops).mb_chars.upcase %>
@@ -93,7 +93,7 @@
           <ul>
             <% @models = %w{Exposition Exhibitor Offert} %>
             <% @models.each do |model| %>
-              <% if %w{Exposition Exhibitor}.include?(model) || eval("@event.has_#{model.downcase}") %>
+              <% if %w{Exposition Exhibitor}.include?(model) || eval("@event.try(:has_#{model.downcase})") %>
                 <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
                 <% if %w{Exposition Offert}.include?(model) %>
                   <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
@@ -107,12 +107,12 @@
         </li>
         <li>
           <a href="#" class="nav-top-item mainlinks<%= " current" if %{face_to_faces sponsors}.include?(controller_name) %>" id="7main"> <!-- Add the class "current" to current menu item -->
-            <%= (@event.has_facetoface)? t(:face_to_faces).mb_chars.upcase: t(:sponsors).mb_chars.upcase %>
+            <%= (@event.try(:has_facetoface))? t(:face_to_faces).mb_chars.upcase: t(:sponsors).mb_chars.upcase %>
           </a>
           <ul>
             <% @models = %w{Face_To_Face Sponsor} %>
             <% @models.each do |model| %>
-              <% if %w{Sponsor}.include?(model) || eval("@event.has_#{model.camelize.downcase}") %>
+              <% if %w{Sponsor}.include?(model) || eval("@event.try(:has_#{model.camelize.downcase})") %>
                 <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
                 <li><%= link_to t(:new_record_male, :record => eval("t('activerecord.models.#{model.downcase}')")), eval("new_#{model.downcase}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "new" ? "current": "" %></li>
               <% end %>
@@ -126,7 +126,7 @@
           <ul>
             <% @models = %w{Diary Conference Activity} %>
             <% @models.each do |model| %>
-              <% if %w{Diary}.include?(model) || eval("@event.has_#{model.downcase}") %>
+              <% if %w{Diary}.include?(model) || eval("@event.try(:has_#{model.downcase})") %>
                 <li><%= link_to eval("t(:#{model.pluralize.downcase})"), eval("#{model.downcase.pluralize}_path"), :class => controller_name == model.pluralize.downcase && controller.action_name == "index" ? "current": "" %></li>
                 <% if %w{Conference Activity}.include?(model) %>
                   <% new_text = t(:new_record_female, :record => eval("t('activerecord.models.#{model.downcase}')")) %>
@@ -143,7 +143,7 @@
             <%= t(:attendances).mb_chars.upcase %>
           </a>
           <ul>
-            <% if @event.has_workshop %>
+            <% if @event.try(:has_workshop) %>
               <li><%= link_to t("visit.attendances_to_workshops"), visits_visits_to_workshops_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_workshops_index" || controller.action_name == "visits_to_workshops" || controller.action_name == "visits_to_workshops_by_subgroup" || controller.action_name == "visits_to_workshops_by_workshop") ? "current": "" %></li>
             <% end %>
             <li><%= link_to t("visit.attendances_to_exhibitors"), visits_visits_to_exhibitors_index_path, :class => controller_name == "visits" && (controller.action_name == "visits_to_exhibitors_index" || controller.action_name == "visits_to_exhibitors" || controller.action_name == "visits_to_exhibitors_by_subgroup" || controller.action_name == "visits_to_exhibitors_by_exhibitor") ? "current": "" %></li>
@@ -167,10 +167,10 @@
           </a>
           <ul>
             <li><%= link_to t("ratings.application_rating"), rating_show_application_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_application_rating") ? "current": "" %></li>
-            <% if @event.has_workshop %>
+            <% if @event.try(:has_workshop) %>
               <li><%= link_to t("ratings.workshops_rating"), rating_show_workshops_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_workshops_rating") ? "current": "" %></li>
             <% end %>
-            <% if @event.has_conference %>
+            <% if @event.try(:has_conference) %>
               <li><%= link_to t("ratings.conferences_rating"), rating_show_conferences_rating_path, :class => controller_name == "rating" && (controller.action_name == "show_conferences_rating") ? "current": "" %></li>
             <% end %>
           </ul>
