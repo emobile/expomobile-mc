@@ -81,7 +81,7 @@
     </p>
     <p class="field">
       <%= f.label :e_tradename, t("atten.enter.tradename") %>
-      <%= f.text_field :e_tradename, :class=>"text-input medium-input" %><!--<span class="required">*</span>-->
+      <%= f.text_field :e_tradename, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
     </p>
     <p class="field">
       <%= f.label :e_street, t("atten.enter.street") %>
