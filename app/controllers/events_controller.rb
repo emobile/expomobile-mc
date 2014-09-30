@@ -61,10 +61,10 @@ class EventsController < ApplicationController
         @group = Group.create(name: t("group.main_group"), event_id: @event.id)
         Subgroup.create(name: t("subgroup.main_subgroup"), leader: "Leader", subgroup_key: "S1", group_id: @group.id, event_id: @event.id)
         MailTemplate.create([
-            { :name => "acknowledgment_template", :content => "", :event_id => @event.id },
-            { :name => "invitation_template", :content => "", :event_id => @event.id },
-            { :name => "general_template", :content => "", :event_id => @event.id },
-            { :name => "welcome_template", :content => "", :event_id => @event.id }])
+            { :name => "acknowledgment_template", :content => MailTemplate.find_by_id(1).content, :event_id => @event.id },
+            { :name => "invitation_template", :content => MailTemplate.find_by_id(2).content, :event_id => @event.id },
+            { :name => "general_template", :content => MailTemplate.find_by_id(3).content, :event_id => @event.id },
+            { :name => "welcome_template", :content => MailTemplate.find_by_id(4).content, :event_id => @event.id }])
         format.html { redirect_to @event, notice: t(:successfully_created)}
         format.json { render json: @event, status: :created, location: @event }
       else
