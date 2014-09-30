@@ -67,9 +67,9 @@
     <%= f.label :event_id, t("system_configuration.select_event").upcase %>
   <%# Implement logic to show form if there are any event available %>
     <%= f.collection_select :event_id, Event.select{ |e| Time.now <= e.end_date && e.is_free }.sort_by{ |e| e.name }, :id ,:name  %><span class="required">*</span>
-  </p><br/><br/>
+  </p><br/><br/>-->
   <fieldset class="column-left">
-    <p class="field">
+    <!--<p class="field">
       <%= f.label :subgroup_id, t("atten.atten.subgroup") %>
       <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name %><span class="required">*</span>
     </p>-->
