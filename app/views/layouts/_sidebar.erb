@@ -9,12 +9,12 @@
       <% if session[:current_event_id].nil? %>
         <div id="current_time"><%= Time.now %></div>
       <% else %>
-        <div><%#= link_to @event.name, @event %></div>
+        <div><%= link_to @event.name, @event %></div>
         <div id="current_time">
           <% if current_user.role.is_super_admin? %>
             <div id="current_time"><%= Time.now %></div>
           <% else %>
-            <div id="current_time"><%#= Time.now.in_time_zone(@event.time_zone) %></div>
+            <div id="current_time"><%= Time.now.in_time_zone(@event.time_zone) %></div>
           <% end %>
         </div>
       <% end %>
