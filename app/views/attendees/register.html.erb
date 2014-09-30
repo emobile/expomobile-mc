@@ -73,8 +73,8 @@
       <%= f.label :subgroup_id, t("atten.atten.subgroup") %>
       <%= f.collection_select :subgroup_id, Subgroup.order(:name), :id ,:name %><span class="required">*</span>
     </p>-->
-    <%= f.input :event_id, :value => 9 %>
-    <%= f.input :subgroup_id, :value => 31 %>
+    <%= f.hidden_field :event_id, :value => 9 %>
+    <%= f.hidden_field :subgroup_id, :value => 31 %>
     <p class="field">
       <%= f.label :e_name, t("atten.enter.name") %>
       <%= f.text_field :e_name, :class=>"text-input medium-input", :required => true %><span class="required">*</span>
