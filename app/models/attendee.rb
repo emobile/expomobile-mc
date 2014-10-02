@@ -12,7 +12,7 @@ class Attendee < ActiveRecord::Base
   
   validates :a_name, :e_tradename, :e_name, :event_id, :presence => true
   #validates :a_email, :confirmation_token, :a_sector, :a_job, :presence => true
-  validates :a_name, :uniqueness => true
+  validates_uniqueness_of :a_name, :scope => :e_tradename
   validates_numericality_of :a_num_employees, :if => :a_num_employees
   validates_numericality_of :e_ext_number, :if => :e_ext_number
   validates_numericality_of :e_lada, :if => :e_lada
