@@ -10,7 +10,7 @@ module MassiveLoadsHelper
     else
       s = Roo::Excelx.new(file_name)
     end
-    out = File.open "massive_load_out.txt", "w"
+    out = File.open "massive_load_out.txt", "a"
     inc_id = 1
 
     2.upto(s.last_row) do |line|
