@@ -594,6 +594,14 @@ class MobileServicesController < ApplicationController
 
   end
   
+  def get_event_map
+    
+    if !session[:attendee_id].blank?
+      render json: @event.map.url(:medium)
+    end
+
+  end
+  
   #  def detect_platform
   #    if request.env['HTTP_USER_AGENT'] == ""
   #      access = true

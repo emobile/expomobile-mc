@@ -175,6 +175,10 @@ ActiveRecord::Schema.define(:version => 20140128221412) do
     t.string   "logo_bellow_content_type"
     t.integer  "logo_bellow_file_size"
     t.datetime "logo_bellow_updated_at"
+    t.string   "map_file_name"
+    t.string   "map_content_type"
+    t.integer  "map_file_size"
+    t.datetime "map_updated_at"
     t.string   "facebook"
     t.string   "twitter"
   end
@@ -380,9 +384,9 @@ ActiveRecord::Schema.define(:version => 20140128221412) do
   create_table "sponsors", :force => true do |t|
     t.string   "name",               :null => false
     t.string   "contact",            :null => false
-    t.string   "social_reason",      :null => false
-    t.string   "phone",              :null => false
-    t.string   "email",              :null => false
+    t.string   "social_reason"
+    t.string   "phone"
+    t.string   "email"
     t.string   "job"
     t.string   "work_street"
     t.string   "work_street_number"

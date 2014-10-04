@@ -99,6 +99,10 @@
       </div>
       <%= image_tag "/assets/gafete.jpg", :style => "position: absolute;" %>
     </div>
+    <p class="field">
+      <%= f.label t("event.map") %>
+      <%= f.file_field :map %>
+    </p>
     <div class="has">
       <%= image_tag "/assets/#{t(:activities).downcase}.png", :height => 64 %>
       <%= f.label t("event.has_activity") %>

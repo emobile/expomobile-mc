@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   attr_accessor :login, :fullname
   
   validates :username, :first_name, :last_name, :phone, :street, :street_number, :colony, :city, :state, :zip, :country, :presence => true
-  validates :username, :email, :uniqueness => {:scope => :event_id}
+  validates :email, :uniqueness => {:scope => :event_id}
+  validates :username, :uniqueness => true
   validates_length_of :email, :maximum => 120
   validates_length_of :first_name, :last_name, :maximum => 30
   validates :username, :length => { :within => 8..30 }, :allow_blank => true
