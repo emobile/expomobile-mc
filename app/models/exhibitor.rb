@@ -12,8 +12,8 @@ class Exhibitor < ActiveRecord::Base
   
   validates :name, :social_reason, :event_id, :presence => true
   #validates :phone, :email, :contact, :job, :presence => true
-  validates :name, :uniqueness => { :scope => :event_id }
-  #validates :social_reason, :uniqueness => { :scope => :event_id }
+  validates :contact, :uniqueness => { :scope => :event_id }
+  #validates :social_reason, :name, :uniqueness => { :scope => :event_id }
   
   private
   
