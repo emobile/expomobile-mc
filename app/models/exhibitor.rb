@@ -10,9 +10,10 @@ class Exhibitor < ActiveRecord::Base
   has_many :offerts, :dependent => :destroy
   before_save :name_to_upcase
   
-  validates :name, :phone, :email, :social_reason, :contact, :job, :event_id, :presence => true
-  validates :name, :uniqueness => true
-  validates :social_reason, :uniqueness => true
+  validates :name, :social_reason, :event_id, :presence => true
+  #validates :phone, :email, :contact, :job, :presence => true
+  validates :name, :uniqueness => { :scope => :event_id }
+  #validates :social_reason, :uniqueness => { :scope => :event_id }
   
   private
   
