@@ -21,9 +21,9 @@ module MassiveLoadsHelper
       attendee_id = @event.token_for_id + "%04d" % inc_id#s.cell(line, "A")
       #        subgroup_key = s.cell(line, "B")
       #        e_name = s.cell(line, "C")
-      #e_tradename = s.cell(line, "A")
-      social_reason = s.cell(line, "C")
-      social_reason.try(:strip!)
+      e_tradename = s.cell(line, "A")
+#      social_reason = s.cell(line, "C")
+#      social_reason.try(:strip!)
       #        e_street = s.cell(line, "E")
       #        e_ext_number = s.cell(line, "F")
       #        e_int_number = s.cell(line, "G")
@@ -35,9 +35,9 @@ module MassiveLoadsHelper
       #        e_rfc = s.cell(line, "M")
       #        e_lada = s.cell(line, "N")
       #        e_phone = s.cell(line, "O")
-      #a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
-      name = "#{s.cell(line, "A")} #{s.cell(line, "B")}"
-      name.try(:strip!)
+      a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
+#      name = "#{s.cell(line, "A")} #{s.cell(line, "B")}"
+#      name.try(:strip!)
       #        a_email = s.cell(line, "Q")
       #        a_chat = s.cell(line, "R")
       #        a_cellphone = s.cell(line, "S")
@@ -96,18 +96,18 @@ module MassiveLoadsHelper
       #        a_want_email = a_want_email.upcase == "SI"
       #        a_job = "N/A" if a_job.nil?
       #        subgroup_id = @event.subgroups.find_by_subgroup_key(subgroup_key).id
-#      if attendee_id[0, 2] == @event.token_for_id
-#        @attendee = @event.attendees.new(subgroup_id: 34, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
-#        if @attendee.save
-#          #            AttendeeMailer.welcome_email(@attendee).deliver!
-#        else
-#          out.puts @attendee.errors.inspect
-#        end
-#      end
-      @exhibitor = @event.exhibitors.new(social_reason: social_reason, name: social_reason, contact: name, email: 'email.email.com', exposition_key: 'CLAVE', phone: '0000000')
-      unless @exhibitor.save
-        out.puts @exhibitor.errors.inspect
+      if attendee_id[0, 2] == @event.token_for_id
+        @attendee = @event.attendees.new(subgroup_id: 34, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
+        if @attendee.save
+          #            AttendeeMailer.welcome_email(@attendee).deliver!
+        else
+          out.puts @attendee.errors.inspect
+        end
       end
+#      @exhibitor = @event.exhibitors.new(social_reason: social_reason, name: social_reason, contact: name, email: 'email.email.com', exposition_key: 'CLAVE', phone: '0000000')
+#      unless @exhibitor.save
+#        out.puts @exhibitor.errors.inspect
+#      end
       #      rescue
       #        @has_error = true
       #      end
