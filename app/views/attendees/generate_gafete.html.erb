@@ -136,7 +136,7 @@
   </div>
 </div>
 <div id="gafete-big" style="width: 8.5cm; height: 12cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
-  <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible; text-align: center;" id="gafete-logo-first-big">
+  <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible; text-align: left;" id="gafete-logo-first-big">
     <%= image_tag @logo_url, :style => "height: auto; max-width: 215px; max-height: 50px; -ms-interpolation-mode: bicubic; margin: 25px 7px 0px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
     <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
   </div>
