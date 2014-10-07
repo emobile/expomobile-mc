@@ -12,7 +12,7 @@
       <div id="gafete-container" style="height: 12cm; margin: 0px; min-height: 13cm; color: #000;">
         <div id="gafete-big" style="width: 8.5cm; height: 12cm;" class="big">
           <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; text-align: center; visibility: <%= @gafete_logo_visibility %>;" id="gafete-logo-first-big">
-            <%= image_tag @logo_url, :style => "#{(@with_qr_code == "true")? "height: auto; max-width: 215px;": "height: 50px;"} max-height: 71px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
+            <%= image_tag @logo_url, :style => "#{(@with_qr_code == "true")? "height: auto; max-width: 215px;": "height: 50px;"} max-height: 50px; -ms-interpolation-mode: bicubic; margin: 21px 7px 0px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
             <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right; display: #{(@with_qr_code == "true")? "block": "none"};", :id => "gafete-qr-img-big" %>    
           </div>
           <div class="gafete-logo" style="height: 135px; text-align: center; visibility: <%= @gafete_logo_visibility %>;">
