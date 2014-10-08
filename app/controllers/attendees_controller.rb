@@ -145,7 +145,7 @@ class AttendeesController < ApplicationController
         "\nTEL;TYPE=cell:#{cell}" +
         "\nEMAIL:#{email}" +
         "\nEND:VCARD")
-    return "http://chart.apis.google.com/chart?cht=qr&chs=512x512&chl=#{vcard}"
+    return "http://chart.apis.google.com/chart?cht=qr&chs=520x520&chl=#{vcard}"
     #    @qr_value = vcard
     #    
     #    respond_to do |format|
