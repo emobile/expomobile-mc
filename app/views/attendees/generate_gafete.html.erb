@@ -112,7 +112,7 @@
 <div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px; border: 1px solid #000; color: #000;" class="small">
   <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible;" id="gafete-logo-first">
     <%= image_tag @logo_url, :style => "height: auto; max-width: 200px; max-height: 71px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img" %>
-    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name}|#{@e_tradename}|#{@e_phone}|#{@a_cellphone}|#{@a_email}|#{@e_address}|#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
+    <%= image_tag generate_qr("emobile:[#{@a_name}|#{@e_tradename}|#{@e_phone}|#{@a_cellphone}|#{@a_email}|#{@e_address}|#{@a_web}]"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
   </div>
   <div class="gafete-logo" style="height: 135px; text-align: center; visibility: visible;">
     <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
@@ -153,7 +153,7 @@
   </div>
   <div class="gafete-logo" style="height: 112px; visibility: visible; text-align: center;">
     <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
-    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name}|#{@e_tradename}|#{@e_phone}|#{@a_cellphone}|#{@a_email}|#{@e_address}|#{@a_web}]", :format => "png"), :height => 110, :style => "height: 110px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
+    <%= image_tag generate_qr("emobile:[#{@a_name}|#{@e_tradename}|#{@e_phone}|#{@a_cellphone}|#{@a_email}|#{@e_address}|#{@a_web}]"), :height => 110, :style => "height: 110px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
     <div style="margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
       <%= image_tag "/assets/expomobile.png", :width => 64, :style => "width 64px; height: auto; -ms-interpolation-mode: bicubic; float: left; position: relative; bottom: 8px;" %>      
       <%#*<span style="margin-right: 5px;"><b>Web:</b> vinculotic.com</span>%>

@@ -4,6 +4,7 @@ class AttendeesController < ApplicationController
   before_filter :authenticate_user!, :except => [:register, :register_attendee, :confirm, :get_subgroups]
   before_filter :load_event, :only => [:create, :generate_gafete, :print_gafete_a, :print_gafete_b, :print_gafete_c, :attend, :general_attendances_report]
   load_and_authorize_resource :except => [:register, :register_attendee, :get_subgroups, :confirm, :general_attendances_report]
+  helper_method :generate_qr
 
   def index
     if params[:search].blank?
@@ -132,30 +133,28 @@ class AttendeesController < ApplicationController
     render json: @attendees
   end
   
-  def generate_qr
-    fn, org, tel, cell, email, address, web = params[:qr_value].gsub(/emobile:|\[|\]/, "").split("|")
+  def generate_qr(qr_value)
+    fn, org, tel, cell, email, address, web = qr_value.gsub(/emobile:|\[|\]/, "").split("|")
     n = fn.sub(" ", ";").split(";").reverse.join(";")
     vcard = URI::encode("BEGIN:VCARD" +
-      "\nVERSION:4.0" +
-      "\nN:#{n}" +
-      "\nFN:#{fn}" +
-      "\nORG:#{org}" +
-      "\nTEL;TYPE=WORK:#{tel}" +
-      "\nTEL;TYPE=cell:#{cell}" +
-      "\nEMAIL:#{email}" +
-      "\nEND:VCARD")
-  
-    logger.info vcard
-
-    @qr_value = vcard
-    
-    respond_to do |format|
-      format.html
-      format.svg  { render :qrcode => @qr_value, :level => :l, :unit => 10, :offset => 50 }
-      format.png  { render :qrcode => @qr_value, :offset => 50 }
-      format.gif  { render :qrcode => @qr_value, :offset => 50 }
-      format.jpeg { render :qrcode => @qr_value, :offset => 50 }
-    end
+        "\nVERSION:4.0" +
+        "\nN:#{n}" +
+        "\nFN:#{fn}" +
+        "\nORG:#{org}" +
+        "\nTEL;TYPE=WORK:#{tel}" +
+        "\nTEL;TYPE=cell:#{cell}" +
+        "\nEMAIL:#{email}" +
+        "\nEND:VCARD")
+    return "http://chart.apis.google.com/chart?cht=qr&chs=512x512&chl=#{vcard}"
+    #    @qr_value = vcard
+    #    
+    #    respond_to do |format|
+    #      format.html
+    #      format.svg  { render :qrcode => @qr_value, :level => :l, :unit => 10, :offset => 50 }
+    #      format.png  { render :qrcode => @qr_value, :offset => 50 }
+    #      format.gif  { render :qrcode => @qr_value, :offset => 50 }
+    #      format.jpeg { render :qrcode => @qr_value, :offset => 50 }
+    #    end
   end
   
   def generate_gafete
