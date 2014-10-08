@@ -135,9 +135,7 @@ class AttendeesController < ApplicationController
   def generate_qr
     fn, org, tel, cell, email, address, web = params[:qr_value].gsub(/emobile:|\[|\]/, "").split("|")
     n = fn.sub(" ", ";").split(";").reverse.join(";")
-    p [n,fn, org, tel, cell, email, address, web]
-    p "QRCODE==============="
-    vcard = URI::encode("BEGIN:VCARD VERSION:3.0
+    vcard = CGI::escape("BEGIN:VCARD VERSION:3.0
       N:#{n}
       FN:#{fn}
       ORG:#{org}
@@ -145,6 +143,7 @@ class AttendeesController < ApplicationController
       TEL;TYPE=CEL:#{cell}
       EMAIL:#{email}
       END:VCARD")
+    p vcard
     @qr_value = vcard
     
     respond_to do |format|
