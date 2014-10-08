@@ -144,6 +144,8 @@ class AttendeesController < ApplicationController
       "\nTEL;TYPE=cell:#{cell}" +
       "\nEMAIL:#{email}" +
       "\nEND:VCARD")
+  
+    logger.info vcard
 
     @qr_value = vcard
     
