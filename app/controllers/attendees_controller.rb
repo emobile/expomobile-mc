@@ -135,14 +135,23 @@ class AttendeesController < ApplicationController
   def generate_qr
     fn, org, tel, cell, email, address, web = params[:qr_value].gsub(/emobile:|\[|\]/, "").split("|")
     n = fn.sub(" ", ";").split(";").reverse.join(";")
-    vcard = URI::encode("BEGIN:VCARD VERSION:3.0" +
+    vcard = URI::encode("BEGIN:VCARD" +
+      "\nVERSION:3.0" +
       "\nN:#{n}" +
       "\nFN:#{fn}" +
       "\nORG:#{org}" +
       "\nTEL;TYPE=WORK:#{tel}" +
       "\nTEL;TYPE=cell:#{cell}" +
-      "\nEMAIL:#{email}" +
       "\nEND:VCARD")
+  
+#      URI::encode("BEGIN:VCARD" +
+#        "\nVERSION:3.0" +
+#        "\nN:Gump;Forrest" +
+#        "\nFN:Forrest Gump" +
+#        "\nORG:Bubba Gump Shrimp Co." +
+#        "\nTEL;TYPE=WORK:(111) 555-1212" +
+#        "\nTEL;TYPE=cell:(404) 555-1212" +
+#        "\nEND:VCARD")
 
     @qr_value = vcard
     
