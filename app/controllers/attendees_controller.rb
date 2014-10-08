@@ -133,12 +133,16 @@ class AttendeesController < ApplicationController
   end
   
   def generate_qr
-    n, org, tel, email, address, web = params[:qr_value].gsub(/emobile:|\[|\]/, "").split("|")
+    fn, org, tel, cell, email, address, web = params[:qr_value].gsub(/emobile:|\[|\]/, "").split("|")
+    n = fn.sub(" ", ";").split(";").reverse.join(";")
+    p [n,fn, org, tel, cell, email, address, web]
+    p "QRCODE==============="
     vcard = URI::encode("BEGIN:VCARD VERSION:3.0
       N:#{n}
-      FN:#{n}
+      FN:#{fn}
       ORG:#{org}
       TEL;TYPE=WORK:#{tel}
+      TEL;TYPE=CEL:#{cell}
       EMAIL:#{email}
       END:VCARD")
     @qr_value = vcard
@@ -159,6 +163,7 @@ class AttendeesController < ApplicationController
     @diaries = @event.diaries.order(:event_date).limit(5)
     @e_tradename = params[:e_tradename]
     @e_phone = params[:e_phone]
+    @a_cellphone = params[:a_cellphone]
     @a_email = params[:a_email]
     @e_address = params[:e_address]
     @a_web = params[:a_web]
@@ -170,6 +175,7 @@ class AttendeesController < ApplicationController
     @a_name = params[:a_name]
     @e_tradename = params[:e_tradename]
     @e_phone = params[:e_phone]
+    @a_cellphone = params[:a_cellphone]
     @a_email = params[:a_email]
     @e_address = params[:e_address]
     @a_web = params[:a_web]

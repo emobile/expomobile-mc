@@ -110,7 +110,7 @@
           <td style="text-align: center;">
             <%= label_tag nil, t("atten.assisted") %><%= check_box_tag nil, attendee.id, attendee.attended, :class => "attended disabled-button" %>
             <%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(
-              :attendee_id => attendee.attendee_id, :a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :e_phone => attendee.e_phone, 
+              :attendee_id => attendee.attendee_id, :a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :e_phone => attendee.e_phone, :a_cellphone => attendee.a_cellphone,
               :a_email => attendee.a_email, :e_address => "#{attendee.e_street} #{attendee.e_ext_number}, #{attendee.e_colony}", 
               :a_web => attendee.a_web, :layout => "true"
               ), :class => "button" %>
