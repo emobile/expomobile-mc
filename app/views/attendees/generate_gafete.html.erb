@@ -112,7 +112,7 @@
 <div id="gafete" style="width: 305px; height: 415px; margin: 0 auto 30px; border: 1px solid #000; color: #000;" class="small">
   <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible;" id="gafete-logo-first">
     <%= image_tag @logo_url, :style => "height: auto; max-width: 200px; max-height: 71px; -ms-interpolation-mode: bicubic; margin: 7px; display: inline-block;", :id => "gafete-logo-first-img" %>
-    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
+    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name}|#{@e_tradename}|#{@e_phone}|#{@a_email}|#{@e_address}|#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img" %>    
   </div>
   <div class="gafete-logo" style="height: 135px; text-align: center; visibility: visible;">
     <% @banner_width, @banner_height = @is_exhibitor? [226, 100]: [295, 125] %>
@@ -122,26 +122,26 @@
     <% end %>
   </div>
   <div id="gafete-text" style="height: 115px; border-top: 1px solid #000; border-bottom: 1px solid #000; line-height: 25px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
-    <span style="font-weight: bold; font-size: 24px; top: 15px; position: relative; left: -7px;"><%= @a_name.mb_chars.upcase %></span><br/>
-    <span style="font-size: 24px; top: 15px; position: relative; left: -7px;"><%= @e_tradename %></span>
+    <span style="font-weight: bold; font-size: 24px; top: 15px; position: relative;"><%= @a_name.mb_chars.upcase %></span><br/>
+    <span style="font-size: 24px; top: 15px; position: relative;"><%= @e_tradename %></span>
   </div>
   <div class="gafete-logo" style="height: 80px; visibility: visible;">
     <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
-    <div style="float: right; display: inline-block; margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-      <%= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
-      <span style="position: relative; bottom: 5px;">VinculoTIC</span><br/>
-      <%= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
-      <span style="position: relative; bottom: 5px;">@vinculotic</span>
-    </div>
+    <%#*<div style="float: right; display: inline-block; margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">%>
+      <%#= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+      <%#*<span style="position: relative; bottom: 5px;">VinculoTIC</span><br/>%>
+      <%#= image_tag "/assets/tweet48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
+      <%#*<span style="position: relative; bottom: 5px;">@vinculotic</span>%>
+    <%#*</div>%>
   </div>
 </div>
 <div id="gafete-big" style="width: 8.5cm; height: 12cm; margin: 0 auto 30px; border: 1px solid #000; color: #000; display: none;" class="big">
   <div class="gafete-logo" style="height: 85px; border-bottom: 1px solid #000; visibility: visible; text-align: left;" id="gafete-logo-first-big">
     <%= image_tag @logo_url, :style => "height: auto; max-width: 215px; max-height: 50px; -ms-interpolation-mode: bicubic; margin: 25px 7px 0px; display: inline-block;", :id => "gafete-logo-first-img-big" %>
-    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 85, :style => "height: 85px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
+    <span style="float: right; margin: 10px; font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif;"><b>Web:</b> foro-ti.mx</span>
   </div>
   <div class="gafete-logo" style="height: 135px; text-align: center; visibility: visible;">
-    <% @banner_height = @is_exhibitor? "135px": "auto" %>
+    <% @banner_height = @is_exhibitor? "112px": "auto" %>
     <%= image_tag @banner_url, :style => "height: #{@banner_height}; width: 100%; -ms-interpolation-mode: bicubic;" %>
     <% if @is_exhibitor %>
       <span style="font-family: 'Helvetica Narrow','Arial Narrow',Tahoma,Arial,Helvetica,sans-serif; font-size: 20px; font-weight: bold; float: right; margin-right: 20px;"><%= t("activerecord.models.exhibitor").mb_chars.upcase %></span>
@@ -153,9 +153,9 @@
   </div>
   <div class="gafete-logo" style="height: 112px; visibility: visible; text-align: center;">
     <%= image_tag @event.logo_bellow.url, :height => 50, :style => "height: 50px; -ms-interpolation-mode: bicubic; margin: 10px;" %>
+    <%= image_tag attendees_generate_qr_path(:qr_value => "emobile:[#{@a_name},#{@e_tradename},#{@e_phone},#{@a_email},#{@e_address},#{@a_web}]", :format => "png"), :height => 110, :style => "height: 110px; -ms-interpolation-mode: bicubic; margin: 0px; float: right;", :id => "gafete-qr-img-big" %>    
     <div style="margin: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-      <span style="float: left;"><b>Web:</b> foro-ti.mx</span>
-      <%= image_tag "/assets/expomobile.png", :width => 64, :style => "width 64px; height: auto; -ms-interpolation-mode: bicubic; float: right; position: relative; bottom: 8px;" %>      
+      <%= image_tag "/assets/expomobile.png", :width => 64, :style => "width 64px; height: auto; -ms-interpolation-mode: bicubic; float: left; position: relative; bottom: 8px;" %>      
       <%#*<span style="margin-right: 5px;"><b>Web:</b> vinculotic.com</span>%>
       <%#= image_tag "/assets/in48.png", :width => 20, :style => "width 20px; height: auto; -ms-interpolation-mode: bicubic;" %>
       <%#*<span style="margin-right: 5px;">VinculoTIC</span>%>

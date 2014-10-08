@@ -13,11 +13,12 @@ class QrGeneratorController < ApplicationController
     else
       @field1a = "Taller: "
       @field2a = "Instructor: "
-      @field3a = p"Salón: "
+      @field3a = "Salón: "
       @field1b = params[:workshop_name]
       @field2b = params[:teacher_name]
       @field3b = params[:room]
     end
+
     @qr_code = "https://chart.googleapis.com/chart?cht=qr&chs=#{256}x#{256}&chl=#{SystemConfiguration.first.token}:#{params[:key]}"
     render layout: false
   end
