@@ -136,13 +136,13 @@ class AttendeesController < ApplicationController
     fn, org, tel, cell, email, address, web = params[:qr_value].gsub(/emobile:|\[|\]/, "").split("|")
     n = fn.sub(" ", ";").split(";").reverse.join(";")
     vcard = URI::encode("BEGIN:VCARD VERSION:3.0" +
-      "N:#{n}" +
-      "FN:#{fn}" +
-      "ORG:#{org}" +
-      "TEL;TYPE=WORK:#{tel}" +
-      "TEL;TYPE=cell:#{cell}" +
-      "EMAIL:#{email}" +
-      "END:VCARD")
+      "\nN:#{n}" +
+      "\nFN:#{fn}" +
+      "\nORG:#{org}" +
+      "\nTEL;TYPE=WORK:#{tel}" +
+      "\nTEL;TYPE=cell:#{cell}" +
+      "\nEMAIL:#{email}" +
+      "\nEND:VCARD")
 
     @qr_value = vcard
     
