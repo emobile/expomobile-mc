@@ -103,6 +103,7 @@ class VisitsController < ApplicationController
   def control_numbers_report_pdf
     respond_to do |format|
       format.pdf {
+        require 'prawn/table'
         pdf = Prawn::Document.new
         @attendees_total = @event.attendees.count
         @logo_url = "#{Rails.root}/public#{@event.logo.url.gsub(/\?.*\z/, "")}"
