@@ -87,6 +87,7 @@ GEM
     prawn (1.0.0)
       pdf-core (~> 0.2.2)
       ttfunk (~> 1.1.1)
+    prawn-table (0.2.1)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -177,6 +178,7 @@ DEPENDENCIES
   nested_form
   paperclip (~> 2.8)
   prawn
+  prawn-table
   rails (= 3.2.13)
   roo
   rqrcode-rails3

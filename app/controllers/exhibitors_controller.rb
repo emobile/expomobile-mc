@@ -6,6 +6,8 @@ class ExhibitorsController < ApplicationController
     if params[:with_offerts] == "1"
       @exhibitors = Exhibitor.joins("RIGHT OUTER JOIN offerts o ON exhibitors.id = o.exhibitor_id").where(:event_id => session[:current_event_id]).uniq
       @exhibitors.each {|e| e[:mobile_logo_url] = e.logo.url(:mobile)}
+    elsif !params[:search].blank?
+      @exhibitors = Exhibitor.where("event_id = #{session[:current_event_id]} AND contact LIKE '%#{params[:search]}%'").order('id DESC').paginate(:per_page => 10, :page => params[:page])
     else
       @exhibitors = Exhibitor.where(:event_id => session[:current_event_id]).order('id DESC').paginate(:per_page => 10, :page => params[:page])
     end
@@ -102,5 +104,11 @@ class ExhibitorsController < ApplicationController
       format.html { redirect_to exhibitors_url }
       format.json { head :no_content }
     end
+  end
+  
+  def get_all_exhibitor_contacts
+    @exhibitors = Exhibitor.where(:event_id => session[:current_event_id]).uniq.pluck(:contact)
+    
+    render json: @exhibitors
   end
 end

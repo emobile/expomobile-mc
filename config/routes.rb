@@ -98,6 +98,7 @@ Expomobile::Application.routes.draw do
 
   resources :offerts
 
+  get "exhibitors/get_all_exhibitor_contacts"
   resources :exhibitors
   
   get "attendees/general_attendances_report"
