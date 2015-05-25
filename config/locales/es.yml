@@ -571,6 +571,7 @@ es:
     not_updated: "El horario no pudo ser actualizado."
   
   schedules: "Horarios"
+  search_by_contact: "Buscar por contacto"
   search_by_name: "Buscar por nombre"
   send_mails: "Enviar correos"
   sessions: "Sesiones"

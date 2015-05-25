@@ -571,6 +571,7 @@ en:
     not_updated: "Schedule could not be updated."
   
   schedules: "Schedules"
+  search_by_contact: "Search by contact"
   search_by_name: "Search by name"
   send_mails: "Send mails"
   sessions: "Sessions"
