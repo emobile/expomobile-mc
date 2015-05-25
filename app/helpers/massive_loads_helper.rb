@@ -35,7 +35,7 @@ module MassiveLoadsHelper
       #        e_rfc = s.cell(line, "M")
       #        e_lada = s.cell(line, "N")
       #        e_phone = s.cell(line, "O")
-      a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}"
+      a_name = "#{s.cell(line, "B")} #{s.cell(line, "C")}".strip
 #      name = "#{s.cell(line, "A")} #{s.cell(line, "B")}"
 #      name.try(:strip!)
       #        a_email = s.cell(line, "Q")
