@@ -101,6 +101,7 @@ Expomobile::Application.routes.draw do
   get "exhibitors/get_all_exhibitor_contacts"
   resources :exhibitors
   
+  get "attendees/is_active"
   get "attendees/general_attendances_report"
   post "attendees/attend"
   get "attendees/select_email_type"

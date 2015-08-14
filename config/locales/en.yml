@@ -233,6 +233,7 @@ en:
       tel_nextel: "NEXTEL PHONE (10 NUMBERS)"
       want_email: "SOMETIMES WE HAVE IMPORTANT INFORMATION OF INTEREST TO YOU, DO YOU WANT TO RECEIVE BY E-MAIL?"
       web: "WEB"
+      active: "ACTIVE?"
     attended_date: "ATTENDED DATE"
     confirmation:
       already_confirmed: "You already have been confirmed."

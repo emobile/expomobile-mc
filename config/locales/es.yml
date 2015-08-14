@@ -233,6 +233,7 @@ es:
       tel_nextel: "TEL. NEXTEL (A 10 DIGITOS)"
       want_email: "EN OCASIONES LOS PATROCINADORES Y EXPOSITORES TIENEN INFORMACIÓN DE INTERÉS PARA TÍ ¿TE GUSTARÍA RECIBIRLA MEDIANTE E-MAIL?"
       web: "WEB"
+      active: "¿ACTIVO?"
     attended_date: "FECHA DE ASISTENCIA"
     confirmation:
       already_confirmed: "Ya haz sido confirmado anteriormente."

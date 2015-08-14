@@ -318,4 +318,10 @@ class AttendeesController < ApplicationController
     @event = Event.find_by_id(session[:current_event_id])
   end
   
+  def is_active
+    @attendee = Attendee.find(params[:id])
+    
+    render json: {active: @attendee.active}
+  end
+  
 end

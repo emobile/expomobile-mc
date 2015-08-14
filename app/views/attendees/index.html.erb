@@ -3,47 +3,59 @@
 <% end %>
 
 <script type="text/javascript">
-  $(function() {
+  $(function () {
 
-    $(".attended").each(function() {
+    $(".attended").each(function () {
       var $link = $(this).next();
-      if ($(this).prop("checked")) {
+      console.log($(this).data("active"));
+      if ($(this).prop("checked") && $(this).data("active")) {
         $link.removeClass("disabled-button");
         $link.off("click");
       }
       else {
         $link.addClass("disabled-button");
-        $link.on("click", function(e) {
+        $link.on("click", function (e) {
           return false;
         });
       }
     });
 
-    $(".attended").on("change", function() {
+    $(".attended").on("change", function () {
       var $link = $(this).next();
       if ($(this).prop("checked")) {
         $.ajax({
           url: "/attendees/attend",
           type: "post",
           data: {attendee_id: $(this).val(), attend: "true"},
-          error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             alert(error);
           }
         });
-        $link.removeClass("disabled-button");
-        $link.off("click");
+
+        $.get("/attendees/is_active",
+                {id: $(this).val()},
+        function (data) {
+          if (data.active) {
+            $link.removeClass("disabled-button");
+            $link.off("click");
+          }
+        },
+                "json"
+
+                );
+
       }
       else {
         $.ajax({
           url: "/attendees/attend",
           type: "post",
           data: {attendee_id: $(this).val(), attend: "false"},
-          error: function(xhr, status, error) {
+          error: function (xhr, status, error) {
             alert(error);
           }
         });
         $link.addClass("disabled-button");
-        $link.on("click", function(e) {
+        $link.on("click", function (e) {
           return false;
         });
       }
@@ -108,7 +120,7 @@
           <td><%= attendee.a_name %></td>
 
           <td style="text-align: center;">
-            <%= label_tag nil, t("atten.assisted") %><%= check_box_tag nil, attendee.id, attendee.attended, :class => "attended disabled-button" %>
+            <%= label_tag nil, t("atten.assisted") %><%= check_box_tag nil, attendee.id, attendee.attended, :class => "attended disabled-button", "data-active" => attendee.active %>
             <%= link_to t("atten.generate_gafete"), attendees_generate_gafete_path(
               :attendee_id => attendee.attendee_id, :a_name => attendee.a_name, :e_tradename => attendee.e_tradename, :e_phone => attendee.e_phone, :a_cellphone => attendee.a_cellphone,
               :a_email => attendee.a_email, :e_address => "#{attendee.e_street} #{attendee.e_ext_number}, #{attendee.e_colony}", 

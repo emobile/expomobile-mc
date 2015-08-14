@@ -238,6 +238,10 @@
         <%= f.text_field :a_market_segment, :name => "attendee[a_market_segment][]", :class=>"text-input small-input other", :style => "display: block;", :value => other_market[0] %>
       <% end %>
     </p>
+    <p class="field">
+      <%= f.label :active, t("atten.atten.active") %>
+      <%= f.check_box :active %>
+    </p>
     <%= f.hidden_field :event_id, :value => session[:current_event_id] %>
   </fieldset>
   <div class="clear"><div>

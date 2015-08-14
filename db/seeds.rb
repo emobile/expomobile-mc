@@ -70,12 +70,12 @@ Exhibitor.create([
 
 
 
-Offert.create([
-  { :exhibitor_id => 26, :description => "Memorias USB 16 GB en $150", :price => 150.0, :start_date => "2014-01-30 15:00:00", :end_date => "2014-01-30 16:00:00", :location => "Stand uno", :event_id => 2, :created_at => "2014-01-30 22:53:27", :updated_at => "2014-01-30 22:53:27" },
-  { :exhibitor_id => 27, :description => "20% de Descuento en Asesorías personalizadas para tu negocio", :price => 4999.0, :start_date => "2014-02-04 09:00:00", :end_date => "2014-02-04 19:00:00", :location => "Stand 044", :event_id => 3, :created_at => "2014-02-04 19:06:55", :updated_at => "2014-02-04 19:06:55" },
-  { :exhibitor_id => 31, :description => "Abre una cuenta con nosotros hoy y entra a una rifa de premios de hasta 150,000", :price => 200.0, :start_date => "2014-02-04 09:00:00", :end_date => "2014-02-04 14:00:00", :location => "Stand 015", :event_id => 3, :created_at => "2014-02-04 19:08:58", :updated_at => "2014-02-04 19:08:58" },
-  { :exhibitor_id => 33, :description => "10% en cualquiera de nuestros servicios, pregunta con uno de nuestros asesores.", :price => 8100.0, :start_date => "2014-02-04 09:00:00", :end_date => "2014-02-04 19:00:00", :location => "Stand 003", :event_id => 3, :created_at => "2014-02-04 19:10:52", :updated_at => "2014-02-04 22:54:23" }
-], :without_protection => true )
+#Offert.create([
+#  { :exhibitor_id => 26, :description => "Memorias USB 16 GB en $150", :price => 150.0, :start_date => "2014-01-30 15:00:00", :end_date => "2014-01-30 16:00:00", :location => "Stand uno", :event_id => 2, :created_at => "2014-01-30 22:53:27", :updated_at => "2014-01-30 22:53:27" },
+#  { :exhibitor_id => 27, :description => "20% de Descuento en Asesorías personalizadas para tu negocio", :price => 4999.0, :start_date => "2014-02-04 09:00:00", :end_date => "2014-02-04 19:00:00", :location => "Stand 044", :event_id => 3, :created_at => "2014-02-04 19:06:55", :updated_at => "2014-02-04 19:06:55" },
+#  { :exhibitor_id => 31, :description => "Abre una cuenta con nosotros hoy y entra a una rifa de premios de hasta 150,000", :price => 200.0, :start_date => "2014-02-04 09:00:00", :end_date => "2014-02-04 14:00:00", :location => "Stand 015", :event_id => 3, :created_at => "2014-02-04 19:08:58", :updated_at => "2014-02-04 19:08:58" },
+#  { :exhibitor_id => 33, :description => "10% en cualquiera de nuestros servicios, pregunta con uno de nuestros asesores.", :price => 8100.0, :start_date => "2014-02-04 09:00:00", :end_date => "2014-02-04 19:00:00", :location => "Stand 003", :event_id => 3, :created_at => "2014-02-04 19:10:52", :updated_at => "2014-02-04 22:54:23" }
+#], :without_protection => true )
 
 
 
