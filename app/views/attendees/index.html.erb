@@ -7,7 +7,7 @@
 
     $(".attended").each(function () {
       var $link = $(this).next();
-      console.log($(this).data("active"));
+
       if ($(this).prop("checked") && $(this).data("active")) {
         $link.removeClass("disabled-button");
         $link.off("click");
