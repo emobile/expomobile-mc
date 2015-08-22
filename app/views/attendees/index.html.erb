@@ -112,7 +112,7 @@
   <%#end%>
           <% @model = attendee %>
           <td><%= attendee.attendee_id %>
-            <%= if !attendee.active? %>
+            <% if !attendee.active? %>
               <span style="float: left; font-weight: bold; color: #f00;"><%= t("blocked") %></span>
             <% end %>
           </td>
