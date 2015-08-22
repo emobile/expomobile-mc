@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
+  blocked: "Bloqueado"
   found: "Encontrado: "
   show_attendees: "Mostrar asistentes"
   download_xls: "Descargar XLS"
