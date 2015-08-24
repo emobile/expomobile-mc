@@ -96,18 +96,18 @@ module MassiveLoadsHelper
       #        a_want_email = a_want_email.upcase == "SI"
       #        a_job = "N/A" if a_job.nil?
       #        subgroup_id = @event.subgroups.find_by_subgroup_key(subgroup_key).id
-      if attendee_id[0, 2] == @event.token_for_id
-        @attendee = @event.attendees.new(subgroup_id: 37, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
-        if @attendee.save
-          #            AttendeeMailer.welcome_email(@attendee).deliver!
-        else
-          out.puts @attendee.errors.inspect
-        end
-      end
-#      @exhibitor = @event.exhibitors.new(social_reason: e_tradename, name: e_tradename, contact: a_name, email: 'email.email.com', exposition_key: 'CLAVE', phone: '0000000')
-#      unless @exhibitor.save
-#        out.puts @exhibitor.errors.inspect
+#      if attendee_id[0, 2] == @event.token_for_id
+#        @attendee = @event.attendees.new(subgroup_id: 37, e_tradename: e_tradename, e_name: e_tradename, a_name: a_name, attendee_id: attendee_id)
+#        if @attendee.save
+#          #            AttendeeMailer.welcome_email(@attendee).deliver!
+#        else
+#          out.puts @attendee.errors.inspect
+#        end
 #      end
+      @exhibitor = @event.exhibitors.new(social_reason: e_tradename, name: e_tradename, contact: a_name, email: 'email.email.com', exposition_key: 'CLAVE', phone: '0000000')
+      unless @exhibitor.save
+        out.puts @exhibitor.errors.inspect
+      end
       #      rescue
       #        @has_error = true
       #      end
